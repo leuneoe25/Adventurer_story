@@ -158,14 +158,18 @@ public class Skeleton : MonoBehaviour
     }
     void Facetarget()
     {
-        if(target.transform.position.x - transform.position.x < 0)
+        if(coru)
         {
-            transform.localScale = new Vector3(-5, transform.localScale.y, transform.localScale.z);
+            if (target.transform.position.x - transform.position.x < 0)
+            {
+                transform.localScale = new Vector3(-5, transform.localScale.y, transform.localScale.z);
+            }
+            else
+            {
+                transform.localScale = new Vector3(5, transform.localScale.y, transform.localScale.z);
+            }
         }
-        else
-        {
-            transform.localScale = new Vector3(5, transform.localScale.y, transform.localScale.z);
-        }
+        
     }
     void Movetarget()
     {
