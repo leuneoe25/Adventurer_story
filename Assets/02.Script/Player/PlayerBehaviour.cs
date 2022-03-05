@@ -57,7 +57,8 @@ public class PlayerBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y-0.5f), Vector2.down, MAX_RAY_DISTANCE, LayerMask.GetMask("Ground"));
+        int layerMask = (1 << LayerMask.NameToLayer("Ground")) + (1 << LayerMask.NameToLayer("Block"));
+        RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y-0.5f), Vector2.down, MAX_RAY_DISTANCE, layerMask);
         isJumpable = hit.transform != null;
         if (Input.GetKeyDown(KeyCode.Space) && isJumpable&& isMove)
         {

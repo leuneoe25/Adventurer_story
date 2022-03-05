@@ -55,7 +55,7 @@ public class PlayerState : MonoBehaviour
         if(isLevel != levelSystem.GetLevel())
         {
             isLevel = levelSystem.GetLevel();
-            StartCoroutine(LevelUpEvent()); 
+            //StartCoroutine(LevelUpEvent()); 
         }
         UpDataUI();
     }
