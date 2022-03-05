@@ -8,7 +8,6 @@ public class Bandit_ : MonoBehaviour
     [SerializeField] private int amendsCoin;
     [SerializeField] private GameObject HpbarPrefab;
     [SerializeField] private GameObject Attack_1;
-    [SerializeField] private GameObject Attack_2;
     public int Damage;
     private GameObject Camaera;
     private GameObject Hpbar;
@@ -85,7 +84,7 @@ public class Bandit_ : MonoBehaviour
 
 
 
-        Vector2 frontVec = new Vector2(rigid.position.x + nextMove, rigid.position.y - 1f);
+        Vector2 frontVec = new Vector2(rigid.position.x + nextMove, rigid.position.y);
         Debug.DrawRay(frontVec, Vector3.down, new Color(0, 1, 0));
         RaycastHit2D raycast = Physics2D.Raycast(frontVec, Vector3.down, 1, LayerMask.GetMask("Ground"));
         if (raycast.collider == null)
@@ -96,10 +95,10 @@ public class Bandit_ : MonoBehaviour
         {
             if (nextMove == -1)
             {
-                transform.localScale = new Vector3(-5, transform.localScale.y, transform.localScale.z);
+                transform.localScale = new Vector3(2.2f, transform.localScale.y, transform.localScale.z);
             }
             else
-                transform.localScale = new Vector3(5, transform.localScale.y, transform.localScale.z);
+                transform.localScale = new Vector3(-2.2f, transform.localScale.y, transform.localScale.z);
             animator.SetBool("walk", true);
         }
 
@@ -162,11 +161,11 @@ public class Bandit_ : MonoBehaviour
             //
             if (target.transform.position.x - transform.position.x < 0)
             {
-                transform.localScale = new Vector3(-5, transform.localScale.y, transform.localScale.z);
+                transform.localScale = new Vector3(2.2f, transform.localScale.y, transform.localScale.z);
             }
             else
             {
-                transform.localScale = new Vector3(5, transform.localScale.y, transform.localScale.z);
+                transform.localScale = new Vector3(-2.2f, transform.localScale.y, transform.localScale.z);
             }
         }
 
@@ -186,18 +185,15 @@ public class Bandit_ : MonoBehaviour
     {
         ismove = false;
         coru = true;
-        animator.SetBool("attack1", true);
+        animator.SetBool("attack", true);
         yield return new WaitForSeconds(0.8f);
-        animator.SetBool("attack1", false);
-        animator.SetBool("attack2", true);
-        yield return new WaitForSeconds(0.8f);
-        animator.SetBool("attack2", false);
+        animator.SetBool("attack", false);
         coru = false;
         ismove = true;
     }
     void UpdateHpbar()
     {
-        HpbarObject.transform.position = new Vector2(gameObject.transform.position.x - 1f, gameObject.transform.position.y + 1.5f);
+        HpbarObject.transform.position = new Vector2(gameObject.transform.position.x - 1f, gameObject.transform.position.y + 3f);
         Hpbar.transform.localScale = new Vector2((Hp / MaxHp * 100 / 100), 0.3715625f);
         if (Hp <= 0)
         {
@@ -210,13 +206,11 @@ public class Bandit_ : MonoBehaviour
         rigid.velocity = Vector2.zero;
         isDie = true;
         Attack_1.SetActive(false);
-        Attack_2.SetActive(false);
         Destroy(HpbarObject);
         gameObject.layer = 0;
-        animator.SetBool("isDie", true);
+        animator.SetBool("isdie", true);
         animator.SetBool("walk", false);
-        animator.SetBool("attack1", false);
-        animator.SetBool("attack2", false);
+        animator.SetBool("attack", false);
         gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
         rigid.gravityScale = 0;
         target.GetComponent<InventorySystem>().coin.SetCoin(amendsCoin);
@@ -228,20 +222,10 @@ public class Bandit_ : MonoBehaviour
     {
         StartCoroutine(Attack_combo_1());
     }
-    public void OnAttack_2()
-    {
-        StartCoroutine(Attack_combo_2());
-    }
     IEnumerator Attack_combo_1()
     {
         Attack_1.SetActive(true);
         yield return new WaitForSeconds(0.4f);
         Attack_1.SetActive(false);
-    }
-    IEnumerator Attack_combo_2()
-    {
-        Attack_2.SetActive(true);
-        yield return new WaitForSeconds(0.4f);
-        Attack_2.SetActive(false);
     }
 }
