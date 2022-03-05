@@ -65,6 +65,11 @@ public class PlayerState : MonoBehaviour
         {
             Attacked(collision.transform.parent.GetComponent<Skeleton>().Damage);
         }
+        if (collision.transform.CompareTag("BanditAttack"))
+        {
+            Debug.Log("BanditAttack");
+            Attacked(collision.transform.parent.GetComponent<Bandit_>().Damage);
+        }
         if (collision.transform.CompareTag("FomerWarriorAttack"))
         {
             Attacked(collision.transform.parent.GetComponent<FormerWarriorBoss>().Damage);

@@ -188,6 +188,7 @@ public class Skeleton : MonoBehaviour
         animator.SetBool("attack2", true);
         yield return new WaitForSeconds(0.8f);
         animator.SetBool("attack2", false);
+        yield return new WaitForSeconds(1f);
         coru = false;
         ismove = true;
     }

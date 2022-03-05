@@ -188,6 +188,8 @@ public class Bandit_ : MonoBehaviour
         animator.SetBool("attack", true);
         yield return new WaitForSeconds(0.8f);
         animator.SetBool("attack", false);
+        Attack_1.SetActive(false);
+        yield return new WaitForSeconds(2f);
         coru = false;
         ismove = true;
     }
@@ -220,12 +222,6 @@ public class Bandit_ : MonoBehaviour
     }
     public void OnAttack_1()
     {
-        StartCoroutine(Attack_combo_1());
-    }
-    IEnumerator Attack_combo_1()
-    {
         Attack_1.SetActive(true);
-        yield return new WaitForSeconds(0.4f);
-        Attack_1.SetActive(false);
     }
 }

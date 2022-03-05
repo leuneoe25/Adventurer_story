@@ -9,6 +9,7 @@ TagManager:
   - SkeletonAttack
   - Double_Slash
   - FomerWarriorAttack
+  - BanditAttack
   layers:
   - Default
   - TransparentFX
