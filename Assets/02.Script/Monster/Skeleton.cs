@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class Skeleton : MonoBehaviour
 {
-    [SerializeField] private float MaxHp; 
-    [SerializeField] private int amendsCoin; 
+    [SerializeField] private float MaxHp; // hp
+
+    [SerializeField] private int amendsCoin; //보상 코인
+
+
     [SerializeField] private GameObject HpbarPrefab;
+
     [SerializeField] private GameObject Attack_1;
     [SerializeField] private GameObject Attack_2;
+
     public int Damage;
     private GameObject Camaera;
+
+
     private GameObject Hpbar;
     private GameObject HpbarObject;
     private float Hp;
@@ -23,14 +30,17 @@ public class Skeleton : MonoBehaviour
     bool move;
     private bool ismove;
     bool coru;
+
     bool isDie = false;
 
     void Awake()
     {
         target = GameObject.Find("Player");
         Camaera = GameObject.Find("Main Camera");
+
         HpbarObject = Instantiate(HpbarPrefab);
         Hpbar = HpbarObject.transform.GetChild(1).gameObject;
+
         coru = false;
         move = false;
         ismove = true;
@@ -40,7 +50,6 @@ public class Skeleton : MonoBehaviour
     }
     private void Start()
     {
- 
         Hp = MaxHp;
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -61,20 +70,7 @@ public class Skeleton : MonoBehaviour
             Camaera.GetComponent<CameraShake>().VibrateForTime(0.1f);
         }
     }
-    IEnumerator KnockBack(float dir)
-    {
-        float ctime = 0;
-        float speed = 0.1f;
-        while(ctime <0.2f)
-        {
-            if (transform.localScale.x == 5)
-                transform.Translate(Vector2.left * speed * dir);
-            else
-                transform.Translate(Vector2.left * speed *-1* dir);
-            ctime += Time.deltaTime;
-            yield return null;
-        }
-    }
+    
     void FixedUpdate()
     {
         if (ismove&&!isDie)
@@ -198,7 +194,7 @@ public class Skeleton : MonoBehaviour
     void UpdateHpbar()
     {
         HpbarObject.transform.position = new Vector2(gameObject.transform.position.x-1f, gameObject.transform.position.y+1.5f);
-         Hpbar.transform.localScale = new Vector2((Hp / MaxHp * 100 / 100), 0.3715625f);
+        Hpbar.transform.localScale = new Vector2((Hp / MaxHp * 100 / 100), 0.3715625f);
         if(Hp <= 0)
         {
             StopAllCoroutines();

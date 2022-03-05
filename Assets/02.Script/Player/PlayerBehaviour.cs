@@ -8,7 +8,8 @@ public class PlayerBehaviour : MonoBehaviour
 {
     Rigidbody2D rigidbody;
     private static readonly float MAX_RAY_DISTANCE = 1f;
-
+    private static readonly float MAX_SEARCH_DISTANCE = 1f;
+    [SerializeField] private Transform searchPos;
     public Transform wallChk;
     public float wallChkDistance;
     public float SlidingSpeed;
@@ -40,6 +41,8 @@ public class PlayerBehaviour : MonoBehaviour
     private bool isCoolTimeDash = false;
     private float StartTIme;
     private float time_current;
+    private bool isDown = false;
+
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -72,9 +75,33 @@ public class PlayerBehaviour : MonoBehaviour
         else
         {
             animator.SetBool("isJump", false);
-            isWall = false;
         }
 
+        RaycastHit2D sea = Physics2D.Raycast(searchPos.position, Vector2.down, MAX_SEARCH_DISTANCE, LayerMask.GetMask("Block"));
+        GameObject block = null;
+        if (sea.transform != null)
+        {
+            
+             block = sea.transform.gameObject;
+            
+            if(Input.GetKeyDown(KeyCode.S))
+            {
+                StartCoroutine(GoDown(block));
+            }
+            else if(!isDown)
+            {
+                block.GetComponent<BoxCollider2D>().isTrigger = false;
+            }
+        }
+        else
+        {
+            if(block!=null)
+            {
+                block.GetComponent<BoxCollider2D>().isTrigger = true;
+                block = null;
+            }
+            
+        }
 
 
 
@@ -87,16 +114,9 @@ public class PlayerBehaviour : MonoBehaviour
     }
     private void OnDrawGizmos()
     {
-        if (x == -1)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawRay(wallChk.position, Vector2.left * wallChkDistance);
-        }
-        else if (x == 1)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawRay(wallChk.position, Vector2.right * wallChkDistance);
-        }
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawRay(searchPos.position, Vector2.down * MAX_SEARCH_DISTANCE);
     }
     private void FixedUpdate()
     {
@@ -127,6 +147,17 @@ public class PlayerBehaviour : MonoBehaviour
     public void Setdefaultspeed(float val)
     {
         defaultspeed = val;
+    }
+    IEnumerator GoDown(GameObject block)
+    {
+        if(!isDown)
+        {
+            isDown = true;
+            block.GetComponent<BoxCollider2D>().isTrigger = true;
+            yield return new WaitForSeconds(1f);
+            isDown = false;
+        }
+        
     }
     IEnumerator dash()
     {
