@@ -23,7 +23,7 @@ public class Bandit_ : MonoBehaviour
     private bool ismove;
     bool coru;
     bool isDie = false;
-
+    bool isAttack = false;
     void Awake()
     {
         target = GameObject.Find("Player");
@@ -87,8 +87,9 @@ public class Bandit_ : MonoBehaviour
         Vector2 frontVec = new Vector2(rigid.position.x + nextMove, rigid.position.y);
         Debug.DrawRay(frontVec, Vector3.down, new Color(0, 1, 0));
         RaycastHit2D raycast = Physics2D.Raycast(frontVec, Vector3.down, 1, LayerMask.GetMask("Ground"));
-        if (raycast.collider == null)
+        if (raycast.collider == null&&!isAttack)
         {
+            Debug.Log("Turn");
             Turn();
         }
         if (nextMove != 0 && !isDie)
@@ -144,6 +145,8 @@ public class Bandit_ : MonoBehaviour
     }
     void Turn()
     {
+        if (isAttack)
+            return;
         nextMove = nextMove * (-1);
         if (nextMove == -1)
         {
@@ -185,13 +188,19 @@ public class Bandit_ : MonoBehaviour
     {
         ismove = false;
         coru = true;
+        isAttack = true;
         animator.SetBool("attack", true);
         yield return new WaitForSeconds(0.8f);
         animator.SetBool("attack", false);
-        Attack_1.SetActive(false);
+        isAttack = false;
+        
         yield return new WaitForSeconds(2f);
         coru = false;
         ismove = true;
+    }
+    void Offattack()
+    {
+        Attack_1.SetActive(false);
     }
     void UpdateHpbar()
     {

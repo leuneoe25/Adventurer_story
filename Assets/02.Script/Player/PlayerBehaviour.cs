@@ -42,6 +42,7 @@ public class PlayerBehaviour : MonoBehaviour
     private float StartTIme;
     private float time_current;
     private bool isDown = false;
+    public bool isDash = false;
 
     private void Awake()
     {
@@ -164,6 +165,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if(!isCoolTimeDash)
         {
+            isDash = true;
             isCoolTimeDash = true;
             animator.SetBool("isDash", true);
             gameObject.layer = 11;
@@ -175,6 +177,7 @@ public class PlayerBehaviour : MonoBehaviour
             animator.SetBool("isDash", false);
             StartTIme = Time.time;
             time_current = 0;
+            isDash = false;
             yield return new WaitForSeconds(DashCoolTime);
             isCoolTimeDash = false;
         }

@@ -25,16 +25,24 @@ public class PlayerAttackSystem : MonoBehaviour
             watch.Reset();
             isAttack = false;
         }
-        if(Input.GetMouseButtonDown(0)&&!isAttack&& gameObject.GetComponent<PlayerBehaviour>().isMove&& AttackIsPossible&& gameObject.GetComponent<PlayerBehaviour>().isJumpable)
+        if(Input.GetMouseButtonDown(0)&&!isAttack&& gameObject.GetComponent<PlayerBehaviour>().isMove&& AttackIsPossible&& gameObject.GetComponent<PlayerBehaviour>().isJumpable && !gameObject.GetComponent<PlayerBehaviour>().isDash)
         {
             StartCoroutine(AttackComboOne());
             watch.Start();
         }
-        if(Input.GetMouseButtonDown(0) && isAttack&& gameObject.GetComponent<PlayerBehaviour>().isMove&& AttackIsPossible&& gameObject.GetComponent<PlayerBehaviour>().isJumpable)
+        if(Input.GetMouseButtonDown(0) && isAttack&& gameObject.GetComponent<PlayerBehaviour>().isMove&& AttackIsPossible&& gameObject.GetComponent<PlayerBehaviour>().isJumpable&&!gameObject.GetComponent<PlayerBehaviour>().isDash)
         {
             StartCoroutine(AttackComboTwo());
             watch.Stop();
             watch.Reset();
+        }
+        if(gameObject.GetComponent<PlayerBehaviour>().isDash)
+        {
+            StopAllCoroutines();
+            animator.SetBool("isAttack_1", false);
+            animator.SetBool("isAttack_2", false);
+            Attack_Combo_2.SetActive(false);
+            Attack_Combo_1.SetActive(false);
         }
     }
     IEnumerator AttackComboOne()
