@@ -372,9 +372,9 @@ public class SkillSystem : MonoBehaviour
         
         SlaughterCommand slaughterCommand = new SlaughterCommand(slaughter, Sword_Effect_Combo_1, Sword_Effect_Combo_2);
         SwordOfWillCommand swordOfWillCommand = new SwordOfWillCommand(swordOfWill, Sword,Player);
-        
-        //commandMgr.SetCommand("QKey", slaughterCommand);
 
+        //commandMgr.SetCommand("QKey", slaughterCommand);
+        //AddCommandESkill();
         OnSkill = false;
     }
 

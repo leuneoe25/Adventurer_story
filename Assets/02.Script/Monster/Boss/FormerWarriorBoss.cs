@@ -106,18 +106,26 @@ public class FormerWarriorBoss : MonoBehaviour
 
     public void str1on()
     {
+        if (SkillEffect_1 == null)
+            return;
         SkillEffect_1.SetActive(true);
     }
     public void str1off()
     {
+        if (SkillEffect_1 == null)
+            return;
         SkillEffect_1.SetActive(false);
     }
     public void Attackarea1on()
     {
+        if (Attack1Area == null)
+            return;
         Attack1Area.SetActive(true);
     }
     public void Attackarea2on()
     {
+        if (Attack2Area == null)
+            return;
         Attack2Area.SetActive(true);
     }
     void UpdateHpbar()
@@ -125,11 +133,12 @@ public class FormerWarriorBoss : MonoBehaviour
         Hpbar.GetComponent<Image>().fillAmount = (Hp / MaxHp * 100 / 100);
         if (Hp <= 0)
         {
+            Player.GetComponent<SkillSystem>().AddCommandESkill();
             StopAllCoroutines();
-            SkillEffect_1.SetActive(false);
-            SkillEffect_2.SetActive(false);
-            AttackRange_1.SetActive(false);
-            AttackRange_2.SetActive(false);
+            Destroy(SkillEffect_1);
+            Destroy(SkillEffect_2);
+            Destroy(AttackRange_1);
+            Destroy(AttackRange_2);
             animator.SetBool("Attack2", false);
             animator.SetBool("Attack1", false);
             animator.SetBool("isDie", true);
@@ -139,6 +148,7 @@ public class FormerWarriorBoss : MonoBehaviour
     }
     void Die()
     {
+        QuestSystem.GameLeval++;
         Destroy(gameObject);
     }
     IEnumerator Attackm1()

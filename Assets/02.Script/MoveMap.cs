@@ -9,10 +9,12 @@ public class MoveMap : MonoBehaviour
     [SerializeField] private GameObject Player;
     [SerializeField] private GameObject NextStage;
     [SerializeField] private GameObject NowStage;
-    [SerializeField] private GameObject Cm;
+    [SerializeField] private CinemachineConfiner Cm;
+    [SerializeField] private CinemachineVirtualCamera Cmcam;
     [SerializeField] private Camera camera;
     [SerializeField] private bool isBossStage;
     [SerializeField] private bool isOutBossStage;
+    [SerializeField] private PolygonCollider2D stageColl;
     [SerializeField] GameObject pos;
     private bool InMove;
     private void Start()
@@ -34,20 +36,19 @@ public class MoveMap : MonoBehaviour
                 }
                 else if(isOutBossStage&& !isBossStage)
                 {
-                    Cm.SetActive(true);
+                    //Cm.SetActive(true);
                     Player.transform.position = pos.transform.position;
-                    camera.orthographicSize = 5;
+                    Cm.m_BoundingShape2D = stageColl;
+                    Cmcam.m_Lens.OrthographicSize = 5;
                     NextStage.SetActive(true);
                     NowStage.SetActive(false);
                 }
                 else if(!isOutBossStage && isBossStage)
                 {
-                    Cm.SetActive(false);
+                    //Cm.SetActive(false);
                     Player.transform.position = pos.transform.position;
-                    camera.transform.position = new Vector3(26.93f, 0.59f, -16.5f);
-                    camera.orthographic = true;
-                    camera.orthographicSize = 7;
-
+                    Cm.m_BoundingShape2D = stageColl;
+                    Cmcam.m_Lens.OrthographicSize = 9;
                     NextStage.SetActive(true);
                     NowStage.SetActive(false);
 
