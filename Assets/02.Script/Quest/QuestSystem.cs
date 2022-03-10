@@ -95,7 +95,16 @@ public class QuestSystem : MonoBehaviour
     {
         Canvers.SetActive(val);
         if(val == false)
+        {
+            InventorySystem.OnUI = 0;
             Player.GetComponent<PlayerBehaviour>().isMove = true;
+        }
+        else
+        {
+            InventorySystem.OnUI++;
+            Player.GetComponent<PlayerBehaviour>().isMove = false;
+        }
+            
     }
     public int GetGameLevel()
     {

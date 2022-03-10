@@ -39,6 +39,7 @@ public class Training : MonoBehaviour
                 Player.GetComponent<PlayerBehaviour>().isMove = false;
                 Player.GetComponent<SkillSystem>().SkillIsPossible = false;
                 TrainingObject.SetActive(true);
+                InventorySystem.OnUI++;
             }
             if(Input.GetKeyDown(KeyCode.Escape))
             {
@@ -71,6 +72,7 @@ public class Training : MonoBehaviour
     }
     private void Exit()
     {
+        InventorySystem.OnUI = 0;
         TrainingObject.SetActive(false);
         Player.GetComponent<PlayerAttackSystem>().AttackIsPossible = true;
         Player.GetComponent<PlayerBehaviour>().isMove = true;

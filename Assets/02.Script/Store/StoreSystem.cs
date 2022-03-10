@@ -29,9 +29,17 @@ public class StoreSystem : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.F))
             {
                 if (Store.activeSelf&& !CheckObject.activeSelf)
+                {
                     Store.SetActive(false);
+                    InventorySystem.OnUI=0;
+                }
+                    
                 else
+                {
                     Store.SetActive(true);
+                    InventorySystem.OnUI++;
+                }
+                    
             }
             if(Input.GetKeyDown(KeyCode.Escape))
             {

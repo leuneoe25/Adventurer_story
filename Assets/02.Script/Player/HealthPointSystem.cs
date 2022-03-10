@@ -23,7 +23,6 @@ public class HealthPointSystem
     {
         //체력이 다참
         HealthPoint += ((int)START_MAX_HEALTH_POINT + ((Level - 1) * 20)+ Addition) / 100 * healamount;
-        Debug.Log(((int)START_MAX_HEALTH_POINT + ((Level - 1) * 20)) / 100 * healamount);
         if (HealthPoint >= START_MAX_HEALTH_POINT + ((Level-1) * 20)+ Addition)
         {
             HealthPoint = (int)START_MAX_HEALTH_POINT + ((Level - 1) * 20) + Addition;

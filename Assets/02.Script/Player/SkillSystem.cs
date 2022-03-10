@@ -315,7 +315,7 @@ public class CommandManager
     {
         if (commandDic.ContainsKey(name))
         {
-            Debug.Log("이미 커맨드가 리스트에 포함되어 있음");
+            
             return true;
         }
         return false;

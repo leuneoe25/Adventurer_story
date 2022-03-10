@@ -7,6 +7,7 @@ public class InventorySystem : MonoBehaviour
 {
     [SerializeField] private GameObject Inven;
     [SerializeField] private GameObject SlotParent;
+    [SerializeField] private GameObject InvenCh;
 
     [SerializeField] private Sprite emergencyPotion_image;
     [SerializeField] private Sprite healingPotion_image;
@@ -22,6 +23,7 @@ public class InventorySystem : MonoBehaviour
     private Slot[] slots;
     public static int temporaryDamaage = 0;
     public static int temporaryHealamount = 0;
+    public static int OnUI = 0;
 
     
     private void Awake()
@@ -51,11 +53,27 @@ public class InventorySystem : MonoBehaviour
             isOnInventory = !isOnInventory;
             if (!isOnInventory)
             {
-                gameObject.GetComponent<PlayerBehaviour>().isMove = false;
-                Inven.SetActive(true);
+                if(OnUI==0)
+                {
+                    gameObject.GetComponent<PlayerBehaviour>().isMove = false;
+                    Inven.SetActive(true);
+                }
+                
             }
             else
             {
+                gameObject.GetComponent<PlayerBehaviour>().isMove = true;
+                Inven.SetActive(false);
+            }
+        }
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(Inven.activeSelf)
+            {
+                if(InvenCh.activeSelf)
+                {
+                    InvenCh.SetActive(false);
+                }
                 gameObject.GetComponent<PlayerBehaviour>().isMove = true;
                 Inven.SetActive(false);
             }
