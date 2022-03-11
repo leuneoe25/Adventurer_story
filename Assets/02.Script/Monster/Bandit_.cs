@@ -159,7 +159,7 @@ public class Bandit_ : MonoBehaviour
     }
     void Facetarget()
     {
-        if (coru)
+        if (!coru)
         {
             //
             if (target.transform.position.x - transform.position.x < 0)

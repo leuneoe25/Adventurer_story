@@ -1,12 +1,12 @@
-Ôªøusing System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skeleton : MonoBehaviour
+public class Goblin : MonoBehaviour
 {
     [SerializeField] private float MaxHp; // hp
 
-    [SerializeField] private int amendsCoin; //Î≥¥ÏÉÅ ÏΩîÏù∏
+    [SerializeField] private int amendsCoin; //∫∏ªÛ ƒ⁄¿Œ
 
 
     [SerializeField] private GameObject HpbarPrefab;
@@ -54,7 +54,7 @@ public class Skeleton : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.transform.CompareTag("PlayerAttack_1"))
+        if (collision.transform.CompareTag("PlayerAttack_1"))
         {
             Hp -= target.GetComponent<PlayerState>().GeneralDamage();
             Camaera.GetComponent<CameraShake>().VibrateForTime(0.1f);
@@ -64,16 +64,16 @@ public class Skeleton : MonoBehaviour
             Hp -= target.GetComponent<PlayerState>().GeneralDamage();
             Camaera.GetComponent<CameraShake>().VibrateForTime(0.1f);
         }
-        if(collision.transform.CompareTag("Double_Slash"))
+        if (collision.transform.CompareTag("Double_Slash"))
         {
             Hp -= target.GetComponent<PlayerState>().ESkillDamage();
             Camaera.GetComponent<CameraShake>().VibrateForTime(0.1f);
         }
     }
-    
+
     void FixedUpdate()
     {
-        if (ismove&&!isDie)
+        if (ismove && !isDie)
         {
             rigid.velocity = new Vector2(nextMove, rigid.velocity.y);
         }
@@ -89,7 +89,7 @@ public class Skeleton : MonoBehaviour
         {
             Turn();
         }
-        if (nextMove != 0&& !isDie)
+        if (nextMove != 0 && !isDie)
         {
             if (nextMove == -1)
             {
@@ -104,20 +104,20 @@ public class Skeleton : MonoBehaviour
 
     void Update()
     {
-        if(HpbarObject!=null)
+        if (HpbarObject != null)
             UpdateHpbar();
         float distance = Vector3.Distance(transform.position, target.transform.position);
-        if(distance <= 5&&!isDie)
+        if (distance <= 5 && !isDie)
         {
-            
+
             move = true;
             Facetarget();
             if (distance <= 2.3)
             {
                 animator.SetBool("walk", false);
                 nextMove = 0;
-                if(!coru)
-                StartCoroutine(Attacktatget());
+                if (!coru)
+                    StartCoroutine(Attacktatget());
             }
             else
             {
@@ -154,7 +154,7 @@ public class Skeleton : MonoBehaviour
     }
     void Facetarget()
     {
-        if(!coru)
+        if (!coru)
         {
             if (target.transform.position.x - transform.position.x < 0)
             {
@@ -165,11 +165,11 @@ public class Skeleton : MonoBehaviour
                 transform.localScale = new Vector3(5, transform.localScale.y, transform.localScale.z);
             }
         }
-        
+
     }
     void Movetarget()
     {
-        if(target.transform.position.x - transform.position.x < 0)
+        if (target.transform.position.x - transform.position.x < 0)
         {
             nextMove = -1;
         }
@@ -194,9 +194,9 @@ public class Skeleton : MonoBehaviour
     }
     void UpdateHpbar()
     {
-        HpbarObject.transform.position = new Vector2(gameObject.transform.position.x-1f, gameObject.transform.position.y+1.5f);
+        HpbarObject.transform.position = new Vector2(gameObject.transform.position.x - 1f, gameObject.transform.position.y + 1.5f);
         Hpbar.transform.localScale = new Vector2((Hp / MaxHp * 100 / 100), 0.3715625f);
-        if(Hp <= 0)
+        if (Hp <= 0)
         {
             StopAllCoroutines();
             StartCoroutine(DieAnimator());
@@ -218,7 +218,7 @@ public class Skeleton : MonoBehaviour
         rigid.gravityScale = 0;
         target.GetComponent<InventorySystem>().coin.SetCoin(amendsCoin);
         yield return new WaitForSeconds(2f);
-        
+
         Destroy(gameObject);
     }
     public void OnAttack_1()
