@@ -133,7 +133,7 @@ public class FormerWarriorBoss : MonoBehaviour
         Hpbar.GetComponent<Image>().fillAmount = (Hp / MaxHp * 100 / 100);
         if (Hp <= 0)
         {
-            Player.GetComponent<SkillSystem>().AddCommandESkill();
+            
             StopAllCoroutines();
             Destroy(SkillEffect_1);
             Destroy(SkillEffect_2);
@@ -148,6 +148,7 @@ public class FormerWarriorBoss : MonoBehaviour
     }
     void Die()
     {
+        Player.GetComponent<SkillSystem>().AddCommandESkill();
         QuestSystem.GameLeval++;
         Destroy(gameObject);
     }
