@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3498823020388909507}
   - component: {fileID: 3498823020388909506}
   - component: {fileID: 3498823020388909509}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Goblin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 78.99
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 3498823020490349926}
   - component: {fileID: 3498823020490349929}
   - component: {fileID: 3498823020490349928}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Attack2_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,7 +259,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.46700883, y: -0.099943526}
@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 3498823020636803855}
   - component: {fileID: 3498823020636803854}
   - component: {fileID: 3498823020636803857}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Attack_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -368,7 +368,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.30547923, y: -0.13576888}
