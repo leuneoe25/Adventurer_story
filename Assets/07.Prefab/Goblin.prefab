@@ -176,7 +176,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3498823020490349926}
   - component: {fileID: 3498823020490349929}
-  - component: {fileID: 3498823020490349928}
+  - component: {fileID: 4845764616700915585}
+  - component: {fileID: 7033802116384511310}
   m_Layer: 10
   m_Name: Attack2_6
   m_TagString: Untagged
@@ -249,8 +250,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &3498823020490349928
-BoxCollider2D:
+--- !u!60 &4845764616700915585
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -262,19 +263,46 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.46700883, y: -0.099943526}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.5, y: 1.5}
-    newSize: {x: 1.5, y: 1.5}
-    adaptiveTilingThreshold: 0.5
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.3915342, y: 0.27523655}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.7016472, y: 0.0113149285}
+      - {x: 0.50805134, y: 0.057859093}
+      - {x: 0.5439462, y: -0.06982258}
+      - {x: 0.4925924, y: -0.1591959}
+      - {x: 0.38048044, y: -0.2349418}
+      - {x: 0.6801783, y: -0.22495595}
+      - {x: 0.799564, y: -0.10160613}
+--- !u!50 &7033802116384511310
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3498823020490349931}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &3498823020636803856
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,7 +313,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3498823020636803855}
   - component: {fileID: 3498823020636803854}
-  - component: {fileID: 3498823020636803857}
+  - component: {fileID: 2193148540916930005}
+  - component: {fileID: 2555089621576312799}
   m_Layer: 10
   m_Name: Attack_6
   m_TagString: Untagged
@@ -358,8 +387,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &3498823020636803857
-BoxCollider2D:
+--- !u!60 &2193148540916930005
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -371,16 +400,47 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.30547923, y: -0.13576888}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.5, y: 1.5}
-    newSize: {x: 1.5, y: 1.5}
-    adaptiveTilingThreshold: 0.5
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.2705379, y: 0.195111}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.361557, y: -0.110666335}
+      - {x: 0.15306424, y: -0.0983256}
+      - {x: -0.21977459, y: 0.052144676}
+      - {x: -0.2901367, y: 0.17724547}
+      - {x: -0.41783315, y: 0.23879921}
+      - {x: -0.47530612, y: 0.16836032}
+      - {x: -0.3113207, y: -0.0013939515}
+      - {x: -0.008610845, y: -0.16778827}
+      - {x: 0.34762242, y: -0.24190718}
+      - {x: 0.488498, y: -0.15951413}
+      - {x: 0.38015607, y: -0.030213654}
+--- !u!50 &2555089621576312799
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3498823020636803856}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
