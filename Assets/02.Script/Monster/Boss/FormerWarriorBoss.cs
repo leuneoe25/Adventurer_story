@@ -35,11 +35,6 @@ public class FormerWarriorBoss : MonoBehaviour
         HpbarObject = GameObject.Find("BossCanvas").transform.Find("FomerWarriorHpbar").gameObject;
         HpbarObject.SetActive(true);
         Hpbar = GameObject.Find("FormerWarrior_Hpbar");
-        
-        if(Hpbar == null)
-        {
-            Debug.Log("null");
-        }
         rigidbody = GetComponent<Rigidbody2D>();
            nrl = 1;
         nextfo = 0;

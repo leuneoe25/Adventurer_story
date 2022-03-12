@@ -17,8 +17,9 @@ public class Training : MonoBehaviour
     {
         Player.GetComponent<InventorySystem>().coin.SetCoin(350);
 
-
+        LevelUpButten.onClick.RemoveAllListeners();
         LevelUpButten.onClick.AddListener(LevelUp);
+        ExitButten.onClick.RemoveAllListeners();
         ExitButten.onClick.AddListener(Exit);
         NeedCoinText.text = "레벨 업 "
             + Player.GetComponent<InventorySystem>().coin.NeedLevelUpCoin(
@@ -63,7 +64,7 @@ public class Training : MonoBehaviour
                 Player.GetComponent<PlayerState>().GetLevelVal()));
             Player.GetComponent<PlayerState>().GetExp();
         }
-        
+        Debug.Log("Up");
 
         NeedCoinText.text = "레벨 업 "
             + Player.GetComponent<InventorySystem>().coin.NeedLevelUpCoin(

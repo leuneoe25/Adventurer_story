@@ -367,11 +367,9 @@ public class SkillSystem : MonoBehaviour
         //리시버 생성
         
         Slaughter slaughter = new Slaughter();
-        SwordOfWill swordOfWill = new SwordOfWill();
         //커맨드를 생성하고 리시버와 연결
         
         SlaughterCommand slaughterCommand = new SlaughterCommand(slaughter, Sword_Effect_Combo_1, Sword_Effect_Combo_2);
-        SwordOfWillCommand swordOfWillCommand = new SwordOfWillCommand(swordOfWill, Sword,Player);
 
         //commandMgr.SetCommand("QKey", slaughterCommand);
         //AddCommandESkill();
@@ -466,7 +464,7 @@ public class SkillSystem : MonoBehaviour
         if(commandMgr.FindCommand("QKey"))
         {
             XSkillText.gameObject.SetActive(true);
-            if (commandMgr.InvokeGetSkillText("XKey") == -1)
+            if (commandMgr.InvokeGetSkillText("QKey") == -1)
             {
                 XSkillText.text = "";
             }
