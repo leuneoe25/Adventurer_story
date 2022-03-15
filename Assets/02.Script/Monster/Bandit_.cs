@@ -150,10 +150,10 @@ public class Bandit_ : MonoBehaviour
         nextMove = nextMove * (-1);
         if (nextMove == -1)
         {
-            transform.localScale = new Vector3(-5, transform.localScale.y, transform.localScale.z);
+            transform.localScale = new Vector3(2.2f, transform.localScale.y, transform.localScale.z);
         }
         else
-            transform.localScale = new Vector3(5, transform.localScale.y, transform.localScale.z);
+            transform.localScale = new Vector3(-2.2f, transform.localScale.y, transform.localScale.z);
         CancelInvoke();
         Invoke("movelange", 3);
     }

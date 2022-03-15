@@ -17,6 +17,7 @@ public class FormerWarriorBoss : MonoBehaviour
     [SerializeField] private GameObject SkillEffect_1; // ��ų ����Ʈ
     [SerializeField] private GameObject SkillEffect_2; // ��ų ����Ʈ
     [SerializeField] private float MaxHp; // ��ų ����Ʈ
+    private bool isAction = false;
     private GameObject Player;
     public int Damage;
     public int nrl;
@@ -41,7 +42,7 @@ public class FormerWarriorBoss : MonoBehaviour
         isattack = false;
         animator = GetComponent<Animator>();
         BoxCollider2D = GetComponent<BoxCollider2D>();
-        Invoke("RandomBossAction", 4);
+        RandomBossAction();
         HpbarObject.SetActive(true);
         
     }
@@ -49,51 +50,35 @@ public class FormerWarriorBoss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (next == -1 && !isattack)
-        {
-            StartCoroutine(Attackm1());
-        }
-        else if (next == 1 && !isattack)
-        {
-            if (nrl == 1)
-            {
-                nrl++;
-                StartCoroutine(Attackm2());
-            }
-            else
-            {
-                nrl--;
-                StartCoroutine(Attackm22());
-            }
-
-        }
+        BossAction(nextfo);
         UpdateHpbar();
     }
 
     void BossAction(int next)
     {
-        switch (next)
+        if (!isAction)
         {
-            case 0:
-                return;
-            case 1:
-                StartCoroutine(Attackm1());
-                break;
-            case 2:
-                if (nrl == 1)
-                {
-                    nrl++;
-                    StartCoroutine(Attackm2());
+            switch (next)
+            {
+                case 0:
+                    return;
+                case 1:
+                    StartCoroutine(Attackm1());
                     break;
-                }
-                else
-                {
-                    nrl--;
-                    StartCoroutine(Attackm22());
-                    break;
-                }
-                
+                case 2:
+                    if (nrl == 1)
+                    {
+                        nrl++;
+                        StartCoroutine(Attackm2());
+                        break;
+                    }
+                    else
+                    {
+                        nrl--;
+                        StartCoroutine(Attackm22());
+                        break;
+                    }
+            }
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -113,9 +98,16 @@ public class FormerWarriorBoss : MonoBehaviour
     }
     void RandomBossAction()
     {
-        next = Random.Range(-1, 2);
-        Debug.Log("Execut");
-        
+        while (true)
+        {
+            next = Random.Range(1, 3);
+            if (next != nextfo)
+            {
+                break;
+            }
+        }
+        nextfo = next;
+        isAction = false;
     }
 
     public void str1on()
@@ -147,7 +139,7 @@ public class FormerWarriorBoss : MonoBehaviour
         Hpbar.GetComponent<Image>().fillAmount = (Hp / MaxHp * 100 / 100);
         if (Hp <= 0)
         {
-            
+            isAction = true;
             StopAllCoroutines();
             Destroy(SkillEffect_1);
             Destroy(SkillEffect_2);
@@ -168,6 +160,7 @@ public class FormerWarriorBoss : MonoBehaviour
     }
     IEnumerator Attackm1()
     {
+        isAction = true;
         isattack = true;
         AttackRange_1.SetActive(true);
         yield return new WaitForSeconds(1f);
@@ -186,6 +179,7 @@ public class FormerWarriorBoss : MonoBehaviour
 
     IEnumerator Attackm2()
     {
+        isAction = true;
         rigidbody.gravityScale = 0;
         BoxCollider2D.isTrigger = true;
         
@@ -220,6 +214,7 @@ public class FormerWarriorBoss : MonoBehaviour
 
     IEnumerator Attackm22()
     {
+        isAction = true;
         rigidbody.gravityScale = 0;
         BoxCollider2D.isTrigger = true;
         
