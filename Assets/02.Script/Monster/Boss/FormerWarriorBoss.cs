@@ -49,6 +49,7 @@ public class FormerWarriorBoss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (next == -1 && !isattack)
         {
             StartCoroutine(Attackm1());
@@ -69,6 +70,32 @@ public class FormerWarriorBoss : MonoBehaviour
         }
         UpdateHpbar();
     }
+
+    void BossAction(int next)
+    {
+        switch (next)
+        {
+            case 0:
+                return;
+            case 1:
+                StartCoroutine(Attackm1());
+                break;
+            case 2:
+                if (nrl == 1)
+                {
+                    nrl++;
+                    StartCoroutine(Attackm2());
+                    break;
+                }
+                else
+                {
+                    nrl--;
+                    StartCoroutine(Attackm22());
+                    break;
+                }
+                
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.transform.CompareTag("PlayerAttack_1"))
@@ -86,17 +113,9 @@ public class FormerWarriorBoss : MonoBehaviour
     }
     void RandomBossAction()
     {
-        while (true)
-        {
-            next = Random.Range(-1, 2);
-            if (next != nextfo)
-            {
-                break;
-            }
-        }
-        nextfo = next;
+        next = Random.Range(-1, 2);
         Debug.Log("Execut");
-        Invoke("RandomBossAction", 4);
+        
     }
 
     public void str1on()
@@ -161,8 +180,8 @@ public class FormerWarriorBoss : MonoBehaviour
         Attack2Area.SetActive(false);
         next = 0;
         isattack = false;
-        
 
+        Invoke("RandomBossAction", 4);
     }
 
     IEnumerator Attackm2()
@@ -195,6 +214,8 @@ public class FormerWarriorBoss : MonoBehaviour
         BoxCollider2D.isTrigger = false;
         rigidbody.gravityScale = 1;
         next = 0;
+
+        Invoke("RandomBossAction", 4);
     }
 
     IEnumerator Attackm22()
@@ -226,5 +247,7 @@ public class FormerWarriorBoss : MonoBehaviour
         isattack = false;
         rigidbody.gravityScale = 1;
         next = 0;
+
+        Invoke("RandomBossAction", 4);
     }
 }
