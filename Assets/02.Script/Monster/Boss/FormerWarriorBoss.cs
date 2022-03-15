@@ -28,6 +28,7 @@ public class FormerWarriorBoss : MonoBehaviour
     private BoxCollider2D BoxCollider2D;
     Animator animator;
     Rigidbody2D rigidbody;
+    bool isAccionPatten = false;
     // Start is called before the first frame update
     void Awake()
     {
@@ -62,13 +63,11 @@ public class FormerWarriorBoss : MonoBehaviour
     {
         if (!isAction)
         {
-            Debug.Log("BossAction");
             switch (next)
             {
                 case 0:
                     return;
                 case 1:
-                    Debug.Log("Attackm1");
                     StartCoroutine(Attackm1());
                     return;
                 case 2:
@@ -113,7 +112,7 @@ public class FormerWarriorBoss : MonoBehaviour
             }
         }
         nextfo = next;
-
+        isAccionPatten = false;
         isAction = false;
     }
 
@@ -167,89 +166,101 @@ public class FormerWarriorBoss : MonoBehaviour
     }
     IEnumerator Attackm1()
     {
+        if(!isAccionPatten)
+        {
+            isAccionPatten = true;
+            isAction = true;
+            isattack = true;
+            AttackRange_1.SetActive(true);
+            yield return new WaitForSeconds(1f);
+            AttackRange_1.SetActive(false);
+            Debug.Log("asd");
+
+            animator.SetBool("Attack1", true);
+            yield return new WaitForSeconds(0.8f);
+            animator.SetBool("Attack1", false);
+            Attack2Area.SetActive(false);
+            next = 0;
+            isattack = false;
+
+            Invoke("RandomBossAction", 4);
+        }
         
-        isAction = true;
-        isattack = true;
-        AttackRange_1.SetActive(true);
-        yield return new WaitForSeconds(1f);
-        AttackRange_1.SetActive(false);
-        Debug.Log("asd");
-
-        animator.SetBool("Attack1", true);
-        yield return new WaitForSeconds(0.8f);
-        animator.SetBool("Attack1", false);
-        Attack2Area.SetActive(false);
-        next = 0;
-        isattack = false;
-
-        Invoke("RandomBossAction", 4);
     }
 
     IEnumerator Attackm2()
     {
-        isAction = true;
-        rigidbody.gravityScale = 0;
-        BoxCollider2D.isTrigger = true;
-        
-        isattack = true;
-        AttackRange_2.SetActive(true);
-        animator.SetBool("Attack2", true);
-        yield return new WaitForSeconds(1.5f);
-        AttackRange_2.SetActive(false);
-        Attackarea2on();
-        while (true)
+        if(!isAccionPatten)
         {
-            SkillEffect_2.SetActive(true);
-            if (transform.position.x <= 18)
+            isAction = true;
+            rigidbody.gravityScale = 0;
+            BoxCollider2D.isTrigger = true;
+
+            isattack = true;
+            AttackRange_2.SetActive(true);
+            animator.SetBool("Attack2", true);
+            yield return new WaitForSeconds(1.5f);
+            AttackRange_2.SetActive(false);
+            Attackarea2on();
+            while (true)
             {
-                break;
+                SkillEffect_2.SetActive(true);
+                if (transform.position.x <= 18)
+                {
+                    break;
+                }
+                yield return new WaitForSeconds(0.01f);
+                transform.position += Vector3.left * 0.6f;
             }
-            yield return new WaitForSeconds(0.01f);
-            transform.position += Vector3.left * 0.6f;
+            SkillEffect_2.SetActive(false);
+            animator.SetBool("Attack2", false);
+            Attack2Area.SetActive(false);
+            transform.localScale = new Vector3(12, 12, 12);
+            isattack = false;
+
+            BoxCollider2D.isTrigger = false;
+            rigidbody.gravityScale = 1;
+            next = 0;
+            Invoke("RandomBossAction", 4);
         }
-        SkillEffect_2.SetActive(false);
-        animator.SetBool("Attack2", false);
-        Attack2Area.SetActive(false);
-        transform.localScale = new Vector3(12, 12, 12);
-        isattack = false;
         
-        BoxCollider2D.isTrigger = false;
-        rigidbody.gravityScale = 1;
-        next = 0;
-        Invoke("RandomBossAction", 4);
     }
 
     IEnumerator Attackm22()
     {
-        isAction = true;
-        rigidbody.gravityScale = 0;
-        BoxCollider2D.isTrigger = true;
-        
-        isattack = true;
-        AttackRange_2.SetActive(true);
-        animator.SetBool("Attack2", true);
-        yield return new WaitForSeconds(1.5f);
-        AttackRange_2.SetActive(false);
-        Attackarea2on();
-        while (true)
+        if(!isAccionPatten)
         {
-            SkillEffect_2.SetActive(true);
-            if (transform.position.x >= 36)
-            {
-                break;
-            }
-            yield return new WaitForSeconds(0.01f);
-            transform.position += Vector3.right * 0.6f;
-        }
-        SkillEffect_2.SetActive(false);
-        animator.SetBool("Attack2", false);
-        Attack2Area.SetActive(false);
-        transform.localScale = new Vector3(-12, 12, 12);
-        BoxCollider2D.isTrigger = false;
-        isattack = false;
-        rigidbody.gravityScale = 1;
-        next = 0;
+            isAction = true;
+            rigidbody.gravityScale = 0;
+            BoxCollider2D.isTrigger = true;
 
-        Invoke("RandomBossAction", 4);
+            isattack = true;
+            AttackRange_2.SetActive(true);
+            animator.SetBool("Attack2", true);
+            yield return new WaitForSeconds(1.5f);
+            AttackRange_2.SetActive(false);
+            Attackarea2on();
+            while (true)
+            {
+                SkillEffect_2.SetActive(true);
+                if (transform.position.x >= 36)
+                {
+                    break;
+                }
+                yield return new WaitForSeconds(0.01f);
+                transform.position += Vector3.right * 0.6f;
+            }
+            SkillEffect_2.SetActive(false);
+            animator.SetBool("Attack2", false);
+            Attack2Area.SetActive(false);
+            transform.localScale = new Vector3(-12, 12, 12);
+            BoxCollider2D.isTrigger = false;
+            isattack = false;
+            rigidbody.gravityScale = 1;
+            next = 0;
+
+            Invoke("RandomBossAction", 4);
+        }
+        
     }
 }
