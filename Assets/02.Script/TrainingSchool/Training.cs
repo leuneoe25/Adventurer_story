@@ -37,9 +37,9 @@ public class Training : MonoBehaviour
             
             if (Input.GetKeyDown(KeyCode.F))
             {
-                //Player.GetComponent<PlayerAttackSystem>().AttackIsPossible = false;
-                //Player.GetComponent<PlayerBehaviour>().isMove = false;
-                //Player.GetComponent<SkillSystem>().SkillIsPossible = false;
+                Player.GetComponent<PlayerAttackSystem>().AttackIsPossible = false;
+                Player.GetComponent<PlayerBehaviour>().isMove = false;
+                Player.GetComponent<SkillSystem>().SkillIsPossible = false;
                 TrainingObject.SetActive(true);
                 InventorySystem.OnUI++;
             }

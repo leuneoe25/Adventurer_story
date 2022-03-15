@@ -17,7 +17,7 @@ public class FormerWarriorBoss : MonoBehaviour
     [SerializeField] private GameObject SkillEffect_1; // ��ų ����Ʈ
     [SerializeField] private GameObject SkillEffect_2; // ��ų ����Ʈ
     [SerializeField] private float MaxHp; // ��ų ����Ʈ
-    private bool isAction = false;
+    private bool isAction;
     private GameObject Player;
     public int Damage;
     public int nrl;
@@ -42,14 +42,18 @@ public class FormerWarriorBoss : MonoBehaviour
         isattack = false;
         animator = GetComponent<Animator>();
         BoxCollider2D = GetComponent<BoxCollider2D>();
-        RandomBossAction();
+        
         HpbarObject.SetActive(true);
         
     }
-
-    // Update is called once per frame
+    void Start()
+    {
+        isAction = true;
+        Invoke( "RandomBossAction",4);
+    }
     void Update()
     {
+        
         BossAction(nextfo);
         UpdateHpbar();
     }
@@ -58,13 +62,15 @@ public class FormerWarriorBoss : MonoBehaviour
     {
         if (!isAction)
         {
+            Debug.Log("BossAction");
             switch (next)
             {
                 case 0:
                     return;
                 case 1:
+                    Debug.Log("Attackm1");
                     StartCoroutine(Attackm1());
-                    break;
+                    return;
                 case 2:
                     if (nrl == 1)
                     {
@@ -98,6 +104,7 @@ public class FormerWarriorBoss : MonoBehaviour
     }
     void RandomBossAction()
     {
+        StopAllCoroutines();
         while (true)
         {
             next = Random.Range(1, 3);
@@ -107,6 +114,7 @@ public class FormerWarriorBoss : MonoBehaviour
             }
         }
         nextfo = next;
+
         isAction = false;
     }
 
@@ -160,12 +168,13 @@ public class FormerWarriorBoss : MonoBehaviour
     }
     IEnumerator Attackm1()
     {
+        
         isAction = true;
         isattack = true;
         AttackRange_1.SetActive(true);
         yield return new WaitForSeconds(1f);
         AttackRange_1.SetActive(false);
-        
+        Debug.Log("asd");
 
         animator.SetBool("Attack1", true);
         yield return new WaitForSeconds(0.8f);
@@ -208,7 +217,6 @@ public class FormerWarriorBoss : MonoBehaviour
         BoxCollider2D.isTrigger = false;
         rigidbody.gravityScale = 1;
         next = 0;
-
         Invoke("RandomBossAction", 4);
     }
 
