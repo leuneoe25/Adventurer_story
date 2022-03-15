@@ -55,6 +55,14 @@ public class BringerofDeath : MonoBehaviour
         isAction = true;
         animator.SetBool("Patten1", true);
         yield return new WaitForSeconds(0.5f);
+        if(Player.transform.localScale.x == 5)
+        {
+            gameObject.transform.localScale = new Vector2(-7, 7);
+        }
+        else
+        {
+            gameObject.transform.localScale = new Vector2(7, 7);
+        }
         transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y+2);
         animator.SetBool("Patten1", false);
         StartCoroutine(EvilWizard_Patten2());
