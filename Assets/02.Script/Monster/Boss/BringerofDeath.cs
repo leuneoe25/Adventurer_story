@@ -16,6 +16,7 @@ public class BringerofDeath : MonoBehaviour
     private int nextfo = 0;
     private bool isAction = false;
     Animator animator;
+    GameObject obj = null;
     void Start()
     {
         Hp = MaxHp;
@@ -79,7 +80,6 @@ public class BringerofDeath : MonoBehaviour
     {
         isAction = true;
         animator.SetBool("Patten3", true);
-        GameObject obj = null;
         for (int i =0;i<3;i++)
         {
             if(i!=0)
@@ -146,8 +146,10 @@ public class BringerofDeath : MonoBehaviour
             isAction = true;
             StopAllCoroutines();
             Destroy(Patten1);
+            Destroy(obj);
             animator.SetBool("Patten1", false);
             animator.SetBool("Patten2", false);
+            animator.SetBool("Patten3", false);
             animator.SetBool("isDie", true);
             Invoke("Die", 3);
             HpbarObject.SetActive(false);
