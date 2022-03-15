@@ -25,6 +25,8 @@ public class Training : MonoBehaviour
             + Player.GetComponent<InventorySystem>().coin.NeedLevelUpCoin(
                 Player.GetComponent<PlayerState>().GetLevelVal())
             + "G";
+        LevelText.text = "Lv. " + Player.GetComponent<PlayerState>().GetLevelVal();
+        CoinText.text = Player.GetComponent<InventorySystem>().coin.GetCoin() + "G";
     }
 
     // Update is called once per frame
@@ -32,13 +34,12 @@ public class Training : MonoBehaviour
     {
         if(Inplayer)
         {
-            LevelText.text = "Lv. " + Player.GetComponent<PlayerState>().GetLevelVal();
-            CoinText.text = Player.GetComponent<InventorySystem>().coin.GetCoin() + "G";
+            
             if (Input.GetKeyDown(KeyCode.F))
             {
-                Player.GetComponent<PlayerAttackSystem>().AttackIsPossible = false;
-                Player.GetComponent<PlayerBehaviour>().isMove = false;
-                Player.GetComponent<SkillSystem>().SkillIsPossible = false;
+                //Player.GetComponent<PlayerAttackSystem>().AttackIsPossible = false;
+                //Player.GetComponent<PlayerBehaviour>().isMove = false;
+                //Player.GetComponent<SkillSystem>().SkillIsPossible = false;
                 TrainingObject.SetActive(true);
                 InventorySystem.OnUI++;
             }
@@ -50,7 +51,9 @@ public class Training : MonoBehaviour
     }
     private void LevelUp()
     {
-        if(Player.GetComponent<PlayerState>().GetLevelVal() >=40)
+        LevelText.text = "Lv. " + Player.GetComponent<PlayerState>().GetLevelVal();
+        CoinText.text = Player.GetComponent<InventorySystem>().coin.GetCoin() + "G";
+        if (Player.GetComponent<PlayerState>().GetLevelVal() >=40)
         {
             NeedCoinText.text = "MaxLeval";
             return;
@@ -65,6 +68,7 @@ public class Training : MonoBehaviour
             Player.GetComponent<PlayerState>().GetExp();
         }
         Debug.Log("Up");
+
 
         NeedCoinText.text = "레벨 업 "
             + Player.GetComponent<InventorySystem>().coin.NeedLevelUpCoin(
