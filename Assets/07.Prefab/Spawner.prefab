@@ -49,3 +49,4 @@ MonoBehaviour:
   FormerWarrior: {fileID: 1877223430609310365, guid: 6f1d4621089c28b4b8bccdb8b2feef25,
     type: 3}
   Bandit: {fileID: 2373588455645324687, guid: 4a913891e47c3d84fa16686a5dce5c14, type: 3}
+  eye: {fileID: 5965455735767549247, guid: 70b1dbdb96c907d428d7280bebec0699, type: 3}

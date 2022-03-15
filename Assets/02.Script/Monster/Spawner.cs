@@ -9,12 +9,14 @@ public class Spawner : MonoBehaviour
     [SerializeField] GameObject Skeleton;
     [SerializeField] GameObject FormerWarrior;
     [SerializeField] GameObject Bandit;
+    [SerializeField] GameObject eye;
     
     private void Awake()
     {
         Monster.Add("1", Skeleton);
         Monster.Add("2", FormerWarrior);
         Monster.Add("3", Bandit);
+        Monster.Add("4", eye);
     }
     void Start()
     {
