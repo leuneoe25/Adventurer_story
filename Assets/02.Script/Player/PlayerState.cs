@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerState : MonoBehaviour
@@ -106,6 +107,10 @@ public class PlayerState : MonoBehaviour
             Hpbar.fillAmount = 1;
         }
         HpText.text = "" + healthPointSystem.GetHp() + " / " + (START_MAX_HEALTH_POINT + ((levelSystem.GetLevel()-1) * 20)+ healthPointSystem.GetAddition()).ToString();
+        if(healthPointSystem.GetHp() <=0)
+        {
+            SceneManager.LoadScene("Die");
+        }
     }
     void UpDataDamage()
     {

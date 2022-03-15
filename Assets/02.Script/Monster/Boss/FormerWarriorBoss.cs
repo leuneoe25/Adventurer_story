@@ -104,7 +104,6 @@ public class FormerWarriorBoss : MonoBehaviour
     }
     void RandomBossAction()
     {
-        StopAllCoroutines();
         while (true)
         {
             next = Random.Range(1, 3);
