@@ -43,7 +43,7 @@ public class PlayerBehaviour : MonoBehaviour
     private float time_current;
     private bool isDown = false;
     public bool isDash = false;
-
+    GameObject block = null;
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -80,7 +80,7 @@ public class PlayerBehaviour : MonoBehaviour
         }
 
         RaycastHit2D sea = Physics2D.Raycast(searchPos.position, Vector2.down, MAX_SEARCH_DISTANCE, LayerMask.GetMask("Block"));
-        GameObject block = null;
+        
         if (sea.transform != null)
         {
             

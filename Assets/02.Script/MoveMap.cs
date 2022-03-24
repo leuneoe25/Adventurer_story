@@ -7,6 +7,7 @@ public class MoveMap : MonoBehaviour
 {
 
     [SerializeField] private GameObject Player;
+    [SerializeField] private GameObject PlayerLihgt;
     [SerializeField] private GameObject NextStage;
     [SerializeField] private GameObject NowStage;
     [SerializeField] private CinemachineConfiner Cm;
@@ -37,11 +38,13 @@ public class MoveMap : MonoBehaviour
                 else if(isOutBossStage&& !isBossStage)
                 {
                     //Cm.SetActive(true);
+                    PlayerLihgt.SetActive(false);
                     Player.transform.position = pos.transform.position;
                     Cm.m_BoundingShape2D = stageColl;
                     Cmcam.m_Lens.OrthographicSize = 5;
                     NextStage.SetActive(true);
                     NowStage.SetActive(false);
+                    
                 }
                 else if(!isOutBossStage && isBossStage)
                 {

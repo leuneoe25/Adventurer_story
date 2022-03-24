@@ -5,6 +5,7 @@ using Cinemachine;
 
 public class MapSystem : MonoBehaviour
 {
+    [SerializeField] private GameObject Light;
     [SerializeField] private GameObject Guild;
     [SerializeField] private CinemachineConfiner GuildCm;
     [SerializeField] private GameObject Map1;
@@ -24,6 +25,7 @@ public class MapSystem : MonoBehaviour
         Guild.SetActive(false);
         Map1.SetActive(true);
         Player.transform.position = Map1pos.transform.position;
+        Light.SetActive(true);
     }
     public void GoMap2Stage1()
     {
@@ -31,5 +33,6 @@ public class MapSystem : MonoBehaviour
         Guild.SetActive(false);
         Map2.SetActive(true);
         Player.transform.position = Map2pos.transform.position;
+        Light.SetActive(true);
     }
 }

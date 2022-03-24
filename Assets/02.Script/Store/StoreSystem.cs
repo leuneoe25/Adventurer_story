@@ -31,12 +31,14 @@ public class StoreSystem : MonoBehaviour
                 if (Store.activeSelf&& !CheckObject.activeSelf)
                 {
                     Store.SetActive(false);
+                    Player.GetComponent<PlayerBehaviour>().isMove = true;
                     InventorySystem.OnUI=0;
                 }
                     
                 else
                 {
                     Store.SetActive(true);
+                    Player.GetComponent<PlayerBehaviour>().isMove = false;
                     InventorySystem.OnUI++;
                 }
                     
