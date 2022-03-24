@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5948052173022831643}
   - component: {fileID: 3950929168545331710}
   - component: {fileID: 6382786132752426462}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 5965455735767549244}
   - component: {fileID: 5965455735767549216}
   - component: {fileID: 5965455735767549217}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 30
   m_Sprite: {fileID: -4795363162621231457, guid: 6d7cd4f7505dc674c891ca8946cfd98b,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 5533245841408181344}
   - component: {fileID: 7326630753107734361}
   - component: {fileID: 1398599990587632769}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GameObject2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

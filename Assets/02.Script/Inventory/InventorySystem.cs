@@ -16,7 +16,10 @@ public class InventorySystem : MonoBehaviour
     [SerializeField] private Text LevelText;
     [SerializeField] private Text HpText;
     [SerializeField] private Text PowerText;
-    
+    [SerializeField] private Text ItemExp;
+    [SerializeField] private Text ItemNum;
+    [SerializeField] private Image ItemImage;
+
     public ItemDictionary itemDictionary = null;
     public Coin coin;
     private bool isOnInventory = false;
@@ -57,6 +60,9 @@ public class InventorySystem : MonoBehaviour
                 {
                     gameObject.GetComponent<PlayerBehaviour>().isMove = false;
                     Inven.SetActive(true);
+                    ItemImage.gameObject.SetActive(false);
+                    ItemExp.gameObject.SetActive(false);
+                    ItemNum.gameObject.SetActive(false);
                 }
                 
             }
@@ -78,36 +84,11 @@ public class InventorySystem : MonoBehaviour
                 Inven.SetActive(false);
             }
         }
-        if(Input.GetKeyDown(KeyCode.B))
-        {
-           
-            AcquireItem("boen", 10);
-            Debug.Log("in item");
-        }
-        if (Input.GetKeyDown(KeyCode.U))
-        {
 
-            AcquireItem("hpAddition", 1);
-            Debug.Log("in item");
-        }
-        if (Input.GetKeyDown(KeyCode.N))
-        {
 
-            AcquireItem("damageAddition", 1);
-            Debug.Log("in item");
-        }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-
-            AcquireItem("emergencyPotion", 1);
-            Debug.Log("in item");
-        }
-        //if (Input.GetKeyDown(KeyCode.Z))
-        //{
-        //    W();
-        //}
 
     }
+
     void UpdateText()
     {
         LevelText.text = gameObject.GetComponent<PlayerState>().GetLevelVal().ToString();

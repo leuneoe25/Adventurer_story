@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.EventSystems;
 public class Slot : MonoBehaviour
 {
     public Item item;
@@ -17,6 +17,30 @@ public class Slot : MonoBehaviour
     [SerializeField] private Button denial;
     [SerializeField] private Button Esc;
     [SerializeField] private GameObject player;
+
+    [SerializeField] private Text ItemExp;
+    [SerializeField] private Text ItemNum;
+    [SerializeField] private Image ItemImage;
+    public void ClickAction()
+    {
+        if(item!=null)
+        {
+            if(itemCount==0)
+            {
+                ItemImage.gameObject.SetActive(false);
+                ItemExp.gameObject.SetActive(false);
+                ItemNum.gameObject.SetActive(false);
+            }
+            ItemImage.gameObject.SetActive(true);
+            ItemExp.gameObject.SetActive(true);
+            ItemNum.gameObject.SetActive(true);
+            ItemImage.sprite = item.image;
+            ItemExp.text = item.Exp;
+            ItemNum.text = itemCount + " 개";
+        }
+        
+    }
+
     private void SetActive(bool val)
     {
         itemImage.gameObject.SetActive(val);
@@ -60,7 +84,9 @@ public class Slot : MonoBehaviour
         SetActive(false);
         textCount.text = "0";
         textCount.gameObject.SetActive(false);
-
+        ItemImage.gameObject.SetActive(false);
+        ItemExp.gameObject.SetActive(false);
+        ItemNum.gameObject.SetActive(false);
     }
     void Execute()
     {
@@ -92,6 +118,7 @@ public class Slot : MonoBehaviour
         SetSlotCount(-1);
         InventorySystem.temporaryHealamount = 0;
         CheackObject.SetActive(false);
+        ClickAction();
     }
     public void Portiondenial()
     {

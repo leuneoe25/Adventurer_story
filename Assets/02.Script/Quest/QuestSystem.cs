@@ -12,7 +12,7 @@ public class QuestSystem : MonoBehaviour
 
     [SerializeField] private GameObject SecondLock;
     [SerializeField] private GameObject ThirdLock;
-    public static int GameLeval = 0;
+    public static int GameLeval = 1;
     private QuestSlot[] questSlots;
     private bool isOnQuest = false;
     private bool OnQuest = false;

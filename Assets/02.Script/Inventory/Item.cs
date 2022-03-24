@@ -14,6 +14,7 @@ public abstract class Item
         MonsterItem
     }
     public string name;
+    public string Exp;
     public int price;
     public Sprite image;
     public abstract type Gettype();
@@ -190,6 +191,7 @@ class EmergencyPotion : Item
         name = _name;
         price = _price;
         image = _sprite;
+        Exp = "-응급포션\n체력 10 % 회복";
     }
     public type type = type.Portion;
     public override type Gettype()
@@ -210,6 +212,7 @@ class HealingPotion: Item
         name = _name;
         price = _price;
         image = _sprite;
+        Exp = "-힐링포션\n체력 20 % 회복";
     }
     public type type = type.Portion;
     public override type Gettype()
@@ -230,6 +233,7 @@ class Highhealingpotion : Item
         name = _name;
         price = _price;
         image = _sprite;
+        Exp = "-하이힐링포션\n체력 40 % 회복";
     }
     public type type = type.Portion;
     public override type Gettype()
