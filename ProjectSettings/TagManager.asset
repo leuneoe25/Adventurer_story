@@ -10,6 +10,7 @@ TagManager:
   - Double_Slash
   - FomerWarriorAttack
   - BanditAttack
+  - QSkill
   layers:
   - Default
   - TransparentFX

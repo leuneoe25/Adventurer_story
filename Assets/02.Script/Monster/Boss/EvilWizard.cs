@@ -127,6 +127,10 @@ public class EvilWizard : MonoBehaviour
         {
             Hp -= Player.GetComponent<PlayerState>().ESkillDamage();
         }
+        if (collision.transform.CompareTag("QSkill"))
+        {
+            Hp -= Player.GetComponent<PlayerState>().XSkillDamage();
+        }
     }
     void UpdateHpbar()
     {

@@ -58,6 +58,11 @@ public class witch : MonoBehaviour
             Hp -= target.GetComponent<PlayerState>().ESkillDamage();
             Camaera.GetComponent<CameraShake>().VibrateForTime(0.1f);
         }
+        if (collision.transform.CompareTag("QSkill"))
+        {
+            Hp -= target.GetComponent<PlayerState>().XSkillDamage();
+            Camaera.GetComponent<CameraShake>().VibrateForTime(0.1f);
+        }
     }
     IEnumerator KnockBack(float dir)
     {
