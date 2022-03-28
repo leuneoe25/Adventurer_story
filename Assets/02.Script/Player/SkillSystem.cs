@@ -357,6 +357,9 @@ public class SkillSystem : MonoBehaviour
     [SerializeField] private Text ESkillText;
     [SerializeField] private Text QSkillText;
     [SerializeField] private Text XSkillText;
+
+    [SerializeField] private GameObject E;
+    [SerializeField] private GameObject Q;
     public bool SkillIsPossible = true;
     // Start is called before the first frame update
     void Start()
@@ -414,12 +417,14 @@ public class SkillSystem : MonoBehaviour
         DoubleSlash doubleSlash = new DoubleSlash();
         DoubleSlashCommand skillCommand = new DoubleSlashCommand(doubleSlash, slash, slash_2, Player);
         commandMgr.SetCommand("EKey", skillCommand);
+        StartCoroutine(OnObject(E));
     }
     public void AddCommandQSkill()
     {
         SwordOfWill swordOfWill = new SwordOfWill();
         SwordOfWillCommand swordOfWillCommand = new SwordOfWillCommand(swordOfWill, Sword, Player);
         commandMgr.SetCommand("QKey", swordOfWillCommand);
+        StartCoroutine(OnObject(Q));
     }
     private void SetisMove(bool val)
     {
@@ -505,5 +510,11 @@ public class SkillSystem : MonoBehaviour
             XSkillImage.gameObject.SetActive(false);
         }
         
+    }
+    IEnumerator OnObject(GameObject val)
+    {
+        val.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        val.SetActive(false);
     }
 }

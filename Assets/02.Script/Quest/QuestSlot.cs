@@ -54,13 +54,15 @@ public class QuestSlot : MonoBehaviour
 
     void Execute()
     {
+        GameSystem.instans().SetisFirst(false);
+        GameSystem.instans().Guidefalse();
         consentImage.SetActive(false);
         questObject.SetActive(true);
         if(quest.Gettype()==Quest.Type.first)
         {
             if (QuestObject.GetComponent<QuestSystem>().GetGameLevel() >= 1)
             {
-                consentImage.SetActive(true);
+                //consentImage.SetActive(true);
                 questObjectTitle.text = "";
                 questObjectExp.text = "이미 완성한 퀘스트입니다";
                 consent.gameObject.SetActive(false);
@@ -74,7 +76,7 @@ public class QuestSlot : MonoBehaviour
         {
             if (QuestObject.GetComponent<QuestSystem>().GetGameLevel() >= 2)
             {
-                consentImage.SetActive(true);
+                //consentImage.SetActive(true);
                 questObjectTitle.text = "";
                 questObjectExp.text = "이미 완성한 퀘스트입니다";
                 consent.gameObject.SetActive(false);

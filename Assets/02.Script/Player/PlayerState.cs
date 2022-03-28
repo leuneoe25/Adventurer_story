@@ -94,7 +94,7 @@ public class PlayerState : MonoBehaviour
         }
         if (collision.CompareTag("EvilWizardAttack"))
         {
-            GameObject boss = GameObject.Find("EvilWizard(Clone)");
+            GameObject boss = GameObject.Find("EvilWizard");
             Attacked(boss.transform.GetComponent<EvilWizard>().Damage);
         }
     }

@@ -95,7 +95,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.33333334
-    functionName: Attackm1
+    functionName: Attackarea1on
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -103,6 +103,13 @@ AnimationClip:
     messageOptions: 0
   - time: 0.41666666
     functionName: str1off
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.41666666
+    functionName: Attackarea1off
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

@@ -130,9 +130,15 @@ public class FormerWarriorBoss : MonoBehaviour
     }
     public void Attackarea1on()
     {
-        if (Attack1Area == null)
-            return;
+        //if (Attack1Area == null)
+        //    return;
         Attack1Area.SetActive(true);
+    }
+    public void Attackarea1off()
+    {
+        //if (Attack1Area == null)
+        //    return;
+        Attack1Area.SetActive(false);
     }
     public void Attackarea2on()
     {
@@ -160,8 +166,8 @@ public class FormerWarriorBoss : MonoBehaviour
     }
     void Die()
     {
-        //Player.GetComponent<SkillSystem>().AddCommandESkill();
-        QuestSystem.GameLeval++;
+        Player.GetComponent<SkillSystem>().AddCommandESkill();
+        //QuestSystem.GameLeval++;
         Destroy(gameObject);
     }
     IEnumerator Attackm1()
@@ -179,7 +185,7 @@ public class FormerWarriorBoss : MonoBehaviour
             animator.SetBool("Attack1", true);
             yield return new WaitForSeconds(0.8f);
             animator.SetBool("Attack1", false);
-            Attack2Area.SetActive(false);
+            
             next = 0;
             isattack = false;
 

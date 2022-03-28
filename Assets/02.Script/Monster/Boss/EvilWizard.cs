@@ -64,7 +64,7 @@ public class EvilWizard : MonoBehaviour
         for (int i = 0; i < 22; i++)
         {
             GameObject obj;
-            obj = (GameObject)Instantiate(meteo, new Vector3(Random.Range(-5, 8), 5, 0), Quaternion.identity);
+            obj = (GameObject)Instantiate(meteo, new Vector3(Random.Range(-25.46f, 7.57f), 5, 0), Quaternion.identity);
             obj.transform.Rotate(new Vector3(0f, 0f,90));
             yield return new WaitForSeconds(0.2f);
         }
@@ -75,9 +75,10 @@ public class EvilWizard : MonoBehaviour
     {
         isAction = true;
         animator.SetBool("Patten1", true);
-        float oneShoting = 10;
+        float oneShoting = 20;
         float angle = 360 / oneShoting;
         float speed = 10;
+
         for (int i = 0; i < oneShoting; i++)
         {
             Debug.Log(i);
@@ -150,8 +151,8 @@ public class EvilWizard : MonoBehaviour
     }
     void Die()
     {
-        Player.GetComponent<SkillSystem>().AddCommandQSkill();
-        QuestSystem.GameLeval++;
+        //Player.GetComponent<SkillSystem>().AddCommandQSkill();
+        //QuestSystem.GameLeval++;
         Destroy(gameObject);
     }
 }

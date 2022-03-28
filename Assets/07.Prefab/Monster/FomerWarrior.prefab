@@ -93,6 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1877223430390217618}
   - component: {fileID: 1877223430390217619}
+  - component: {fileID: 7276329626871350765}
   m_Layer: 10
   m_Name: Area2
   m_TagString: FomerWarriorAttack
@@ -139,11 +140,32 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.5453104, y: 0.31696308}
-      - {x: 0.24062485, y: 0.29448426}
-      - {x: 0.25995523, y: -0.17926677}
-      - {x: 1.9877689, y: -0.18411084}
-      - {x: 2.0218687, y: 0.2587068}
+    - - {x: 0.14885247, y: 0.35623845}
+      - {x: -0.28304678, y: 0.31193995}
+      - {x: -0.3291754, y: -0.22726998}
+      - {x: 0.39493418, y: -0.22775017}
+      - {x: 0.43776178, y: 0.21070357}
+--- !u!50 &7276329626871350765
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877223430390217617}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1877223430517484509
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,7 +406,7 @@ MonoBehaviour:
   AttackRange_2: {fileID: 1877223430517484509}
   SkillEffect_1: {fileID: 1877223431574085943}
   SkillEffect_2: {fileID: 1877223432054439662}
-  MaxHp: 500
+  MaxHp: 100
   Damage: 10
   nrl: 0
   next: 0
@@ -420,6 +442,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1877223431159564298}
   - component: {fileID: 1877223431159564299}
+  - component: {fileID: 8697925636900342429}
   m_Layer: 10
   m_Name: Area1
   m_TagString: FomerWarriorAttack
@@ -467,10 +490,31 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0.416604, y: 0.709346}
-      - {x: 0.090453565, y: 0.30417272}
-      - {x: 0.1969803, y: -0.184111}
-      - {x: 1.1224194, y: -0.15183131}
+      - {x: -0.34593952, y: 0.27362522}
+      - {x: -0.3790586, y: -0.2364782}
+      - {x: 1.1616948, y: -0.2041985}
       - {x: 1.1878211, y: 0.39490515}
+--- !u!50 &8697925636900342429
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877223431159564297}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1877223431574085943
 GameObject:
   m_ObjectHideFlags: 0
