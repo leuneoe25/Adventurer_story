@@ -87,6 +87,11 @@ public class PlayerState : MonoBehaviour
         {
             Attacked(collision.transform.parent.GetComponent<Goblin>().Damage);
         }
+        if (collision.CompareTag("BringerofDeath"))
+        {
+            GameObject boss = GameObject.Find("BringerofDeath");
+            Attacked(boss.transform.GetComponent<BringerofDeath>().Damage);
+        }
     }
     void UpDataUI()
     {        

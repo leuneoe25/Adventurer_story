@@ -48,21 +48,25 @@ public class StoreSystem : MonoBehaviour
                 if(Store.activeSelf)
                 {
                     if(!CheckObject.activeSelf)
+                    {
                         Store.SetActive(false);
+                        Player.GetComponent<PlayerBehaviour>().isMove = true;
+                    }
+                        
                 }
             }
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.transform.CompareTag("Player"))
+        if(collision.CompareTag("Player"))
         {
             InStore = true;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.transform.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             InStore = false;
         }

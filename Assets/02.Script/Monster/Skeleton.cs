@@ -74,6 +74,10 @@ public class Skeleton : MonoBehaviour
             Hp -= target.GetComponent<PlayerState>().XSkillDamage();
             Camaera.GetComponent<CameraShake>().VibrateForTime(0.1f);
         }
+        if (collision.transform.CompareTag("wall"))
+        {
+            Turn();
+        }
     }
     
     void FixedUpdate()

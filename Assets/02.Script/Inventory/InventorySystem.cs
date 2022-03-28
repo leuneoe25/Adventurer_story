@@ -50,10 +50,11 @@ public class InventorySystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateText();
+        
         if (Input.GetKeyDown(KeyCode.I))
         {
-            isOnInventory = !isOnInventory;
+            Debug.Log("I");
+            
             if (!isOnInventory)
             {
                 if(OnUI==0)
@@ -71,6 +72,7 @@ public class InventorySystem : MonoBehaviour
                 gameObject.GetComponent<PlayerBehaviour>().isMove = true;
                 Inven.SetActive(false);
             }
+            isOnInventory = !isOnInventory;
         }
         if(Input.GetKeyDown(KeyCode.Escape))
         {
@@ -85,7 +87,7 @@ public class InventorySystem : MonoBehaviour
             }
         }
 
-
+        UpdateText();
 
     }
 

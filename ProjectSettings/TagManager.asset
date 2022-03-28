@@ -14,6 +14,8 @@ TagManager:
   - EyeAttack
   - MushroomAttack
   - GoblinAttack
+  - BringerofDeath
+  - wall
   layers:
   - Default
   - TransparentFX

@@ -63,6 +63,10 @@ public class Bandit_ : MonoBehaviour
             Hp -= target.GetComponent<PlayerState>().XSkillDamage();
             Camaera.GetComponent<CameraShake>().VibrateForTime(0.1f);
         }
+        if (collision.transform.CompareTag("wall"))
+        {
+            Turn();
+        }
     }
     IEnumerator KnockBack(float dir)
     {

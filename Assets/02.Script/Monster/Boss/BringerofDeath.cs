@@ -10,6 +10,7 @@ public class BringerofDeath : MonoBehaviour
     [SerializeField] private float MaxHp;
     [SerializeField] private GameObject Darkhand;
     [SerializeField] private GameObject Patten1;
+    public int Damage;
     private GameObject Hpbar;
     private GameObject HpbarObject;
     private int next;
@@ -64,7 +65,7 @@ public class BringerofDeath : MonoBehaviour
         {
             gameObject.transform.localScale = new Vector2(7, 7);
         }
-        transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y+2);
+        transform.position = new Vector2(Player.transform.position.x, gameObject.transform.position.y);
         animator.SetBool("Patten1", false);
         StartCoroutine(EvilWizard_Patten2());
     }
@@ -86,7 +87,7 @@ public class BringerofDeath : MonoBehaviour
             {
                 Destroy(obj);
             }
-            obj = (GameObject)Instantiate(Darkhand, new Vector2(Player.transform.position.x, Player.transform.position.y + 2), Quaternion.identity);
+            obj = (GameObject)Instantiate(Darkhand, new Vector2(Player.transform.position.x, gameObject.transform.position.y), Quaternion.identity);
             yield return new WaitForSeconds(1f);
         }
         Destroy(obj);
@@ -151,7 +152,7 @@ public class BringerofDeath : MonoBehaviour
             animator.SetBool("Patten2", false);
             animator.SetBool("Patten3", false);
             animator.SetBool("isDie", true);
-            Invoke("Die", 3);
+            Invoke("Die", 1f);
             HpbarObject.SetActive(false);
         }
     }
