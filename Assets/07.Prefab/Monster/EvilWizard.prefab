@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 3893938423847386434}
   m_Layer: 10
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: EvilWizardAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

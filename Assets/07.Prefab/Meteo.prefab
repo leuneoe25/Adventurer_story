@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3131189625142457314}
   m_Layer: 0
   m_Name: Meteo
-  m_TagString: Untagged
+  m_TagString: EvilWizardAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

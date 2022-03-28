@@ -16,6 +16,7 @@ TagManager:
   - GoblinAttack
   - BringerofDeath
   - wall
+  - EvilWizardAttack
   layers:
   - Default
   - TransparentFX
