@@ -32,11 +32,13 @@ public class Training : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Inplayer)
+        
+        if (Inplayer)
         {
             
             if (Input.GetKeyDown(KeyCode.F))
             {
+                
                 Player.GetComponent<PlayerAttackSystem>().AttackIsPossible = false;
                 Player.GetComponent<PlayerBehaviour>().isMove = false;
                 Player.GetComponent<SkillSystem>().SkillIsPossible = false;
@@ -48,6 +50,10 @@ public class Training : MonoBehaviour
                 Exit();
             }
         }
+    }
+    private void FixedUpdate()
+    {
+        LevelText.text = "Lv. " + Player.GetComponent<PlayerState>().GetLevelVal();
     }
     private void LevelUp()
     {
