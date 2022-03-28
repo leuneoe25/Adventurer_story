@@ -92,6 +92,11 @@ public class PlayerState : MonoBehaviour
             GameObject boss = GameObject.Find("BringerofDeath(Clone)");
             Attacked(boss.transform.GetComponent<BringerofDeath>().Damage);
         }
+        if (collision.CompareTag("EvilWizardAttack"))
+        {
+            GameObject boss = GameObject.Find("EvilWizard(Clone)");
+            Attacked(boss.transform.GetComponent<EvilWizard>().Damage);
+        }
     }
     void UpDataUI()
     {        

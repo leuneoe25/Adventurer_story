@@ -160,7 +160,7 @@ public class FormerWarriorBoss : MonoBehaviour
     }
     void Die()
     {
-        Player.GetComponent<SkillSystem>().AddCommandESkill();
+        //Player.GetComponent<SkillSystem>().AddCommandESkill();
         QuestSystem.GameLeval++;
         Destroy(gameObject);
     }
