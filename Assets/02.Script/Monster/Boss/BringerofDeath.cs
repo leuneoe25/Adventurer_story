@@ -25,7 +25,7 @@ public class BringerofDeath : MonoBehaviour
         HpbarObject.SetActive(true);
         Hpbar = GameObject.Find("BringerofDeath_Hpbar");
         animator = GetComponent<Animator>();
-        RandomBossAction();
+        Invoke("RandomBossAction", 1f);
     }
 
     // Update is called once per frame

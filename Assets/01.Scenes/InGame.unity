@@ -2292,8 +2292,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 201959747}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -25.0219, y: 3.9906, z: 0}
-  m_LocalScale: {x: 5.2215, y: 19.14362, z: 1}
+  m_LocalPosition: {x: -25.0219, y: 4.198, z: 0}
+  m_LocalScale: {x: 5.2215, y: 19.555206, z: 1}
   m_Children: []
   m_Father: {fileID: 293445925}
   m_RootOrder: 2
@@ -12798,7 +12798,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 806385583}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -14.31, y: -1.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 116208735}
@@ -16566,7 +16566,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1017884421}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.94, y: 4.9883, z: 0}
+  m_LocalPosition: {x: -10.94, y: 5.82, z: 0}
   m_LocalScale: {x: 10.480557, y: 10.326238, z: 7.4704742}
   m_Children: []
   m_Father: {fileID: 293445925}
@@ -22421,7 +22421,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 60
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!1 &1430948563
 GameObject:
