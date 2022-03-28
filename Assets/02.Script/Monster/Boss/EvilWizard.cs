@@ -11,6 +11,7 @@ public class EvilWizard : MonoBehaviour
     [SerializeField] private GameObject bullet;
     [SerializeField] private GameObject meteo;
     [SerializeField] private GameObject Patten3;
+    public int Damage;
     private GameObject Hpbar;
     private GameObject HpbarObject;
     private int next;
