@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6382786132752426462}
   m_Layer: 10
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: EyeAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,7 +42,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -97,7 +97,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -207,7 +207,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -223,7 +223,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.017698528, y: 0.032869514}
@@ -247,7 +247,7 @@ MonoBehaviour:
     type: 3}
   Attack_1: {fileID: 8298661928193750921}
   Attack_2: {fileID: 804565823425136833}
-  Damage: 0
+  Damage: 10
   target: {fileID: 0}
   nextMove: 0
 --- !u!95 &5965455735767549217
@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 1398599990587632769}
   m_Layer: 10
   m_Name: GameObject2
-  m_TagString: Untagged
+  m_TagString: EyeAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -311,7 +311,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -326,11 +326,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.5724793, y: 0.47840875}
-      - {x: 0.18117827, y: 0.19452143}
-      - {x: 0.31545895, y: -0.1729303}
-      - {x: 0.9058281, y: -0.109321535}
-      - {x: 0.9510565, y: 0.30901712}
+    - - {x: 0.66457945, y: 0.82378435}
+      - {x: 0.11210363, y: 0.44779685}
+      - {x: 0.08520952, y: -0.54133093}
+      - {x: 1.1821285, y: -0.36259696}
+      - {x: 1.3885337, y: 0.5853176}
 --- !u!50 &1398599990587632769
 Rigidbody2D:
   serializedVersion: 4
@@ -346,7 +346,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1

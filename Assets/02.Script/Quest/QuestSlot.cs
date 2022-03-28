@@ -120,10 +120,12 @@ public class QuestSlot : MonoBehaviour
         Proceeding = true;
         questObject.SetActive(false);
         QuestObject.GetComponent<QuestSystem>().SetCanvers(false);
-        if(quest.Gettype() == Quest.Type.first)
+        if (quest.Gettype() == Quest.Type.first)
             MapSystem.GetComponent<MapSystem>().GoMap1Stage1();
-        else if(quest.Gettype() == Quest.Type.Second)
+        else if (quest.Gettype() == Quest.Type.Second)
             MapSystem.GetComponent<MapSystem>().GoMap2Stage1();
+        else if (quest.Gettype() == Quest.Type.third)
+            MapSystem.GetComponent<MapSystem>().GoMap3Stage1();
 
     }
     public void Esc()

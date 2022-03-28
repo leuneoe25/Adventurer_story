@@ -11,9 +11,12 @@ public class MapSystem : MonoBehaviour
     [SerializeField] private GameObject Map1;
     [SerializeField] private PolygonCollider2D stage1Coll;
     [SerializeField] private GameObject Map2;
+    [SerializeField] private GameObject Map3;
     [SerializeField] private PolygonCollider2D stage2Coll;
+    [SerializeField] private PolygonCollider2D stage3Coll;
     [SerializeField] private GameObject Map1pos;
     [SerializeField] private GameObject Map2pos;
+    [SerializeField] private GameObject Map3pos;
     private GameObject Player;
     private void Start()
     {
@@ -33,6 +36,14 @@ public class MapSystem : MonoBehaviour
         Guild.SetActive(false);
         Map2.SetActive(true);
         Player.transform.position = Map2pos.transform.position;
+        Light.SetActive(true);
+    }
+    public void GoMap3Stage1()
+    {
+        GuildCm.m_BoundingShape2D = stage3Coll;
+        Guild.SetActive(false);
+        Map3.SetActive(true);
+        Player.transform.position = Map3pos.transform.position;
         Light.SetActive(true);
     }
 }

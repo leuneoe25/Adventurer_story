@@ -117,7 +117,7 @@ public class Mushroom : MonoBehaviour
 
             move = true;
             Facetarget();
-            if (distance <= 2.3)
+            if (distance <= 1.5f)
             {
                 animator.SetBool("walk", false);
                 nextMove = 0;
@@ -193,9 +193,10 @@ public class Mushroom : MonoBehaviour
         animator.SetBool("attack2", true);
         yield return new WaitForSeconds(0.8f);
         animator.SetBool("attack2", false);
+        ismove = true;
         yield return new WaitForSeconds(1f);
         coru = false;
-        ismove = true;
+        
     }
     void UpdateHpbar()
     {

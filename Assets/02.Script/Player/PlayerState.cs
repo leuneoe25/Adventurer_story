@@ -75,6 +75,18 @@ public class PlayerState : MonoBehaviour
         {
             Attacked(collision.transform.parent.GetComponent<FormerWarriorBoss>().Damage);
         }
+        if (collision.transform.CompareTag("EyeAttack"))
+        {
+            Attacked(collision.transform.parent.GetComponent<eye>().Damage);
+        }
+        if (collision.transform.CompareTag("MushroomAttack"))
+        {
+            Attacked(collision.transform.parent.GetComponent<Mushroom>().Damage);
+        }
+        if (collision.transform.CompareTag("GoblinAttack"))
+        {
+            Attacked(collision.transform.parent.GetComponent<Goblin>().Damage);
+        }
     }
     void UpDataUI()
     {        

@@ -11,6 +11,9 @@ TagManager:
   - FomerWarriorAttack
   - BanditAttack
   - QSkill
+  - EyeAttack
+  - MushroomAttack
+  - GoblinAttack
   layers:
   - Default
   - TransparentFX

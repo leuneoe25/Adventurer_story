@@ -112,7 +112,7 @@ public class eye : MonoBehaviour
 
             move = true;
             Facetarget();
-            if (distance <= 2.3)
+            if (distance <= 1.5f)
             {
                
                 nextMove = 0;
@@ -199,6 +199,8 @@ public class eye : MonoBehaviour
         if (Hp <= 0)
         {
             StopAllCoroutines();
+            animator.SetBool("attack1", false);
+            animator.SetBool("attack2", false);
             StartCoroutine(DieAnimator());
         }
     }
@@ -210,9 +212,10 @@ public class eye : MonoBehaviour
         Attack_2.SetActive(false);
         Destroy(HpbarObject);
         gameObject.layer = 0;
-        animator.SetBool("isDie", true);
         animator.SetBool("attack1", false);
         animator.SetBool("attack2", false);
+        animator.SetBool("isDie", true);
+        
         gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
         rigid.gravityScale = 0;
         target.GetComponent<InventorySystem>().coin.SetCoin(amendsCoin);

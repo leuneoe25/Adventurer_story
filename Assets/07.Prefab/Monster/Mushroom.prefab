@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_Sprite: {fileID: 4723107735738678597, guid: f8b30c2afe165d645b54d500a9c30862,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -99,7 +99,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0074833054, y: -0.07145336}
@@ -142,7 +142,7 @@ MonoBehaviour:
     type: 3}
   Attack_1: {fileID: 8907506100218133513}
   Attack_2: {fileID: 8503820327526795213}
-  Damage: 0
+  Damage: 10
   target: {fileID: 0}
   nextMove: 0
 --- !u!50 &5514959841081793773
@@ -160,7 +160,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 671961351081585874}
   m_Layer: 10
   m_Name: Attack_7
-  m_TagString: Untagged
+  m_TagString: MushroomAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -274,13 +274,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.17621422, y: 1.054544}
+    - - {x: -0.10244846, y: 1.3053398}
       - {x: -0.17781746, y: 1.0091572}
       - {x: -0.11247867, y: 0.59554636}
-      - {x: 0.18655777, y: 0.30889487}
-      - {x: 0.6775036, y: 0.47972298}
-      - {x: 0.69176733, y: 0.95585656}
-      - {x: 0.499959, y: 1.2354417}
+      - {x: -0.01779461, y: -0.109098196}
+      - {x: 0.8911457, y: 0.4611454}
+      - {x: 0.9518534, y: 1.1416314}
+      - {x: 0.3420496, y: 1.5977025}
 --- !u!1 &8907506100218133513
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,7 +294,7 @@ GameObject:
   - component: {fileID: 4852603677902487658}
   m_Layer: 10
   m_Name: Attack_6
-  m_TagString: Untagged
+  m_TagString: MushroomAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -389,10 +389,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.018500328, y: 0.95991516}
-      - {x: -0.21724617, y: 0.961843}
-      - {x: -0.26625007, y: 0.28800333}
-      - {x: 0.05249977, y: -0.02230525}
-      - {x: 0.5316181, y: 0.17217994}
-      - {x: 0.56165373, y: 0.64831376}
-      - {x: 0.37773037, y: 0.9200129}
+    - - {x: -0.1569004, y: 1.4159569}
+      - {x: -0.50958073, y: 1.1606305}
+      - {x: -0.59366363, y: 0.11260283}
+      - {x: -0.09951401, y: -0.47834706}
+      - {x: 0.75379276, y: -0.04999399}
+      - {x: 0.90076315, y: 0.9055681}
+      - {x: 0.4946642, y: 1.1889606}

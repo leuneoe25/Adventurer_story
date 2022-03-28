@@ -193,9 +193,10 @@ public class Goblin : MonoBehaviour
         animator.SetBool("attack2", true);
         yield return new WaitForSeconds(0.8f);
         animator.SetBool("attack2", false);
+        ismove = true;
         yield return new WaitForSeconds(1f);
         coru = false;
-        ismove = true;
+        
     }
     void UpdateHpbar()
     {
