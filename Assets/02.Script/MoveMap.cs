@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Cinemachine;
 
 public class MoveMap : MonoBehaviour
@@ -15,6 +16,7 @@ public class MoveMap : MonoBehaviour
     [SerializeField] private Camera camera;
     [SerializeField] private bool isBossStage;
     [SerializeField] private bool isOutBossStage;
+    [SerializeField] private bool isEnd;
     [SerializeField] private PolygonCollider2D stageColl;
     [SerializeField] GameObject pos;
     private bool InMove;
@@ -28,6 +30,11 @@ public class MoveMap : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.F))
             {
+                if(isEnd)
+                {
+                    SceneManager.LoadScene("EndingScene");
+
+                }
                 if(!isBossStage&&!isOutBossStage)
                 {
                     NextStage.SetActive(true);

@@ -9,6 +9,7 @@ public class EvilWizard : MonoBehaviour
     private GameObject Player;
     [SerializeField] private float MaxHp;
     [SerializeField] private GameObject bullet;
+    [SerializeField] private GameObject Circle;
     [SerializeField] private GameObject meteo;
     [SerializeField] private GameObject Patten3;
     public int Damage;
@@ -56,6 +57,7 @@ public class EvilWizard : MonoBehaviour
                     break;
                 case 3:
                     StartCoroutine(EvilWizard_Patten4());
+                    
                     break;
                 case 4:
                     if (5 >= Vector2.Distance(transform.position, Player.transform.position))
@@ -74,10 +76,10 @@ public class EvilWizard : MonoBehaviour
     {
         isAction = true;
         animator.SetBool("Patten1",true);
-        for (int i = 0; i < 22; i++)
+        for (int i = 0; i < 44; i++)
         {
             GameObject obj;
-            obj = (GameObject)Instantiate(meteo, new Vector3(Random.Range(-25.46f, 7.57f), 5, 0), Quaternion.identity);
+            obj = (GameObject)Instantiate(meteo, new Vector3(Random.Range(-25.46f, 7.57f), 9, 0), Quaternion.identity);
             obj.transform.Rotate(new Vector3(0f, 0f,90));
             yield return new WaitForSeconds(0.2f);
         }
@@ -115,23 +117,17 @@ public class EvilWizard : MonoBehaviour
     {
         isAction = true;
         animator.SetBool("Patten1", true);
-        float oneShoting = 10;
+        GameObject player = GameObject.Find("Player");
         
-        float speed = 10;
-        for (int j = 0; j < 5; j++)
+        GameObject obj;
+        for (int i = 0; i < 3; i++)
         {
-            float angle = 360 / oneShoting;
-            for (int i = 0; i < oneShoting; i++)
-            {
-                Debug.Log("patten4");
-                GameObject obj;
-                obj = (GameObject)Instantiate(bullet, transform.position, Quaternion.identity);
-                obj.GetComponent<Rigidbody2D>().AddForce(new Vector2(speed * Mathf.Cos(Mathf.PI * 2 * i / oneShoting), speed * Mathf.Sin(Mathf.PI * i * 2 / oneShoting)));
-                obj.transform.Rotate(new Vector3(0f, 0f,Random.Range(0.0f,360.0f)));
-            }
-            oneShoting++;
-            yield return new WaitForSeconds(0.2f);
+            obj = (GameObject)Instantiate(meteo, new Vector2(Player.transform.position.x, gameObject.transform.position.y-10), Quaternion.identity);
+            obj.transform.Rotate(new Vector3(0, 0, -90));
+            obj.transform.localScale = new Vector3(0.5f, 0.5f, 1);
+            yield return new WaitForSeconds(1f);
         }
+
 
 
         yield return new WaitForSeconds(1f);
@@ -142,11 +138,17 @@ public class EvilWizard : MonoBehaviour
     {
         isAction = true;
         animator.SetBool("Patten3", true);
-        Patten3.SetActive(true);
-        yield return new WaitForSeconds(3f);
-        Patten3.SetActive(false);
+        yield return new WaitForSeconds(2f);
         animator.SetBool("Patten3", false);
         Invoke("RandomBossAction", 4);
+    }
+    void patten3On()
+    {
+        Patten3.SetActive(true);
+    }
+    void patten3Off()
+    {
+        Patten3.SetActive(false);
     }
     void RandomBossAction()
     {

@@ -226,6 +226,7 @@ public class Skeleton : MonoBehaviour
         gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
         rigid.gravityScale = 0;
         target.GetComponent<InventorySystem>().coin.SetCoin(amendsCoin);
+        //Player.GetComponent<InventorySystem>().coin.SetCoin(350);
         yield return new WaitForSeconds(2f);
         
         Destroy(gameObject);

@@ -8,6 +8,7 @@ public class PlayerAttackSystem : MonoBehaviour
     [SerializeField] GameObject Attack_Combo_1;
     [SerializeField] GameObject Attack_Combo_2;
     private Boolean isAttack;
+    private bool ingAttack = false;
     private System.Diagnostics.Stopwatch watch = new System.Diagnostics.Stopwatch();
     Animator animator;
     public bool AttackIsPossible = true;
@@ -27,11 +28,13 @@ public class PlayerAttackSystem : MonoBehaviour
         }
         if(Input.GetMouseButtonDown(0)&&!isAttack&& gameObject.GetComponent<PlayerBehaviour>().isMove&& AttackIsPossible&& gameObject.GetComponent<PlayerBehaviour>().isJumpable && !gameObject.GetComponent<PlayerBehaviour>().isDash)
         {
+            
             StartCoroutine(AttackComboOne());
             watch.Start();
         }
         if(Input.GetMouseButtonDown(0) && isAttack&& gameObject.GetComponent<PlayerBehaviour>().isMove&& AttackIsPossible&& gameObject.GetComponent<PlayerBehaviour>().isJumpable&&!gameObject.GetComponent<PlayerBehaviour>().isDash)
         {
+            
             StartCoroutine(AttackComboTwo());
             watch.Stop();
             watch.Reset();
@@ -58,6 +61,7 @@ public class PlayerAttackSystem : MonoBehaviour
         gameObject.GetComponent<PlayerBehaviour>().isAttack = false;
         gameObject.GetComponent<PlayerBehaviour>().Setdefaultspeed(10);
     }
+    
     IEnumerator AttackComboTwo()
     {
         gameObject.GetComponent<PlayerBehaviour>().Setdefaultspeed(3);
@@ -66,7 +70,7 @@ public class PlayerAttackSystem : MonoBehaviour
         animator.SetBool("isAttack_2", true);
         
         yield return new WaitForSeconds(0.4f);
-        Attack_Combo_2.SetActive(false);
+        
         isAttack = false;
         animator.SetBool("isAttack_2", false);
         gameObject.GetComponent<PlayerBehaviour>().isAttack = false;
@@ -74,10 +78,13 @@ public class PlayerAttackSystem : MonoBehaviour
     }
     public void Attack_Combo_2_On()
     {
+        SoundManager.instance.attack1();
+        Attack_Combo_2.SetActive(false);
         Attack_Combo_2.SetActive(true);
     }
     public void Attack_Combo_1_On()
     {
+        SoundManager.instance.attack1();
         Attack_Combo_1.SetActive(true);
     }
     public void Attack_1()

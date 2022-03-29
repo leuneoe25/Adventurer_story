@@ -137,7 +137,7 @@ public class PlayerState : MonoBehaviour
     void UpDataDamage()
     {
         Damage = (levelSystem.GetLevel()) * (int)START_DAMAGE;
-        DamageText.text = "Damage : " + Damage;
+        //DamageText.text = "Damage : " + Damage;
     }
     public void GetExp()
     {

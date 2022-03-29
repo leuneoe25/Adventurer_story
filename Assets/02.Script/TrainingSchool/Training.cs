@@ -15,7 +15,7 @@ public class Training : MonoBehaviour
     private bool Inplayer = false;
     void Start()
     {
-        Player.GetComponent<InventorySystem>().coin.SetCoin(350);
+        //Player.GetComponent<InventorySystem>().coin.SetCoin(350);
 
         LevelUpButten.onClick.RemoveAllListeners();
         LevelUpButten.onClick.AddListener(LevelUp);
@@ -38,7 +38,7 @@ public class Training : MonoBehaviour
             
             if (Input.GetKeyDown(KeyCode.F))
             {
-                
+                CoinText.text = Player.GetComponent<InventorySystem>().coin.GetCoin() + "G";
                 Player.GetComponent<PlayerAttackSystem>().AttackIsPossible = false;
                 Player.GetComponent<PlayerBehaviour>().isMove = false;
                 Player.GetComponent<SkillSystem>().SkillIsPossible = false;

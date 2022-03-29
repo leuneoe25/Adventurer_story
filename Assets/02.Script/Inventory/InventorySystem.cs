@@ -46,11 +46,12 @@ public class InventorySystem : MonoBehaviour
     {
         slots = SlotParent.GetComponentsInChildren<Slot>();
         Inven.SetActive(false);
+        
     }
     // Update is called once per frame
     void Update()
     {
-        
+        //Debug.Log(coin.GetCoin());
         if (Input.GetKeyDown(KeyCode.I))
         {
             Debug.Log("I");
