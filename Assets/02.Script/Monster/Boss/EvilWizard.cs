@@ -9,6 +9,7 @@ public class EvilWizard : MonoBehaviour
     private GameObject Player;
     [SerializeField] private float MaxHp;
     [SerializeField] private GameObject bullet;
+    [SerializeField] private GameObject Circle;
     [SerializeField] private GameObject meteo;
     [SerializeField] private GameObject Patten3;
     public int Damage;
@@ -118,19 +119,15 @@ public class EvilWizard : MonoBehaviour
         float oneShoting = 10;
         
         float speed = 10;
-        for (int j = 0; j < 5; j++)
+        GameObject player = GameObject.Find("Player");
+
+        for (int i = 0; i < oneShoting; i++)
         {
-            float angle = 360 / oneShoting;
-            for (int i = 0; i < oneShoting; i++)
-            {
-                Debug.Log("patten4");
-                GameObject obj;
-                obj = (GameObject)Instantiate(bullet, transform.position, Quaternion.identity);
-                obj.GetComponent<Rigidbody2D>().AddForce(new Vector2(speed * Mathf.Cos(Mathf.PI * 2 * i / oneShoting), speed * Mathf.Sin(Mathf.PI * i * 2 / oneShoting)));
-                obj.transform.Rotate(new Vector3(0f, 0f,Random.Range(0.0f,360.0f)));
-            }
-            oneShoting++;
-            yield return new WaitForSeconds(0.2f);
+            Debug.Log("patten4");
+            GameObject obj;
+            obj = (GameObject)Instantiate(bullet, Circle.transform.position, Quaternion.identity);
+            obj.GetComponent<Rigidbody2D>().AddForce(new Vector2(speed * Mathf.Cos(Mathf.PI * 2 * i / oneShoting), speed * Mathf.Sin(Mathf.PI * i * 2 / oneShoting)));
+            obj.transform.Rotate(new Vector3(0f, 0f,0f));
         }
 
 
