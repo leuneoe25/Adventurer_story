@@ -32,6 +32,7 @@ public class PlayerAttackSystem : MonoBehaviour
         }
         if(Input.GetMouseButtonDown(0) && isAttack&& gameObject.GetComponent<PlayerBehaviour>().isMove&& AttackIsPossible&& gameObject.GetComponent<PlayerBehaviour>().isJumpable&&!gameObject.GetComponent<PlayerBehaviour>().isDash)
         {
+           
             StartCoroutine(AttackComboTwo());
             watch.Stop();
             watch.Reset();
@@ -47,6 +48,7 @@ public class PlayerAttackSystem : MonoBehaviour
     }
     IEnumerator AttackComboOne()
     {
+        SoundManager.instance.attack1();
         gameObject.GetComponent<PlayerBehaviour>().Setdefaultspeed(3);
         gameObject.GetComponent<PlayerBehaviour>().isAttack = true;
         animator.SetBool("isAttack_1", true);
@@ -60,6 +62,7 @@ public class PlayerAttackSystem : MonoBehaviour
     }
     IEnumerator AttackComboTwo()
     {
+        SoundManager.instance.attack2();
         gameObject.GetComponent<PlayerBehaviour>().Setdefaultspeed(3);
         gameObject.GetComponent<PlayerBehaviour>().isAttack = true;
         animator.SetBool("isAttack_1", false);
