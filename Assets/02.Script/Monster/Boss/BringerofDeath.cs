@@ -144,6 +144,7 @@ public class BringerofDeath : MonoBehaviour
         Hpbar.GetComponent<Image>().fillAmount = (Hp / MaxHp * 100 / 100);
         if (Hp <= 0)
         {
+            
             isAction = true;
             StopAllCoroutines();
             Destroy(Patten1);

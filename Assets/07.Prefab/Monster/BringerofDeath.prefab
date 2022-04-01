@@ -118,11 +118,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 586f257161d0fd44481f4743bc370744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 1000
+  MaxHp: 2000
   Darkhand: {fileID: 2394141542431829239, guid: a248a7124c9c14444bc3cb4856cc31a8,
     type: 3}
   Patten1: {fileID: 6725354898512933558}
-  Damage: 10
+  Damage: 20
 --- !u!61 &750392177831308051
 BoxCollider2D:
   m_ObjectHideFlags: 0

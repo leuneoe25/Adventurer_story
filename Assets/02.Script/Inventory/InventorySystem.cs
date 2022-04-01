@@ -21,7 +21,7 @@ public class InventorySystem : MonoBehaviour
     [SerializeField] private Image ItemImage;
 
     public ItemDictionary itemDictionary = null;
-    public Coin coin;
+    public  Coin coin;
     private bool isOnInventory = false;
     private Slot[] slots;
     public static int temporaryDamaage = 0;
@@ -31,9 +31,17 @@ public class InventorySystem : MonoBehaviour
     
     private void Awake()
     {
+
         itemDictionary = new ItemDictionary();
         coin = new Coin();
-
+        if (PlayerPrefs.HasKey("Coin"))
+        {
+            coin.SetCoin(PlayerPrefs.GetInt("Coin"));
+        }
+        else
+        {
+            PlayerPrefs.SetInt("Coin", 0);
+        }
         EmergencyPotion emergencyPotion = new EmergencyPotion("emergencyPotion", 10, emergencyPotion_image);
         HealingPotion healingPotion = new HealingPotion("healingPotion", 30, healingPotion_image);
         Highhealingpotion highhealingpotion = new Highhealingpotion("highhealingpotion", 60, highhealingpotion_image);
@@ -54,13 +62,12 @@ public class InventorySystem : MonoBehaviour
         //Debug.Log(coin.GetCoin());
         if (Input.GetKeyDown(KeyCode.I))
         {
-            Debug.Log("I");
-            
             if (!isOnInventory)
             {
                 if(OnUI==0)
                 {
                     gameObject.GetComponent<PlayerBehaviour>().isMove = false;
+                    gameObject.GetComponent<SkillSystem>().isG = true;
                     Inven.SetActive(true);
                     ItemImage.gameObject.SetActive(false);
                     ItemExp.gameObject.SetActive(false);
@@ -71,6 +78,7 @@ public class InventorySystem : MonoBehaviour
             else
             {
                 gameObject.GetComponent<PlayerBehaviour>().isMove = true;
+                gameObject.GetComponent<SkillSystem>().isG = false;
                 Inven.SetActive(false);
             }
             isOnInventory = !isOnInventory;
@@ -84,6 +92,7 @@ public class InventorySystem : MonoBehaviour
                     InvenCh.SetActive(false);
                 }
                 gameObject.GetComponent<PlayerBehaviour>().isMove = true;
+                gameObject.GetComponent<SkillSystem>().isG = false;
                 Inven.SetActive(false);
             }
         }

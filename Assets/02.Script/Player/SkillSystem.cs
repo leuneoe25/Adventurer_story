@@ -361,6 +361,7 @@ public class SkillSystem : MonoBehaviour
     [SerializeField] private GameObject E;
     [SerializeField] private GameObject Q;
     public bool SkillIsPossible = true;
+    public bool isG = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -376,7 +377,32 @@ public class SkillSystem : MonoBehaviour
 
         //commandMgr.SetCommand("QKey", slaughterCommand);
         //AddCommandESkill();
+        
         OnSkill = false;
+        PlayerPrefs.SetInt("ESkill", 0);
+        PlayerPrefs.SetInt("Coin", 0);
+        if (!PlayerPrefs.HasKey("ESkill"))
+        {
+            PlayerPrefs.SetInt("ESkill", 0);
+        }
+        else
+        {
+            if(PlayerPrefs.GetInt("ESkill")==1)
+            {
+                AddCommandESkill();
+            }
+        }
+        if (!PlayerPrefs.HasKey("QSkill"))
+        {
+            PlayerPrefs.SetInt("QSkill", 0);
+        }
+        else
+        {
+            if (PlayerPrefs.GetInt("QSkill") == 1)
+            {
+                AddCommandQSkill();
+            }
+        }
     }
 
     // Update is called once per frame
@@ -393,7 +419,7 @@ public class SkillSystem : MonoBehaviour
         }
         SetImage();
         SetText();
-        if (Input.GetKeyDown(KeyCode.E)&&!OnSkill&& SkillIsPossible&& commandMgr.FindCommand("EKey"))
+        if (Input.GetKeyDown(KeyCode.E)&&!OnSkill&& SkillIsPossible&& commandMgr.FindCommand("EKey")&&!isG)
         {
             
             StartCoroutine(commandMgr.InvokeExecute("EKey"));
@@ -404,7 +430,7 @@ public class SkillSystem : MonoBehaviour
         //{
         //    StartCoroutine(commandMgr.InvokeExecute("QKey"));
         //}
-        if(Input.GetKeyDown(KeyCode.Q) && !OnSkill&& gameObject.GetComponent<PlayerBehaviour>().isJumpable&& SkillIsPossible&& commandMgr.FindCommand("QKey"))
+        if(Input.GetKeyDown(KeyCode.Q) && !OnSkill&& gameObject.GetComponent<PlayerBehaviour>().isJumpable&& SkillIsPossible&& commandMgr.FindCommand("QKey") && !isG)
         {
             
             StartCoroutine(commandMgr.InvokeExecute("QKey"));
@@ -417,25 +443,35 @@ public class SkillSystem : MonoBehaviour
         DoubleSlash doubleSlash = new DoubleSlash();
         DoubleSlashCommand skillCommand = new DoubleSlashCommand(doubleSlash, slash, slash_2, Player);
         commandMgr.SetCommand("EKey", skillCommand);
-        StartCoroutine(OnObject(E));
+        if (PlayerPrefs.GetInt("ESkill") == 0)
+        {
+            StartCoroutine(OnObject(E));
+        }
+        PlayerPrefs.SetInt("ESkill", 1);
     }
     public void AddCommandQSkill()
     {
         SwordOfWill swordOfWill = new SwordOfWill();
         SwordOfWillCommand swordOfWillCommand = new SwordOfWillCommand(swordOfWill, Sword, Player);
         commandMgr.SetCommand("QKey", swordOfWillCommand);
-        StartCoroutine(OnObject(Q));
+        if (PlayerPrefs.GetInt("ESkill") == 0)
+        {
+            StartCoroutine(OnObject(Q));
+        }
+        PlayerPrefs.SetInt("QSkill", 1);
     }
     private void SetisMove(bool val)
     {
         if(val==false)
         {
             gameObject.GetComponent<PlayerBehaviour>().isMove = false;
+            gameObject.GetComponent<PlayerBehaviour>().isAttack = true;
         }
         else
         {
             gameObject.GetComponent<PlayerBehaviour>().isMove = true;
-            Debug.Log("move is true");
+            gameObject.GetComponent<PlayerBehaviour>().isAttack = false;
+            //Debug.Log("move is true");
             first = false;
         }
     }
@@ -511,6 +547,19 @@ public class SkillSystem : MonoBehaviour
         }
         
     }
+
+    void dashSound()
+    {
+        SoundManager.instance.Dash();
+    }
+
+    void EskSound()
+    {
+        SoundManager.instance.esk();
+    }
+
+    
+
     IEnumerator OnObject(GameObject val)
     {
         val.SetActive(true);

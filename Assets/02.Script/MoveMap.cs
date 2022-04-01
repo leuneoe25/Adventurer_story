@@ -45,6 +45,8 @@ public class MoveMap : MonoBehaviour
                 else if(isOutBossStage&& !isBossStage)
                 {
                     //Cm.SetActive(true);
+                    Player.GetComponent<PlayerState>().Heal(100);
+                    Player.GetComponent<SkillSystem>().isG = true;
                     PlayerLihgt.SetActive(false);
                     Player.transform.position = pos.transform.position;
                     Cm.m_BoundingShape2D = stageColl;

@@ -70,7 +70,7 @@ public class PlayerAttackSystem : MonoBehaviour
         animator.SetBool("isAttack_2", true);
         
         yield return new WaitForSeconds(0.4f);
-        
+        Attack_Combo_2.SetActive(false);
         isAttack = false;
         animator.SetBool("isAttack_2", false);
         gameObject.GetComponent<PlayerBehaviour>().isAttack = false;
@@ -79,7 +79,6 @@ public class PlayerAttackSystem : MonoBehaviour
     public void Attack_Combo_2_On()
     {
         SoundManager.instance.attack1();
-        Attack_Combo_2.SetActive(false);
         Attack_Combo_2.SetActive(true);
     }
     public void Attack_Combo_1_On()

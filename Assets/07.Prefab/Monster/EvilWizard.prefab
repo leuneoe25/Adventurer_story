@@ -134,8 +134,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92acdac6bb2108a42b1f5347e44fd7af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 100
+  MaxHp: 3000
   bullet: {fileID: 3168296606117620281, guid: 7342cb86dfabed44a9850b582910025a, type: 3}
+  Circle: {fileID: 0}
   meteo: {fileID: 4989642096216208129, guid: 6026173b04c2b144291eb52bb84bb490, type: 3}
   Patten3: {fileID: 3893938423847386432}
   Damage: 10

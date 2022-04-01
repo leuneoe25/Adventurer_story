@@ -46,18 +46,20 @@ public class PlayerState : MonoBehaviour
     }
     void Start()
     {
+        if (PlayerPrefs.HasKey("Level"))
+        {
+            for(int i=0;i<PlayerPrefs.GetInt("Level");i++)
+            {
+                levelSystem.AddExp();
+            }
+        }
         isLevel = levelSystem.GetLevel();
-        Damage = (int)START_DAMAGE;
+        Damage = (levelSystem.GetLevel()) * (int)START_DAMAGE;
+
     }
 
     void Update()
     {
-        
-        if(isLevel != levelSystem.GetLevel())
-        {
-            isLevel = levelSystem.GetLevel();
-            //StartCoroutine(LevelUpEvent()); 
-        }
         UpDataUI();
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -132,6 +134,7 @@ public class PlayerState : MonoBehaviour
         if(healthPointSystem.GetHp() <=0)
         {
             SceneManager.LoadScene("Die");
+            PlayerPrefs.SetInt("Level", levelSystem.GetLevel());
         }
     }
     void UpDataDamage()

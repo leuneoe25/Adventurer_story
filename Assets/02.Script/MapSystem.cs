@@ -24,6 +24,7 @@ public class MapSystem : MonoBehaviour
     }
     public void GoMap1Stage1()
     {
+        Player.GetComponent<SkillSystem>().isG = false;
         GuildCm.m_BoundingShape2D = stage1Coll;
         Guild.SetActive(false);
         Map1.SetActive(true);
@@ -32,6 +33,7 @@ public class MapSystem : MonoBehaviour
     }
     public void GoMap2Stage1()
     {
+        Player.GetComponent<SkillSystem>().isG = false;
         GuildCm.m_BoundingShape2D = stage2Coll;
         Guild.SetActive(false);
         Map2.SetActive(true);
@@ -40,6 +42,7 @@ public class MapSystem : MonoBehaviour
     }
     public void GoMap3Stage1()
     {
+        Player.GetComponent<SkillSystem>().isG = false;
         GuildCm.m_BoundingShape2D = stage3Coll;
         Guild.SetActive(false);
         Map3.SetActive(true);

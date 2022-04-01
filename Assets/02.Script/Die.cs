@@ -14,6 +14,7 @@ public class Die : MonoBehaviour
 
     void StartScene()
     {
-        SceneManager.LoadScene("StartScenes");
+        SceneManager.LoadScene("InGame");
+        GameSystem.instans().StartSet();
     }
 }

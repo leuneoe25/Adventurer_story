@@ -12,6 +12,7 @@ public class Coin
     public void SetCoin(int _coin)
     {
         coin += _coin;
+        PlayerPrefs.SetInt("Coin", coin);
         Debug.Log(coin);
     }
     public int NeedLevelUpCoin(int level)

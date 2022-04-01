@@ -113,6 +113,20 @@ public class PlayerBehaviour : MonoBehaviour
             StartCoroutine(dash());
         }
         Dashbar.fillAmount = GetDashTime();
+        if(Input.GetKey(KeyCode.A))
+        {
+            if (!isAttack && !isWallJump)
+            {
+                gameObject.transform.localScale = new Vector3(-5, 5, 1);
+            }
+        }
+        if(Input.GetKey(KeyCode.D))
+        {
+            if (!isAttack && !isWallJump)
+            {
+                gameObject.transform.localScale = new Vector3(5, 5, 1);
+            }
+        }
     }
     private void OnDrawGizmos()
     {
