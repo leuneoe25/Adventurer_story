@@ -5229,7 +5229,7 @@ RectTransform:
   m_Children:
   - {fileID: 1660589344}
   m_Father: {fileID: 617860544}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6888,9 +6888,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ChannelMask: 1
+  m_ChannelMask: -1
   m_Gain: 1
-  m_Use2DDistance: 1
+  m_Use2DDistance: 0
 --- !u!1 &419453766
 GameObject:
   m_ObjectHideFlags: 0
@@ -8471,6 +8471,7 @@ Transform:
   - {fileID: 671522003}
   - {fileID: 1450364007}
   - {fileID: 2072923825}
+  - {fileID: 1100410395}
   m_Father: {fileID: 2054677553}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9081,7 +9082,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!114 &519420030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11123,11 +11124,11 @@ Transform:
   - {fileID: 1748065423}
   - {fileID: 1897852209}
   - {fileID: 610791021}
-  - {fileID: 1787100347}
-  - {fileID: 938277987}
   - {fileID: 1426459844}
   - {fileID: 1859011628}
   - {fileID: 325843786}
+  - {fileID: 1787100347}
+  - {fileID: 938277987}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14605,6 +14606,7 @@ GameObject:
   - component: {fileID: 792389814}
   - component: {fileID: 792389815}
   - component: {fileID: 792389818}
+  - component: {fileID: 792389819}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -14879,6 +14881,91 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &792389819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792389808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd438dd108a0f284aa931a2da434f1d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_RawSignal: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+    m_AmplitudeGain: 2.5
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0.1
+      m_SustainTime: 0.1
+      m_DecayTime: 0.1
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 1000
+    m_PropagationSpeed: 100
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 16384
+  m_IgnoreTag: 
+  m_UseImpactDirection: 0
+  m_ScaleImpactWithMass: 0
+  m_ScaleImpactWithSpeed: 0
 --- !u!1 &795411780
 GameObject:
   m_ObjectHideFlags: 0
@@ -17716,7 +17803,7 @@ RectTransform:
   - {fileID: 423749308}
   - {fileID: 504787301}
   m_Father: {fileID: 617860544}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -19487,8 +19574,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1030159830}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.4231, y: -5.133, z: 9.725964}
-  m_LocalScale: {x: 46.465416, y: 3.3894548, z: 1}
+  m_LocalPosition: {x: 6.1812, y: -5.2002, z: 9.725964}
+  m_LocalScale: {x: 35.92824, y: 3.2548928, z: 1}
   m_Children: []
   m_Father: {fileID: 1225025435}
   m_RootOrder: 0
@@ -20230,6 +20317,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &1100410395 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5965455735767549219, guid: 70b1dbdb96c907d428d7280bebec0699,
+    type: 3}
+  m_PrefabInstance: {fileID: 1509805165}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1101697197
 GameObject:
   m_ObjectHideFlags: 0
@@ -20669,28 +20762,64 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ImpulseDefinition:
     m_ImpulseChannel: 1
-    m_RawSignal: {fileID: 11400000, guid: 554b0ed52734c154eab51f6cedd3a7d7, type: 2}
-    m_AmplitudeGain: 0.5
-    m_FrequencyGain: 0.5
+    m_RawSignal: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+    m_AmplitudeGain: 2
+    m_FrequencyGain: 0.8
     m_RepeatMode: 0
-    m_Randomize: 1
+    m_Randomize: 0
     m_TimeEnvelope:
       m_AttackShape:
         serializedVersion: 2
-        m_Curve: []
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_DecayShape:
         serializedVersion: 2
-        m_Curve: []
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-      m_AttackTime: 0
-      m_SustainTime: 0.2
-      m_DecayTime: 0
-      m_ScaleWithImpact: 1
+      m_AttackTime: 0.1
+      m_SustainTime: 0.1
+      m_DecayTime: 0.1
+      m_ScaleWithImpact: 0
       m_HoldForever: 0
     m_ImpactRadius: 1
     m_DirectionMode: 1
@@ -26676,7 +26805,7 @@ RectTransform:
   - {fileID: 1200336768}
   - {fileID: 507771298}
   m_Father: {fileID: 617860544}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -28457,6 +28586,80 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!1001 &1509805165
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 496383285}
+    m_Modifications:
+    - target: {fileID: 5965455735767549216, guid: 70b1dbdb96c907d428d7280bebec0699,
+        type: 3}
+      propertyPath: MaxHp
+      value: 1000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5965455735767549219, guid: 70b1dbdb96c907d428d7280bebec0699,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5965455735767549219, guid: 70b1dbdb96c907d428d7280bebec0699,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 5965455735767549219, guid: 70b1dbdb96c907d428d7280bebec0699,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 5965455735767549219, guid: 70b1dbdb96c907d428d7280bebec0699,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5965455735767549219, guid: 70b1dbdb96c907d428d7280bebec0699,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5965455735767549219, guid: 70b1dbdb96c907d428d7280bebec0699,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5965455735767549219, guid: 70b1dbdb96c907d428d7280bebec0699,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5965455735767549219, guid: 70b1dbdb96c907d428d7280bebec0699,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5965455735767549219, guid: 70b1dbdb96c907d428d7280bebec0699,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5965455735767549219, guid: 70b1dbdb96c907d428d7280bebec0699,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5965455735767549219, guid: 70b1dbdb96c907d428d7280bebec0699,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5965455735767549247, guid: 70b1dbdb96c907d428d7280bebec0699,
+        type: 3}
+      propertyPath: m_Name
+      value: eye
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 70b1dbdb96c907d428d7280bebec0699, type: 3}
 --- !u!1 &1511130426
 GameObject:
   m_ObjectHideFlags: 0
@@ -33111,7 +33314,7 @@ RectTransform:
   m_Children:
   - {fileID: 2084745205}
   m_Father: {fileID: 617860544}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -33177,7 +33380,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1000
+  m_SortingOrder: 1001
   m_TargetDisplay: 0
 --- !u!1 &1816671027
 GameObject:
@@ -33577,16 +33780,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ImpulseDefinition:
-    m_ImpulseChannel: 1
-    m_RawSignal: {fileID: 11400000, guid: 554b0ed52734c154eab51f6cedd3a7d7, type: 2}
-    m_AmplitudeGain: 0.5
-    m_FrequencyGain: 0.5
+    m_ImpulseChannel: -1
+    m_RawSignal: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+    m_AmplitudeGain: 2
+    m_FrequencyGain: 0.8
     m_RepeatMode: 0
-    m_Randomize: 1
+    m_Randomize: 0
     m_TimeEnvelope:
       m_AttackShape:
         serializedVersion: 2
-        m_Curve: []
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
@@ -33614,10 +33835,10 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-      m_AttackTime: 0
-      m_SustainTime: 0.2
-      m_DecayTime: 0
-      m_ScaleWithImpact: 1
+      m_AttackTime: 0.1
+      m_SustainTime: 0.1
+      m_DecayTime: 0.1
+      m_ScaleWithImpact: 0
       m_HoldForever: 0
     m_ImpactRadius: 1
     m_DirectionMode: 1
@@ -33964,7 +34185,7 @@ RectTransform:
   - {fileID: 1136465168}
   - {fileID: 1993896191}
   m_Father: {fileID: 617860544}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

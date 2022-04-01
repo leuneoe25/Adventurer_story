@@ -38,23 +38,29 @@ public class PlayerState : MonoBehaviour
     private bool isLevelUp = false;
     private GameObject Camaera;
     bool isOn = false;
+    SpriteRenderer sprite;
+
+    bool isred = false;
     private void Awake()
     {
         levelSystem = new LevelSystem();
         healthPointSystem = new HealthPointSystem();
         Camaera = GameObject.Find("Main Camera");
+        sprite = GetComponent<SpriteRenderer>();
     }
     void Start()
     {
+        
         if (PlayerPrefs.HasKey("Level"))
         {
-            for(int i=0;i<PlayerPrefs.GetInt("Level");i++)
+            for(int i=0;i<PlayerPrefs.GetInt("Level")-1;i++)
             {
                 levelSystem.AddExp();
             }
         }
         isLevel = levelSystem.GetLevel();
         Damage = (levelSystem.GetLevel()) * (int)START_DAMAGE;
+        Heal(100);
 
     }
 
@@ -100,6 +106,7 @@ public class PlayerState : MonoBehaviour
             Attacked(boss.transform.GetComponent<EvilWizard>().Damage);
         }
     }
+    
     void UpDataUI()
     {        
         if(!isLevelUp)
@@ -155,10 +162,25 @@ public class PlayerState : MonoBehaviour
         if (!isOn)
         {
             
-            StartCoroutine( AttackedEvent());
+            //StartCoroutine( AttackedEvent());
         }
         Camaera.GetComponent<CameraShake>().VibrateForTime(0.1f);
         healthPointSystem.Attacked(damage);
+        StartCoroutine(Attactedimage());
+    }
+    IEnumerator Attactedimage()
+    {
+        if(!isred)
+        {
+            isred = true;
+            sprite.color = Color.red;
+            //Time.timeScale = 0.8f;
+            yield return new WaitForSeconds(0.1f);
+            //Time.timeScale = 1;
+            sprite.color = Color.white;
+            isred = false;
+        }
+        
     }
     IEnumerator AttackedEvent()
     {

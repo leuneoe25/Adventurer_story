@@ -30,9 +30,9 @@ public class eye : MonoBehaviour
     bool move;
     private bool ismove;
     bool coru;
-
+    SpriteRenderer sprite;
     bool isDie = false;
-
+    bool isred = false;
     void Awake()
     {
         target = GameObject.Find("Player");
@@ -50,6 +50,7 @@ public class eye : MonoBehaviour
     }
     private void Start()
     {
+        sprite = GetComponent<SpriteRenderer>();
         Hp = MaxHp;
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -58,21 +59,25 @@ public class eye : MonoBehaviour
         {
             Hp -= target.GetComponent<PlayerState>().GeneralDamage();
             Camaera.GetComponent<CameraShake>().VibrateForTime(0.1f);
+            StartCoroutine(Attacked());
         }
         if (collision.transform.CompareTag("PlayerAttack_2"))
         {
             Hp -= target.GetComponent<PlayerState>().GeneralDamage();
             Camaera.GetComponent<CameraShake>().VibrateForTime(0.1f);
+            StartCoroutine(Attacked());
         }
         if (collision.transform.CompareTag("Double_Slash"))
         {
             Hp -= target.GetComponent<PlayerState>().ESkillDamage();
             Camaera.GetComponent<CameraShake>().VibrateForTime(0.1f);
+            StartCoroutine(Attacked());
         }
         if (collision.transform.CompareTag("QSkill"))
         {
             Hp -= target.GetComponent<PlayerState>().XSkillDamage();
             Camaera.GetComponent<CameraShake>().VibrateForTime(0.1f);
+            StartCoroutine(Attacked());
         }
         if (collision.transform.CompareTag("wall"))
         {
@@ -110,7 +115,19 @@ public class eye : MonoBehaviour
         }
 
     }
-
+    IEnumerator Attacked()
+    {
+        if (!isred)
+        {
+            isred = true;
+            sprite.color = Color.red;
+            Time.timeScale = 0.7f;
+            yield return new WaitForSeconds(0.1f);
+            Time.timeScale = 1;
+            sprite.color = Color.white;
+            isred = false;
+        }
+    }
     void Update()
     {
         if (HpbarObject != null)
