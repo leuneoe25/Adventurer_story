@@ -140,6 +140,7 @@ public class PlayerState : MonoBehaviour
         HpText.text = "" + healthPointSystem.GetHp() + " / " + (START_MAX_HEALTH_POINT + ((levelSystem.GetLevel()-1) * 20)+ healthPointSystem.GetAddition()).ToString();
         if(healthPointSystem.GetHp() <=0)
         {
+            GameSystem.instans().AddDie();
             SceneManager.LoadScene("Die");
             PlayerPrefs.SetInt("Level", levelSystem.GetLevel());
         }

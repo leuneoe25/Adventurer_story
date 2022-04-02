@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Ending : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private Text text;
     void Start()
     {
-        
+        text.text = "Á×Àº È½¼ö : " +GameSystem.instans().GetDie().ToString();
     }
 
     // Update is called once per frame

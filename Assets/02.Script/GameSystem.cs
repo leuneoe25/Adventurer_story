@@ -9,6 +9,7 @@ public class GameSystem : MonoBehaviour
 {
     private static GameSystem ins;
     private bool isFirst;
+    private int DieCount;
     [SerializeField] GameObject Tutorial;
     [SerializeField] PolygonCollider2D coll;
     [SerializeField] GameObject Guild;
@@ -23,11 +24,20 @@ public class GameSystem : MonoBehaviour
             PlayerPrefs.SetInt("QSkill", 0);
             PlayerPrefs.SetInt("Coin", 0);
             PlayerPrefs.SetInt("Level", 1);
+            DieCount = 0;
             DontDestroyOnLoad(gameObject);
         }
         else
             Destroy(gameObject);
         
+    }
+    public int GetDie()
+    {
+        return DieCount;
+    }
+    public void AddDie()
+    {
+        DieCount++;
     }
     public static GameSystem instans()
     {
