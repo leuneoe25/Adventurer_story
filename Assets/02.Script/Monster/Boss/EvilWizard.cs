@@ -41,11 +41,11 @@ public class EvilWizard : MonoBehaviour
     {
         if(!isAction)
         {
-            if(5>=Vector2.Distance(transform.position,Player.transform.position))
-            {
-                StartCoroutine(EvilWizard_Patten3());
-                return;
-            }
+            //if(5>=Vector2.Distance(transform.position,Player.transform.position))
+            //{
+            //    StartCoroutine(EvilWizard_Patten3());
+            //    return;
+            //}
             switch (next)
             {
                 case 0:
