@@ -5048,7 +5048,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: EvilWizard
+  m_Text: "\uD30C\uC774\uC5B4\uB370\uBE14"
 --- !u!222 &322156332
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -26492,7 +26492,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: BringerofDeath
+  m_Text: "\uADF8\uB9BC\uC790\uC6A9\uBCD1"
 --- !u!222 &1330040535
 CanvasRenderer:
   m_ObjectHideFlags: 0

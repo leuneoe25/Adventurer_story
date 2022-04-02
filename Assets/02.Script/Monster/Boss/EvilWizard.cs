@@ -27,7 +27,8 @@ public class EvilWizard : MonoBehaviour
         HpbarObject.SetActive(true);
         Hpbar = GameObject.Find("EvilWizard_Hpbar");
         animator = GetComponent<Animator>();
-        RandomBossAction();
+        Invoke("RandomBossAction", 3);
+        //RandomBossAction();
     }
 
     // Update is called once per frame
