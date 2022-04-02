@@ -49,12 +49,14 @@ public class Bandit_ : MonoBehaviour
     {
         if (collision.transform.CompareTag("PlayerAttack_1"))
         {
+            SoundManager.instance.hit();
             Hp -= target.GetComponent<PlayerState>().GeneralDamage();
             Camaera.GetComponent<CameraShake>().VibrateForTime(0.1f);
             StartCoroutine(Attacked());
         }
         if (collision.transform.CompareTag("PlayerAttack_2"))
         {
+            SoundManager.instance.hit();
             Hp -= target.GetComponent<PlayerState>().GeneralDamage();
             Camaera.GetComponent<CameraShake>().VibrateForTime(0.1f);
             StartCoroutine(Attacked());
@@ -67,6 +69,7 @@ public class Bandit_ : MonoBehaviour
         }
         if (collision.transform.CompareTag("QSkill"))
         {
+            SoundManager.instance.hit();
             Hp -= target.GetComponent<PlayerState>().XSkillDamage();
             Camaera.GetComponent<CameraShake>().VibrateForTime(0.1f);
             StartCoroutine(Attacked());

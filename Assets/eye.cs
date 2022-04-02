@@ -78,6 +78,7 @@ public class eye : MonoBehaviour
         }
         if (collision.transform.CompareTag("QSkill"))
         {
+            SoundManager.instance.hit();
             Hp -= target.GetComponent<PlayerState>().XSkillDamage();
             Camaera.GetComponent<CameraShake>().VibrateForTime(0.1f);
             StartCoroutine(Attacked());
