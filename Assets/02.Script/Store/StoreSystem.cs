@@ -16,6 +16,8 @@ public class StoreSystem : MonoBehaviour
     [SerializeField] private GameObject One;
     [SerializeField] private GameObject Two;
     [SerializeField] private GameObject Three;
+    [SerializeField] private GameObject yes;
+    [SerializeField] private GameObject no;
 
     [SerializeField] private Button Consent;
     [SerializeField] private Button Refusal;
@@ -79,6 +81,8 @@ public class StoreSystem : MonoBehaviour
     }
     void buyCheck(string name, int price)
     {
+        OffNo();
+        Offyes();
         CheckObject.SetActive(true);
         Consent.onClick.AddListener(delegate { ButtenConsent(name, price); });
         Refusal.onClick.AddListener(ButtenRefusal);
@@ -89,7 +93,8 @@ public class StoreSystem : MonoBehaviour
         }
         else
         {
-            Consent.gameObject.SetActive(false);
+            //Consent.gameObject.SetActive(false);
+            Consent.onClick.RemoveAllListeners();
             CheckText.text = "코인이 부족합니다.";
         }
         
@@ -141,5 +146,21 @@ public class StoreSystem : MonoBehaviour
         if (CheckObject.activeSelf)
             return;
         Three.SetActive(false);
+    }
+    public void Onyes()
+    {
+        yes.SetActive(true);
+    }
+    public void Offyes()
+    {
+        yes.SetActive(false);
+    }
+    public void OffNo()
+    {
+        no.SetActive(false);
+    }
+    public void OnNo()
+    {
+        no.SetActive(true);
     }
 }
