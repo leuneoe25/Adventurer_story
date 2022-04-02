@@ -61,6 +61,7 @@ public class StoreSystem : MonoBehaviour
                     if(!CheckObject.activeSelf)
                     {
                         Store.SetActive(false);
+                        InventorySystem.OnUI = 0;
                         Player.GetComponent<PlayerBehaviour>().isMove = true;
                     }
                         

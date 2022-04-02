@@ -91,6 +91,7 @@ public class InventorySystem : MonoBehaviour
             {
                 if(InvenCh.activeSelf)
                 {
+                    Time.timeScale = 1;
                     InvenCh.SetActive(false);
                 }
                 gameObject.GetComponent<PlayerBehaviour>().isMove = true;
