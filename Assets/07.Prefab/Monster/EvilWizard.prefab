@@ -139,7 +139,7 @@ MonoBehaviour:
   Circle: {fileID: 0}
   meteo: {fileID: 4989642096216208129, guid: 6026173b04c2b144291eb52bb84bb490, type: 3}
   Patten3: {fileID: 3893938423847386432}
-  Damage: 40
+  Damage: 10
 --- !u!1 &3893938423847386432
 GameObject:
   m_ObjectHideFlags: 0

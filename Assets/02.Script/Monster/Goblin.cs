@@ -89,7 +89,6 @@ public class Goblin : MonoBehaviour
     {
         if (!isred)
         {
-            SoundManager.instance.hit();
             isred = true;
             sprite.color = Color.red;
             Time.timeScale = 0.7f;

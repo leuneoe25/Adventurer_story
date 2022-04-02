@@ -20,7 +20,6 @@ public class GameSystem : MonoBehaviour
         {
             ins = gameObject.GetComponent<GameSystem>();
             PlayerPrefs.SetInt("ESkill", 0);
-            PlayerPrefs.SetInt("QSkill", 0);
             PlayerPrefs.SetInt("Coin", 0);
             PlayerPrefs.SetInt("Level", 1);
             DontDestroyOnLoad(gameObject);

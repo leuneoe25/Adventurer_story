@@ -120,7 +120,6 @@ public class eye : MonoBehaviour
     {
         if (!isred)
         {
-            SoundManager.instance.hit();
             isred = true;
             sprite.color = Color.red;
             Time.timeScale = 0.7f;
@@ -210,11 +209,9 @@ public class eye : MonoBehaviour
     {
         ismove = false;
         coru = true;
-        SoundManager.instance.batAttack();
         animator.SetBool("attack1", true);
         yield return new WaitForSeconds(0.8f);
         animator.SetBool("attack1", false);
-        SoundManager.instance.batAttack();
         animator.SetBool("attack2", true);
         yield return new WaitForSeconds(0.8f);
         animator.SetBool("attack2", false);
