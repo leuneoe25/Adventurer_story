@@ -88,7 +88,7 @@ public class BringerofDeath : MonoBehaviour
                 Destroy(obj);
             }
             obj = (GameObject)Instantiate(Darkhand, new Vector2(Player.transform.position.x, gameObject.transform.position.y), Quaternion.identity);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(2f);
         }
         Destroy(obj);
         animator.SetBool("Patten3", false);
