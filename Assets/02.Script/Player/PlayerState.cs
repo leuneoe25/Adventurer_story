@@ -161,10 +161,10 @@ public class PlayerState : MonoBehaviour
     {
         if (!isOn)
         {
-            
-            //StartCoroutine( AttackedEvent());
+
+            StartCoroutine(AttackedEvent());
         }
-        Camaera.GetComponent<CameraShake>().VibrateForTime(0.1f);
+        Camaera.GetComponent<CameraShake>().VibrateForTime(0.05f);
         healthPointSystem.Attacked(damage);
         StartCoroutine(Attactedimage());
     }
@@ -192,11 +192,11 @@ public class PlayerState : MonoBehaviour
             
             color.a += 0.01f;
             AttackedImage.color = color;
-            if (AttackedImage.color.a >= 0.3f)
+            if (AttackedImage.color.a >= 0.2f)
             {
                 break;
             }
-            yield return new WaitForSeconds(0.005f);
+            yield return new WaitForSeconds(0.00005f);
         }
         while (true)
         {
@@ -206,7 +206,7 @@ public class PlayerState : MonoBehaviour
             {
                 break;
             }
-            yield return new WaitForSeconds(0.005f);
+            yield return new WaitForSeconds(0.00005f);
         }
         AttackedImage.gameObject.SetActive(false);
         isOn = false;
