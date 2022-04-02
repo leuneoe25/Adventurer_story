@@ -25,8 +25,11 @@ public class StoreSystem : MonoBehaviour
     [SerializeField] private Text CoinText;
     void Start()
     {
+        Product_1.onClick.RemoveAllListeners();
         Product_1.onClick.AddListener(delegate { buyCheck("emergencyPotion",2); } );
+        Product_2.onClick.RemoveAllListeners();
         Product_2.onClick.AddListener(delegate { buyCheck("healingPotion",5); } );
+        Product_3.onClick.RemoveAllListeners();
         Product_3.onClick.AddListener(delegate { buyCheck("highhealingpotion",8); } );
     }
     void Update()
