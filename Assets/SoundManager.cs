@@ -14,6 +14,8 @@ public class SoundManager : MonoBehaviour
     public AudioClip dash;
     public AudioClip Esk;
     public AudioClip Qsk;
+    public AudioClip Hit;
+    public AudioClip BatAttack;
     private void Awake()
     {
         if(instance == null)
@@ -48,5 +50,13 @@ public class SoundManager : MonoBehaviour
     public void qsk()
     {
         myAudio.PlayOneShot(Qsk);
+    }
+    public void hit()
+    {
+        myAudio.PlayOneShot(Hit);
+    }
+    public void batAttack()
+    {
+        myAudio.PlayOneShot(BatAttack);
     }
 }

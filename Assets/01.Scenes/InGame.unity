@@ -8896,7 +8896,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &496383285
 Transform:
   m_ObjectHideFlags: 0
@@ -9814,7 +9814,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.50111, y: 2.2399998, z: -10}
+  m_LocalPosition: {x: -14.50111, y: 0.21999931, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -13193,7 +13193,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &706523798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22475,7 +22475,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1165431591
 Transform:
   m_ObjectHideFlags: 0
@@ -29595,7 +29595,7 @@ PrefabInstance:
     - target: {fileID: 5965455735767549247, guid: 70b1dbdb96c907d428d7280bebec0699,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 713211995637264703, guid: 70b1dbdb96c907d428d7280bebec0699, type: 3}
@@ -35832,6 +35832,8 @@ MonoBehaviour:
   dash: {fileID: 8300000, guid: 827ab153bf9d8584ebf522dba70d2359, type: 3}
   Esk: {fileID: 8300000, guid: 92077893dd6082b4fac109dc33ceb216, type: 3}
   Qsk: {fileID: 0}
+  Hit: {fileID: 8300000, guid: 283b38512bc24bc4fb511ec89e743084, type: 3}
+  BatAttack: {fileID: 8300000, guid: 46a64402e4b23fc4383a0660a5e42206, type: 3}
 --- !u!82 &1888939243
 AudioSource:
   m_ObjectHideFlags: 0
@@ -35844,7 +35846,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
