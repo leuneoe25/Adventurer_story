@@ -54,8 +54,12 @@ public class QuestSlot : MonoBehaviour
 
     void Execute()
     {
-        GameSystem.instans().SetisFirst(false);
-        GameSystem.instans().Guidefalse();
+        if(GameSystem.instans()!=null)
+        {
+            GameSystem.instans().SetisFirst(false);
+            GameSystem.instans().Guidefalse();
+        }
+        
 
         consentImage.SetActive(false);
         questObject.SetActive(true);
