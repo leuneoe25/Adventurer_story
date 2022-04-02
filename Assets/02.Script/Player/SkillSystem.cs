@@ -403,8 +403,6 @@ public class SkillSystem : MonoBehaviour
             }
         }
     }
-
-    // Update is called once per frame
     void Update()
     {
         
@@ -420,7 +418,6 @@ public class SkillSystem : MonoBehaviour
         SetText();
         if (Input.GetKeyDown(KeyCode.E)&&!OnSkill&& SkillIsPossible&& commandMgr.FindCommand("EKey")&&!isG)
         {
-            
             StartCoroutine(commandMgr.InvokeExecute("EKey"));
             
             first = true;
@@ -453,7 +450,7 @@ public class SkillSystem : MonoBehaviour
         SwordOfWill swordOfWill = new SwordOfWill();
         SwordOfWillCommand swordOfWillCommand = new SwordOfWillCommand(swordOfWill, Sword, Player);
         commandMgr.SetCommand("QKey", swordOfWillCommand);
-        if (PlayerPrefs.GetInt("ESkill") == 0)
+        if (PlayerPrefs.GetInt("QSkill") == 0)
         {
             StartCoroutine(OnObject(Q));
         }
@@ -556,9 +553,6 @@ public class SkillSystem : MonoBehaviour
     {
         SoundManager.instance.esk();
     }
-
-    
-
     IEnumerator OnObject(GameObject val)
     {
         val.SetActive(true);
