@@ -13,6 +13,10 @@ public class StoreSystem : MonoBehaviour
     [SerializeField] private Button Product_2;
     [SerializeField] private Button Product_3;
 
+    [SerializeField] private GameObject One;
+    [SerializeField] private GameObject Two;
+    [SerializeField] private GameObject Three;
+
     [SerializeField] private Button Consent;
     [SerializeField] private Button Refusal;
     [SerializeField] private Text CheckText;
@@ -98,5 +102,41 @@ public class StoreSystem : MonoBehaviour
     void ButtenRefusal()
     {
         CheckObject.SetActive(false);
+    }
+    public void OnOne()
+    {
+        if (CheckObject.activeSelf)
+            return;
+        One.SetActive(true);
+    }
+    public void OnTwo()
+    {
+        if (CheckObject.activeSelf)
+            return;
+        Two.SetActive(true);
+    }
+    public void OnThree()
+    {
+        if (CheckObject.activeSelf)
+            return;
+        Three.SetActive(true);
+    }
+    public void OffOne()
+    {
+        if (CheckObject.activeSelf)
+            return;
+        One.SetActive(false);
+    }
+    public void OffTwo()
+    {
+        if (CheckObject.activeSelf)
+            return;
+        Two.SetActive(false);
+    }
+    public void OffThree()
+    {
+        if (CheckObject.activeSelf)
+            return;
+        Three.SetActive(false);
     }
 }
