@@ -50,7 +50,7 @@ public class FormerWarriorBoss : MonoBehaviour
     void Start()
     {
         isAction = true;
-        Invoke( "RandomBossAction",4);
+        Invoke( "RandomBossAction",3);
     }
     void Update()
     {
@@ -189,7 +189,7 @@ public class FormerWarriorBoss : MonoBehaviour
             next = 0;
             isattack = false;
 
-            Invoke("RandomBossAction", 4);
+            Invoke("RandomBossAction", 3);
         }
         
     }
@@ -227,7 +227,7 @@ public class FormerWarriorBoss : MonoBehaviour
             BoxCollider2D.isTrigger = false;
             rigidbody.gravityScale = 1;
             next = 0;
-            Invoke("RandomBossAction", 4);
+            Invoke("RandomBossAction", 3);
         }
         
     }
@@ -265,7 +265,7 @@ public class FormerWarriorBoss : MonoBehaviour
             rigidbody.gravityScale = 1;
             next = 0;
 
-            Invoke("RandomBossAction", 4);
+            Invoke("RandomBossAction", 3);
         }
         
     }
