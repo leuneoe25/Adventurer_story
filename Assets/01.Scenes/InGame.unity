@@ -1712,7 +1712,7 @@ PrefabInstance:
     - target: {fileID: 5965455735767549216, guid: 70b1dbdb96c907d428d7280bebec0699,
         type: 3}
       propertyPath: amendsCoin
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5965455735767549219, guid: 70b1dbdb96c907d428d7280bebec0699,
         type: 3}
@@ -10106,7 +10106,7 @@ PrefabInstance:
     - target: {fileID: 2373588455645324683, guid: 4a913891e47c3d84fa16686a5dce5c14,
         type: 3}
       propertyPath: amendsCoin
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2373588455645324687, guid: 4a913891e47c3d84fa16686a5dce5c14,
         type: 3}
@@ -10135,7 +10135,7 @@ PrefabInstance:
     - target: {fileID: 4879681704837327084, guid: b7758efa6f6e5c9448888fe5b370a428,
         type: 3}
       propertyPath: amendsCoin
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4879681704837327086, guid: b7758efa6f6e5c9448888fe5b370a428,
         type: 3}
@@ -13995,7 +13995,7 @@ PrefabInstance:
     - target: {fileID: 4879681704837327084, guid: b7758efa6f6e5c9448888fe5b370a428,
         type: 3}
       propertyPath: amendsCoin
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4879681704837327086, guid: b7758efa6f6e5c9448888fe5b370a428,
         type: 3}
@@ -16596,7 +16596,7 @@ PrefabInstance:
     - target: {fileID: 2373588455645324683, guid: 4a913891e47c3d84fa16686a5dce5c14,
         type: 3}
       propertyPath: amendsCoin
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2373588455645324687, guid: 4a913891e47c3d84fa16686a5dce5c14,
         type: 3}
@@ -16727,7 +16727,7 @@ PrefabInstance:
     - target: {fileID: 5965455735767549216, guid: 70b1dbdb96c907d428d7280bebec0699,
         type: 3}
       propertyPath: amendsCoin
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5965455735767549219, guid: 70b1dbdb96c907d428d7280bebec0699,
         type: 3}
@@ -18530,6 +18530,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5965455735767549245, guid: 70b1dbdb96c907d428d7280bebec0699,
+        type: 3}
+      propertyPath: m_Mass
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5965455735767549247, guid: 70b1dbdb96c907d428d7280bebec0699,
         type: 3}
@@ -23809,7 +23814,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.5011532, y: 8.625111}
+  m_Offset: {x: -1.5011532, y: 8.640517}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -23820,7 +23825,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.329243, y: 1.6791668}
+  m_Size: {x: 5.329243, y: 1.70998}
   m_EdgeRadius: 0
 --- !u!1 &1195653701
 GameObject:
@@ -27103,8 +27108,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1337798682}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.7994, y: -14.3336, z: 9.725964}
-  m_LocalScale: {x: 14.849593, y: 1.629811, z: 1}
+  m_LocalPosition: {x: 9.7208, y: -14.3362, z: 9.725964}
+  m_LocalScale: {x: 15.006998, y: 1.6245956, z: 1}
   m_Children: []
   m_Father: {fileID: 1638904947}
   m_RootOrder: 17
@@ -28657,7 +28662,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.6021204, y: 8.664116}
+  m_Offset: {x: 1.6021204, y: 8.6489315}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -28668,7 +28673,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 11.018896, y: 1.7571783}
+  m_Size: {x: 11.018896, y: 1.726809}
   m_EdgeRadius: 0
 --- !u!1 &1424676986
 GameObject:
@@ -29546,6 +29551,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5965455735767549245, guid: 70b1dbdb96c907d428d7280bebec0699,
+        type: 3}
+      propertyPath: m_Mass
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5965455735767549247, guid: 70b1dbdb96c907d428d7280bebec0699,
         type: 3}
