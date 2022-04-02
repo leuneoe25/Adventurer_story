@@ -32,6 +32,8 @@ public class Skeleton : MonoBehaviour
     bool coru;
 
     bool isDie = false;
+    SpriteRenderer sprite;
+    bool isred = false;
 
     void Awake()
     {
@@ -51,6 +53,7 @@ public class Skeleton : MonoBehaviour
     private void Start()
     {
         Hp = MaxHp;
+        sprite = GetComponent<SpriteRenderer>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -58,28 +61,45 @@ public class Skeleton : MonoBehaviour
         {
             Hp -= target.GetComponent<PlayerState>().GeneralDamage();
             Camaera.GetComponent<CameraShake>().VibrateForTime(0.1f);
+            StartCoroutine(Attacked());
         }
         if (collision.transform.CompareTag("PlayerAttack_2"))
         {
             Hp -= target.GetComponent<PlayerState>().GeneralDamage();
             Camaera.GetComponent<CameraShake>().VibrateForTime(0.1f);
+            StartCoroutine(Attacked());
         }
         if(collision.transform.CompareTag("Double_Slash"))
         {
             Hp -= target.GetComponent<PlayerState>().ESkillDamage();
             Camaera.GetComponent<CameraShake>().VibrateForTime(0.1f);
+            StartCoroutine(Attacked());
         }
         if (collision.transform.CompareTag("QSkill"))
         {
             Hp -= target.GetComponent<PlayerState>().XSkillDamage();
             Camaera.GetComponent<CameraShake>().VibrateForTime(0.1f);
+            StartCoroutine(Attacked());
         }
         if (collision.transform.CompareTag("wall"))
         {
             Turn();
         }
     }
-    
+
+    IEnumerator Attacked()
+    {
+        if (!isred)
+        {
+            isred = true;
+            sprite.color = Color.red;
+            Time.timeScale = 0.7f;
+            yield return new WaitForSeconds(0.1f);
+            Time.timeScale = 1;
+            sprite.color = Color.white;
+            isred = false;
+        }
+    }
     void FixedUpdate()
     {
         if (ismove&&!isDie)
@@ -208,11 +228,14 @@ public class Skeleton : MonoBehaviour
         if(Hp <= 0)
         {
             StopAllCoroutines();
+            Time.timeScale = 1;
+            sprite.color = Color.white;
             StartCoroutine(DieAnimator());
         }
     }
     IEnumerator DieAnimator()
     {
+
         rigid.velocity = Vector2.zero;
         isDie = true;
         Attack_1.SetActive(false);

@@ -379,8 +379,7 @@ public class SkillSystem : MonoBehaviour
         //AddCommandESkill();
         
         OnSkill = false;
-        PlayerPrefs.SetInt("ESkill", 0);
-        PlayerPrefs.SetInt("Coin", 0);
+        
         if (!PlayerPrefs.HasKey("ESkill"))
         {
             PlayerPrefs.SetInt("ESkill", 0);

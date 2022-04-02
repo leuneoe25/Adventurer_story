@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3168296606117620284}
   - component: {fileID: 3168296606117620282}
   - component: {fileID: 6428931261921678911}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Circle
   m_TagString: EvilWizardAttack
   m_Icon: {fileID: 0}

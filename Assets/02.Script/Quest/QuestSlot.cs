@@ -108,7 +108,7 @@ public class QuestSlot : MonoBehaviour
             {
                 SkillImage.gameObject.SetActive(true);
                 SkillImage.sprite = QSkillImage;
-                SkillExpText.text = "- Q스킬 연속검귀\n하나의 큰 강기를 내리찍어 공격합니다\n재사용 대기시간 10초";
+                SkillExpText.text = "- Q스킬 직언\n하나의 큰 강기를 내리찍어 공격합니다\n재사용 대기시간 10초";
             }
         }
         else

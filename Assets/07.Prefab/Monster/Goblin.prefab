@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 3498823020490349929}
   - component: {fileID: 4845764616700915585}
   - component: {fileID: 7033802116384511310}
-  m_Layer: 10
+  m_Layer: 14
   m_Name: Attack2_6
   m_TagString: GoblinAttack
   m_Icon: {fileID: 0}
@@ -315,7 +315,7 @@ GameObject:
   - component: {fileID: 3498823020636803854}
   - component: {fileID: 2193148540916930005}
   - component: {fileID: 2555089621576312799}
-  m_Layer: 10
+  m_Layer: 14
   m_Name: Attack_6
   m_TagString: GoblinAttack
   m_Icon: {fileID: 0}

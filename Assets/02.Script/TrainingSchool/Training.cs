@@ -13,6 +13,9 @@ public class Training : MonoBehaviour
     [SerializeField] private Button LevelUpButten;
     [SerializeField] private Button ExitButten;
     private bool Inplayer = false;
+
+    [SerializeField] private GameObject LevelUpObject;
+    [SerializeField] private GameObject ExitObject;
     void Start()
     {
         //Player.GetComponent<InventorySystem>().coin.SetCoin(350);
@@ -38,12 +41,23 @@ public class Training : MonoBehaviour
             
             if (Input.GetKeyDown(KeyCode.F))
             {
-                CoinText.text = Player.GetComponent<InventorySystem>().coin.GetCoin() + "G";
-                Player.GetComponent<PlayerAttackSystem>().AttackIsPossible = false;
-                Player.GetComponent<PlayerBehaviour>().isMove = false;
-                Player.GetComponent<SkillSystem>().SkillIsPossible = false;
-                TrainingObject.SetActive(true);
-                InventorySystem.OnUI++;
+                if(TrainingObject.activeSelf)
+                {
+                    Exit();
+                    
+                }
+                else
+                {
+                    CoinText.text = Player.GetComponent<InventorySystem>().coin.GetCoin() + "G";
+                    Player.GetComponent<PlayerAttackSystem>().AttackIsPossible = false;
+                    Player.GetComponent<PlayerBehaviour>().isMove = false;
+                    Player.GetComponent<SkillSystem>().SkillIsPossible = false;
+                    OffExitObject();
+                    OffLevelUpObject();
+                    TrainingObject.SetActive(true);
+                    InventorySystem.OnUI++;
+                }
+                
             }
             if(Input.GetKeyDown(KeyCode.Escape))
             {
@@ -103,6 +117,22 @@ public class Training : MonoBehaviour
         {
             Inplayer = false;
         }
+    }
+    public void OnLevelUpObject()
+    {
+        LevelUpObject.SetActive(true);
+    }
+    public void OffLevelUpObject()
+    {
+        LevelUpObject.SetActive(false);
+    }
+    public void OnExitObject()
+    {
+        ExitObject.SetActive(true);
+    }
+    public void OffExitObject()
+    {
+        ExitObject.SetActive(false);
     }
 
 }

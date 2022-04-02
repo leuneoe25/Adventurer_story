@@ -27,7 +27,7 @@ public class PlayerState : MonoBehaviour
     
     private static readonly Single General_DAMAGE_Coefficient = 0.8f;
     private static readonly Single ESkill_DAMAGE_Coefficient = 1f;
-    private static readonly Single QSkill_DAMAGE_Coefficient = 1.5f;
+    private static readonly Single QSkill_DAMAGE_Coefficient = 2f;
     private int HealthPoint;
     LevelSystem levelSystem;
     HealthPointSystem healthPointSystem;

@@ -30,8 +30,9 @@ public class eye : MonoBehaviour
     bool move;
     private bool ismove;
     bool coru;
-    SpriteRenderer sprite;
+    
     bool isDie = false;
+    SpriteRenderer sprite;
     bool isred = false;
     void Awake()
     {
@@ -224,6 +225,8 @@ public class eye : MonoBehaviour
         Hpbar.transform.localScale = new Vector2((Hp / MaxHp * 100 / 100), 0.3715625f);
         if (Hp <= 0)
         {
+            Time.timeScale = 1;
+            sprite.color = Color.white;
             StopAllCoroutines();
             animator.SetBool("attack1", false);
             animator.SetBool("attack2", false);

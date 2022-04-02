@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 4879681705492365575}
   - component: {fileID: 4879681705492365574}
   - component: {fileID: 5264539918477971360}
-  m_Layer: 10
+  m_Layer: 14
   m_Name: Attack_2
   m_TagString: SkeletonAttack
   m_Icon: {fileID: 0}
@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 4879681705844716163}
   - component: {fileID: 4879681705844716162}
   - component: {fileID: 5336165565520680791}
-  m_Layer: 10
+  m_Layer: 14
   m_Name: Attack_1
   m_TagString: SkeletonAttack
   m_Icon: {fileID: 0}

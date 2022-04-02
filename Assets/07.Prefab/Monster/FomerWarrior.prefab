@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1877223430390217618}
   - component: {fileID: 1877223430390217619}
   - component: {fileID: 7276329626871350765}
-  m_Layer: 10
+  m_Layer: 14
   m_Name: Area2
   m_TagString: FomerWarriorAttack
   m_Icon: {fileID: 0}
@@ -443,7 +443,7 @@ GameObject:
   - component: {fileID: 1877223431159564298}
   - component: {fileID: 1877223431159564299}
   - component: {fileID: 8697925636900342429}
-  m_Layer: 10
+  m_Layer: 14
   m_Name: Area1
   m_TagString: FomerWarriorAttack
   m_Icon: {fileID: 0}

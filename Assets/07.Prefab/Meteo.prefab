@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4989642096216208159}
   - component: {fileID: 4989642096216208158}
   - component: {fileID: 3131189625142457314}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Meteo
   m_TagString: EvilWizardAttack
   m_Icon: {fileID: 0}

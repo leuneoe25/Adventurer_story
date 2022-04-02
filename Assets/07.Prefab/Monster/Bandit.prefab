@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2373588454010174963}
   - component: {fileID: 2373588454010174961}
   - component: {fileID: 2467008179235026418}
-  m_Layer: 10
+  m_Layer: 14
   m_Name: HeavyBandit_20
   m_TagString: BanditAttack
   m_Icon: {fileID: 0}

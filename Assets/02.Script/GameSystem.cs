@@ -19,10 +19,14 @@ public class GameSystem : MonoBehaviour
         if (ins == null)
         {
             ins = gameObject.GetComponent<GameSystem>();
+            PlayerPrefs.SetInt("ESkill", 0);
+            PlayerPrefs.SetInt("Coin", 0);
+            PlayerPrefs.SetInt("Level", 1);
             DontDestroyOnLoad(gameObject);
         }
         else
             Destroy(gameObject);
+        
     }
     public static GameSystem instans()
     {
@@ -41,6 +45,7 @@ public class GameSystem : MonoBehaviour
     {
         if (isFirst)
         {
+
             Tutorial = GameObject.Find("Map").transform.GetChild(0).gameObject;
             Tutorial.SetActive(true);
             coll = GameObject.Find("TutorialStage1").transform.GetChild(0).gameObject.GetComponent<PolygonCollider2D>();
