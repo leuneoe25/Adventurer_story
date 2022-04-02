@@ -1136,7 +1136,7 @@ GameObject:
   m_Component:
   - component: {fileID: 48184732}
   - component: {fileID: 48184733}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: balpan_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1203,7 +1203,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.32, y: 1.02}
+  m_Size: {x: 3.32, y: 1.15}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2852,7 +2852,7 @@ GameObject:
   m_Component:
   - component: {fileID: 218459977}
   - component: {fileID: 218459978}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: balpan_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2919,7 +2919,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.77, y: 1.12}
+  m_Size: {x: 0.8, y: 1.35}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -4852,7 +4852,7 @@ GameObject:
   m_Component:
   - component: {fileID: 315069259}
   - component: {fileID: 315069260}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: balpan_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4918,7 +4918,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.7, y: 1.03}
+  m_Size: {x: 0.84, y: 1.22}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -6726,7 +6726,7 @@ GameObject:
   m_Component:
   - component: {fileID: 404980486}
   - component: {fileID: 404980487}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: balpan_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6793,7 +6793,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.77, y: 1.12}
+  m_Size: {x: 0.8, y: 1.35}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -6918,7 +6918,7 @@ GameObject:
   m_Component:
   - component: {fileID: 412108284}
   - component: {fileID: 412108285}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: balpan_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6985,7 +6985,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.32, y: 1.02}
+  m_Size: {x: 3.32, y: 1.15}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -7916,7 +7916,7 @@ GameObject:
   m_Component:
   - component: {fileID: 451163903}
   - component: {fileID: 451163904}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: balpan_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7983,7 +7983,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.32, y: 1.02}
+  m_Size: {x: 3.32, y: 1.15}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -9052,7 +9052,7 @@ GameObject:
   m_Component:
   - component: {fileID: 506191003}
   - component: {fileID: 506191004}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: balpan_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9118,7 +9118,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.7, y: 1.03}
+  m_Size: {x: 0.84, y: 1.22}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -9658,7 +9658,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.496381, y: 2.2399998, z: -10}
+  m_LocalPosition: {x: -14.50111, y: 2.2399998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -16524,7 +16524,7 @@ GameObject:
   m_Component:
   - component: {fileID: 836672264}
   - component: {fileID: 836672265}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: GameObject (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17759,7 +17759,7 @@ GameObject:
   m_Component:
   - component: {fileID: 871009564}
   - component: {fileID: 871009565}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: balpan_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17825,7 +17825,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.7, y: 1.03}
+  m_Size: {x: 0.84, y: 1.22}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -18411,7 +18411,7 @@ GameObject:
   m_Component:
   - component: {fileID: 900722946}
   - component: {fileID: 900722947}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: GameObject (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18553,7 +18553,7 @@ GameObject:
   m_Component:
   - component: {fileID: 912773613}
   - component: {fileID: 912773614}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: balpan_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18620,7 +18620,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.32, y: 1.02}
+  m_Size: {x: 3.32, y: 1.15}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -19797,7 +19797,7 @@ GameObject:
   m_Component:
   - component: {fileID: 979290977}
   - component: {fileID: 979290978}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: balpan_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19864,7 +19864,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.77, y: 1.12}
+  m_Size: {x: 0.8, y: 1.35}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -20120,7 +20120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 987850237}
   - component: {fileID: 987850238}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: balpan_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20187,7 +20187,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.77, y: 1.12}
+  m_Size: {x: 0.8, y: 1.35}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -23629,7 +23629,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1189403555}
   - component: {fileID: 1189403556}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: GameObject (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24337,7 +24337,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1225756814}
   - component: {fileID: 1225756815}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: GameObject (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24973,7 +24973,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1251967042}
   - component: {fileID: 1251967043}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: balpan_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25039,7 +25039,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.7, y: 1.03}
+  m_Size: {x: 0.84, y: 1.22}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -26361,7 +26361,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1315497612}
   - component: {fileID: 1315497613}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: balpan_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26428,7 +26428,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.77, y: 1.12}
+  m_Size: {x: 0.8, y: 1.35}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -28587,7 +28587,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1423921321}
   - component: {fileID: 1423921322}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: GameObject (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29728,7 +29728,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1452990344}
   - component: {fileID: 1452990345}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: balpan_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29795,7 +29795,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.32, y: 1.02}
+  m_Size: {x: 3.32, y: 1.15}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -31859,7 +31859,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1583707835}
   - component: {fileID: 1583707836}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: balpan_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31926,7 +31926,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.32, y: 1.02}
+  m_Size: {x: 3.32, y: 1.15}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -36252,7 +36252,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1796532400}
   - component: {fileID: 1796532401}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: GameObject (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36579,7 +36579,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1835237611}
   - component: {fileID: 1835237612}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: balpan_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36645,7 +36645,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.7, y: 1.03}
+  m_Size: {x: 0.84, y: 1.22}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -37362,7 +37362,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1860893516}
   - component: {fileID: 1860893517}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: balpan_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37428,7 +37428,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.7, y: 1.03}
+  m_Size: {x: 0.84, y: 1.22}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -38140,7 +38140,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1892449760}
   - component: {fileID: 1892449761}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38200,7 +38200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1894648297}
   - component: {fileID: 1894648298}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: balpan_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38267,7 +38267,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.77, y: 1.12}
+  m_Size: {x: 0.8, y: 1.35}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -38803,7 +38803,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1914156673}
   - component: {fileID: 1914156674}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: balpan_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38870,7 +38870,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.32, y: 1.02}
+  m_Size: {x: 3.32, y: 1.15}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -38995,7 +38995,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1933986797}
   - component: {fileID: 1933986798}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: balpan_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39061,7 +39061,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.7, y: 1.03}
+  m_Size: {x: 0.84, y: 1.22}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -40540,7 +40540,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2019174255}
   - component: {fileID: 2019174256}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: balpan_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40607,7 +40607,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.77, y: 1.12}
+  m_Size: {x: 0.8, y: 1.35}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
