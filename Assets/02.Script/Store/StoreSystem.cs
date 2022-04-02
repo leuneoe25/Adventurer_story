@@ -20,6 +20,7 @@ public class StoreSystem : MonoBehaviour
     [SerializeField] private Button Consent;
     [SerializeField] private Button Refusal;
     [SerializeField] private Text CheckText;
+    [SerializeField] private Text CoinText;
     void Start()
     {
         Product_1.onClick.AddListener(delegate { buyCheck("emergencyPotion",2); } );
@@ -41,6 +42,7 @@ public class StoreSystem : MonoBehaviour
                     
                 else
                 {
+                    CoinText.text = "Coin : " + Player.GetComponent<InventorySystem>().coin.GetCoin();
                     Store.SetActive(true);
                     Player.GetComponent<PlayerBehaviour>().isMove = false;
                     InventorySystem.OnUI++;
@@ -94,6 +96,7 @@ public class StoreSystem : MonoBehaviour
     }
     void ButtenConsent(string name,int price)
     {
+        CoinText.text = "Coin : " + Player.GetComponent<InventorySystem>().coin.GetCoin();
         Player.GetComponent<InventorySystem>().AcquireItem(name);
         Player.GetComponent<InventorySystem>().coin.SetCoin(-price);
         CheckObject.SetActive(false);
