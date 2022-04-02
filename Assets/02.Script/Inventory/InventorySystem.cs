@@ -69,6 +69,7 @@ public class InventorySystem : MonoBehaviour
                     gameObject.GetComponent<PlayerBehaviour>().isMove = false;
                     gameObject.GetComponent<SkillSystem>().isG = true;
                     Inven.SetActive(true);
+                    Time.timeScale = 0;
                     ItemImage.gameObject.SetActive(false);
                     ItemExp.gameObject.SetActive(false);
                     ItemNum.gameObject.SetActive(false);
@@ -79,6 +80,7 @@ public class InventorySystem : MonoBehaviour
             {
                 gameObject.GetComponent<PlayerBehaviour>().isMove = true;
                 gameObject.GetComponent<SkillSystem>().isG = false;
+                Time.timeScale = 1;
                 Inven.SetActive(false);
             }
             isOnInventory = !isOnInventory;
