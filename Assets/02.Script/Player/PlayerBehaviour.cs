@@ -114,14 +114,14 @@ public class PlayerBehaviour : MonoBehaviour
         Dashbar.fillAmount = GetDashTime();
         if(Input.GetKey(KeyCode.A))
         {
-            if (!isAttack && !isWallJump)
+            if (!isAttack && !isWallJump && isMove)
             {
                 gameObject.transform.localScale = new Vector3(-5, 5, 1);
             }
         }
         if(Input.GetKey(KeyCode.D))
         {
-            if (!isAttack && !isWallJump)
+            if (!isAttack && !isWallJump&&isMove)
             {
                 gameObject.transform.localScale = new Vector3(5, 5, 1);
             }
