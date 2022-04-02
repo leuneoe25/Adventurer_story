@@ -4512,6 +4512,11 @@ PrefabInstance:
       propertyPath: MaxHp
       value: 300
       objectReference: {fileID: 0}
+    - target: {fileID: 2373588455645324683, guid: 4a913891e47c3d84fa16686a5dce5c14,
+        type: 3}
+      propertyPath: amendsCoin
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2373588455645324687, guid: 4a913891e47c3d84fa16686a5dce5c14,
         type: 3}
       propertyPath: m_Name
@@ -5611,6 +5616,11 @@ PrefabInstance:
         type: 3}
       propertyPath: MaxHp
       value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 6358960802687941846, guid: 117ebc4a817cf8a46afc68c7b3660784,
+        type: 3}
+      propertyPath: amendsCoin
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7138022725882901446, guid: 117ebc4a817cf8a46afc68c7b3660784,
         type: 3}
@@ -8027,6 +8037,11 @@ PrefabInstance:
       propertyPath: MaxHp
       value: 300
       objectReference: {fileID: 0}
+    - target: {fileID: 2373588455645324683, guid: 4a913891e47c3d84fa16686a5dce5c14,
+        type: 3}
+      propertyPath: amendsCoin
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2373588455645324687, guid: 4a913891e47c3d84fa16686a5dce5c14,
         type: 3}
       propertyPath: m_Name
@@ -9786,7 +9801,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.50111, y: 0.21999931, z: -10}
+  m_LocalPosition: {x: -14.502266, y: 0.21999931, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -12931,6 +12946,11 @@ PrefabInstance:
       propertyPath: MaxHp
       value: 300
       objectReference: {fileID: 0}
+    - target: {fileID: 6358960802687941846, guid: 117ebc4a817cf8a46afc68c7b3660784,
+        type: 3}
+      propertyPath: amendsCoin
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7138022725882901446, guid: 117ebc4a817cf8a46afc68c7b3660784,
         type: 3}
       propertyPath: m_Name
@@ -13402,7 +13422,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &706523798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23148,6 +23168,11 @@ PrefabInstance:
       propertyPath: MaxHp
       value: 300
       objectReference: {fileID: 0}
+    - target: {fileID: 3498823020388909509, guid: fe97b2ffa436bb2428cbcce8eff955cc,
+        type: 3}
+      propertyPath: amendsCoin
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe97b2ffa436bb2428cbcce8eff955cc, type: 3}
 --- !u!1 &1141907972
@@ -27682,7 +27707,7 @@ PrefabInstance:
     - target: {fileID: 4879681704837327084, guid: b7758efa6f6e5c9448888fe5b370a428,
         type: 3}
       propertyPath: amendsCoin
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4879681704837327086, guid: b7758efa6f6e5c9448888fe5b370a428,
         type: 3}
@@ -28347,6 +28372,11 @@ PrefabInstance:
         type: 3}
       propertyPath: MaxHp
       value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3498823020388909509, guid: fe97b2ffa436bb2428cbcce8eff955cc,
+        type: 3}
+      propertyPath: amendsCoin
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe97b2ffa436bb2428cbcce8eff955cc, type: 3}
@@ -32798,6 +32828,11 @@ PrefabInstance:
       propertyPath: MaxHp
       value: 300
       objectReference: {fileID: 0}
+    - target: {fileID: 6358960802687941846, guid: 117ebc4a817cf8a46afc68c7b3660784,
+        type: 3}
+      propertyPath: amendsCoin
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7138022725882901446, guid: 117ebc4a817cf8a46afc68c7b3660784,
         type: 3}
       propertyPath: m_Name
@@ -35130,6 +35165,11 @@ PrefabInstance:
         type: 3}
       propertyPath: MaxHp
       value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 5965455735767549216, guid: 70b1dbdb96c907d428d7280bebec0699,
+        type: 3}
+      propertyPath: amendsCoin
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5965455735767549219, guid: 70b1dbdb96c907d428d7280bebec0699,
         type: 3}
@@ -40216,6 +40256,11 @@ PrefabInstance:
         type: 3}
       propertyPath: MaxHp
       value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 2373588455645324683, guid: 4a913891e47c3d84fa16686a5dce5c14,
+        type: 3}
+      propertyPath: amendsCoin
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2373588455645324687, guid: 4a913891e47c3d84fa16686a5dce5c14,
         type: 3}
