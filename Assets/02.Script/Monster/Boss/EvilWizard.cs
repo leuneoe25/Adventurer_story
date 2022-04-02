@@ -196,6 +196,8 @@ public class EvilWizard : MonoBehaviour
             animator.SetBool("Patten1", false);
             animator.SetBool("Patten2", false);
             animator.SetBool("isDie", true);
+            animator.SetBool("Patten1", false);
+            animator.SetBool("Patten2", false);
             Invoke("Die", 3);
             HpbarObject.SetActive(false);
         }
@@ -204,6 +206,8 @@ public class EvilWizard : MonoBehaviour
     {
         //Player.GetComponent<SkillSystem>().AddCommandQSkill();
         //QuestSystem.GameLeval++;
+        animator.SetBool("Patten1", false);
+        animator.SetBool("Patten2", false);
         Destroy(gameObject);
     }
 }

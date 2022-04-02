@@ -45,7 +45,7 @@ public class MoveMap : MonoBehaviour
                 else if(isOutBossStage&& !isBossStage)
                 {
                     //Cm.SetActive(true);
-                    Player.GetComponent<PlayerState>().Heal(100);
+                    
                     Player.GetComponent<SkillSystem>().isG = true;
                     PlayerLihgt.SetActive(false);
                     Player.transform.position = pos.transform.position;
@@ -53,7 +53,8 @@ public class MoveMap : MonoBehaviour
                     Cmcam.m_Lens.OrthographicSize = 5;
                     NextStage.SetActive(true);
                     NowStage.SetActive(false);
-                    
+                    Player.GetComponent<PlayerState>().Heal(100);
+
                 }
                 else if(!isOutBossStage && isBossStage)
                 {
