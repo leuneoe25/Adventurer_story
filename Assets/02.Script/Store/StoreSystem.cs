@@ -13,9 +13,16 @@ public class StoreSystem : MonoBehaviour
     [SerializeField] private Button Product_2;
     [SerializeField] private Button Product_3;
 
+    [SerializeField] private GameObject One;
+    [SerializeField] private GameObject Two;
+    [SerializeField] private GameObject Three;
+    [SerializeField] private GameObject yes;
+    [SerializeField] private GameObject no;
+
     [SerializeField] private Button Consent;
     [SerializeField] private Button Refusal;
     [SerializeField] private Text CheckText;
+    [SerializeField] private Text CoinText;
     void Start()
     {
         Product_1.onClick.AddListener(delegate { buyCheck("emergencyPotion",2); } );
@@ -37,6 +44,7 @@ public class StoreSystem : MonoBehaviour
                     
                 else
                 {
+                    CoinText.text = "Coin : " + Player.GetComponent<InventorySystem>().coin.GetCoin();
                     Store.SetActive(true);
                     Player.GetComponent<PlayerBehaviour>().isMove = false;
                     InventorySystem.OnUI++;
@@ -73,6 +81,8 @@ public class StoreSystem : MonoBehaviour
     }
     void buyCheck(string name, int price)
     {
+        OffNo();
+        Offyes();
         CheckObject.SetActive(true);
         Consent.onClick.AddListener(delegate { ButtenConsent(name, price); });
         Refusal.onClick.AddListener(ButtenRefusal);
@@ -83,13 +93,15 @@ public class StoreSystem : MonoBehaviour
         }
         else
         {
-            Consent.gameObject.SetActive(false);
+            //Consent.gameObject.SetActive(false);
+            Consent.onClick.RemoveAllListeners();
             CheckText.text = "코인이 부족합니다.";
         }
         
     }
     void ButtenConsent(string name,int price)
     {
+        CoinText.text = "Coin : " + Player.GetComponent<InventorySystem>().coin.GetCoin();
         Player.GetComponent<InventorySystem>().AcquireItem(name);
         Player.GetComponent<InventorySystem>().coin.SetCoin(-price);
         CheckObject.SetActive(false);
@@ -98,5 +110,57 @@ public class StoreSystem : MonoBehaviour
     void ButtenRefusal()
     {
         CheckObject.SetActive(false);
+    }
+    public void OnOne()
+    {
+        if (CheckObject.activeSelf)
+            return;
+        One.SetActive(true);
+    }
+    public void OnTwo()
+    {
+        if (CheckObject.activeSelf)
+            return;
+        Two.SetActive(true);
+    }
+    public void OnThree()
+    {
+        if (CheckObject.activeSelf)
+            return;
+        Three.SetActive(true);
+    }
+    public void OffOne()
+    {
+        if (CheckObject.activeSelf)
+            return;
+        One.SetActive(false);
+    }
+    public void OffTwo()
+    {
+        if (CheckObject.activeSelf)
+            return;
+        Two.SetActive(false);
+    }
+    public void OffThree()
+    {
+        if (CheckObject.activeSelf)
+            return;
+        Three.SetActive(false);
+    }
+    public void Onyes()
+    {
+        yes.SetActive(true);
+    }
+    public void Offyes()
+    {
+        yes.SetActive(false);
+    }
+    public void OffNo()
+    {
+        no.SetActive(false);
+    }
+    public void OnNo()
+    {
+        no.SetActive(true);
     }
 }
