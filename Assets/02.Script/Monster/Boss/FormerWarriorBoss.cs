@@ -90,10 +90,12 @@ public class FormerWarriorBoss : MonoBehaviour
     {
         if (collision.transform.CompareTag("PlayerAttack_1"))
         {
+            SoundManager.instance.hit();
             Hp -= Player.GetComponent<PlayerState>().GeneralDamage();
         }
         if (collision.transform.CompareTag("PlayerAttack_2"))
         {
+            SoundManager.instance.hit();
             Hp -= Player.GetComponent<PlayerState>().GeneralDamage();
         }
         if (collision.transform.CompareTag("Double_Slash"))
