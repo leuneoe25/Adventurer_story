@@ -83,8 +83,7 @@ public class PlayerBehaviour : MonoBehaviour
         
         if (sea.transform != null)
         {
-            
-             block = sea.transform.gameObject;
+            block = sea.transform.gameObject;
             
             if(Input.GetKeyDown(KeyCode.S))
             {
@@ -173,7 +172,6 @@ public class PlayerBehaviour : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
             isDown = false;
         }
-        
     }
     IEnumerator dash()
     {
