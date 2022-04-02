@@ -17169,6 +17169,7 @@ MonoBehaviour:
   Consent: {fileID: 595281200}
   Refusal: {fileID: 106262823}
   CheckText: {fileID: 1181879095}
+  CoinText: {fileID: 1106056344}
 --- !u!61 &864113230
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18570,7 +18571,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &938277987
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21422,7 +21423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
