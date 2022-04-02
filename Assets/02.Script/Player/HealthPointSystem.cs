@@ -12,6 +12,7 @@ public class HealthPointSystem
 
     public void Attacked(int d)
     {
+        SoundManager.instance.qsk();
         HealthPoint -= d;
         if (HealthPoint<=0)
         {

@@ -9820,7 +9820,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.50111, y: 0.21999931, z: -10}
+  m_LocalPosition: {x: -14.496382, y: 0.21999931, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -13322,7 +13322,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &706523798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37286,7 +37286,7 @@ MonoBehaviour:
   Attack2: {fileID: 8300000, guid: 4ea678f9075f1334fb39126c08df8211, type: 3}
   dash: {fileID: 8300000, guid: 827ab153bf9d8584ebf522dba70d2359, type: 3}
   Esk: {fileID: 8300000, guid: 92077893dd6082b4fac109dc33ceb216, type: 3}
-  Qsk: {fileID: 0}
+  Qsk: {fileID: 8300000, guid: 60c96ec962c2e81489fb037458da81bd, type: 3}
 --- !u!82 &1888939243
 AudioSource:
   m_ObjectHideFlags: 0
