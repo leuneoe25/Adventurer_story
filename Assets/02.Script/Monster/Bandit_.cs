@@ -14,7 +14,9 @@ public class Bandit_ : MonoBehaviour
     private GameObject HpbarObject;
     private float Hp;
 
-
+    SpriteRenderer sprite;
+    bool isred = false;
+    bool stopandtun;
     public GameObject target;
     Rigidbody2D rigid;
     public int nextMove;
@@ -33,12 +35,14 @@ public class Bandit_ : MonoBehaviour
         coru = false;
         move = false;
         ismove = true;
+        stopandtun = false;
         rigid = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         Invoke("movelange", 3);
     }
     private void Start()
     {
+        sprite = GetComponent<SpriteRenderer>();
         Hp = MaxHp;
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -47,25 +51,41 @@ public class Bandit_ : MonoBehaviour
         {
             Hp -= target.GetComponent<PlayerState>().GeneralDamage();
             Camaera.GetComponent<CameraShake>().VibrateForTime(0.1f);
+            StartCoroutine(Attacked());
         }
         if (collision.transform.CompareTag("PlayerAttack_2"))
         {
             Hp -= target.GetComponent<PlayerState>().GeneralDamage();
             Camaera.GetComponent<CameraShake>().VibrateForTime(0.1f);
+            StartCoroutine(Attacked());
         }
         if (collision.transform.CompareTag("Double_Slash"))
         {
             Hp -= target.GetComponent<PlayerState>().ESkillDamage();
             Camaera.GetComponent<CameraShake>().VibrateForTime(0.1f);
+            StartCoroutine(Attacked());
         }
         if (collision.transform.CompareTag("QSkill"))
         {
             Hp -= target.GetComponent<PlayerState>().XSkillDamage();
             Camaera.GetComponent<CameraShake>().VibrateForTime(0.1f);
+            StartCoroutine(Attacked());
         }
         if (collision.transform.CompareTag("wall"))
         {
             Turn();
+        }
+        if (collision.transform.CompareTag("block"))
+        {
+            stopandtun = true;
+            Turn();
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.transform.CompareTag("block"))
+        {
+            stopandtun = false;
         }
     }
     IEnumerator KnockBack(float dir)
@@ -113,13 +133,25 @@ public class Bandit_ : MonoBehaviour
         }
 
     }
-
+    IEnumerator Attacked()
+    {
+        if (!isred)
+        {
+            isred = true;
+            sprite.color = Color.red;
+            Time.timeScale = 0.7f;
+            yield return new WaitForSeconds(0.1f);
+            Time.timeScale = 1;
+            sprite.color = Color.white;
+            isred = false;
+        }
+    }
     void Update()
     {
         if (HpbarObject != null)
             UpdateHpbar();
         float distance = Vector3.Distance(transform.position, target.transform.position);
-        if (distance <= 5 && !isDie)
+        if (distance <= 5 && !isDie && !stopandtun)
         {
 
             move = true;
@@ -213,11 +245,15 @@ public class Bandit_ : MonoBehaviour
     }
     void UpdateHpbar()
     {
+
         HpbarObject.transform.position = new Vector2(gameObject.transform.position.x - 1f, gameObject.transform.position.y + 3f);
         Hpbar.transform.localScale = new Vector2((Hp / MaxHp * 100 / 100), 0.3715625f);
         if (Hp <= 0)
         {
+            Time.timeScale = 1;
+            sprite.color = Color.white;
             StopAllCoroutines();
+            animator.SetBool("attack1", false);
             StartCoroutine(DieAnimator());
         }
     }

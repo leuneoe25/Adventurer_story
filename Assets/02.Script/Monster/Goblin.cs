@@ -22,7 +22,7 @@ public class Goblin : MonoBehaviour
     private GameObject HpbarObject;
     private float Hp;
 
-
+    bool stopandtun;
     public GameObject target;
     Rigidbody2D rigid;
     public int nextMove;
@@ -41,7 +41,7 @@ public class Goblin : MonoBehaviour
 
         HpbarObject = Instantiate(HpbarPrefab);
         Hpbar = HpbarObject.transform.GetChild(1).gameObject;
-
+        stopandtun = false;
         coru = false;
         move = false;
         ismove = true;
@@ -83,6 +83,19 @@ public class Goblin : MonoBehaviour
         if (collision.transform.CompareTag("wall"))
         {
             Turn();
+        }
+        if (collision.transform.CompareTag("block"))
+        {
+            stopandtun = true;
+            Turn();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.transform.CompareTag("block"))
+        {
+            stopandtun = false;
         }
     }
     IEnumerator Attacked()
@@ -134,7 +147,7 @@ public class Goblin : MonoBehaviour
         if (HpbarObject != null)
             UpdateHpbar();
         float distance = Vector3.Distance(transform.position, target.transform.position);
-        if (distance <= 5 && !isDie)
+        if (distance <= 5 && !isDie && !stopandtun)
         {
 
             move = true;

@@ -17,7 +17,7 @@ public class eye : MonoBehaviour
     public int Damage;
     private GameObject Camaera;
 
-
+    bool stopandtun;
     private GameObject Hpbar;
     private GameObject HpbarObject;
     private float Hp;
@@ -41,7 +41,7 @@ public class eye : MonoBehaviour
 
         HpbarObject = Instantiate(HpbarPrefab);
         Hpbar = HpbarObject.transform.GetChild(1).gameObject;
-
+        stopandtun = false;
         coru = false;
         move = false;
         ismove = true;
@@ -83,6 +83,18 @@ public class eye : MonoBehaviour
         if (collision.transform.CompareTag("wall"))
         {
             Turn();
+        }
+        if (collision.transform.CompareTag("block"))
+        {
+            stopandtun = true;
+            Turn();
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.transform.CompareTag("block"))
+        {
+            stopandtun = false;
         }
     }
 
@@ -134,7 +146,7 @@ public class eye : MonoBehaviour
         if (HpbarObject != null)
             UpdateHpbar();
         float distance = Vector3.Distance(transform.position, target.transform.position);
-        if (distance <= 5 && !isDie)
+        if (distance <= 5 && !isDie && !stopandtun)
         {
 
             move = true;

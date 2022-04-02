@@ -18,6 +18,7 @@ TagManager:
   - wall
   - EvilWizardAttack
   - BringerofDeathAttack
+  - block
   layers:
   - Default
   - TransparentFX

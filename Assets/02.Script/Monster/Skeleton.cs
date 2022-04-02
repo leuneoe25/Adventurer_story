@@ -30,7 +30,7 @@ public class Skeleton : MonoBehaviour
     bool move;
     private bool ismove;
     bool coru;
-
+    bool stopandtun;
     bool isDie = false;
     SpriteRenderer sprite;
     bool isred = false;
@@ -42,7 +42,7 @@ public class Skeleton : MonoBehaviour
 
         HpbarObject = Instantiate(HpbarPrefab);
         Hpbar = HpbarObject.transform.GetChild(1).gameObject;
-
+        stopandtun = false;
         coru = false;
         move = false;
         ismove = true;
@@ -57,7 +57,7 @@ public class Skeleton : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.transform.CompareTag("PlayerAttack_1"))
+        if (collision.transform.CompareTag("PlayerAttack_1"))
         {
             Hp -= target.GetComponent<PlayerState>().GeneralDamage();
             Camaera.GetComponent<CameraShake>().VibrateForTime(0.1f);
@@ -69,7 +69,7 @@ public class Skeleton : MonoBehaviour
             Camaera.GetComponent<CameraShake>().VibrateForTime(0.1f);
             StartCoroutine(Attacked());
         }
-        if(collision.transform.CompareTag("Double_Slash"))
+        if (collision.transform.CompareTag("Double_Slash"))
         {
             Hp -= target.GetComponent<PlayerState>().ESkillDamage();
             Camaera.GetComponent<CameraShake>().VibrateForTime(0.1f);
@@ -85,8 +85,21 @@ public class Skeleton : MonoBehaviour
         {
             Turn();
         }
+
+        if (collision.transform.CompareTag("block"))
+        {
+            stopandtun = true;
+            Turn();
+        }
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.transform.CompareTag("block"))
+        {
+            stopandtun = false;
+        }
+    }
     IEnumerator Attacked()
     {
         if (!isred)
@@ -133,14 +146,17 @@ public class Skeleton : MonoBehaviour
 
     void Update()
     {
-        if(HpbarObject!=null)
+        
+        if (HpbarObject!=null)
             UpdateHpbar();
         float distance = Vector3.Distance(transform.position, target.transform.position);
-        if(distance <= 5&&!isDie)
+        if(distance <= 5&&!isDie&&!stopandtun)
         {
             
             move = true;
-            Facetarget();
+
+
+            
             if (distance <= 2.3)
             {
                 animator.SetBool("walk", false);
@@ -169,6 +185,8 @@ public class Skeleton : MonoBehaviour
         }
 
     }
+
+
     void Turn()
     {
         nextMove = nextMove * (-1);
