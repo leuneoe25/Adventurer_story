@@ -30,6 +30,8 @@ public class FormerWarriorBoss : MonoBehaviour
     Rigidbody2D rigidbody;
     bool isAccionPatten = false;
     // Start is called before the first frame update
+    SpriteRenderer sprite;
+    bool isred = false;
     void Awake()
     {
         Hp = MaxHp;
@@ -50,6 +52,7 @@ public class FormerWarriorBoss : MonoBehaviour
     void Start()
     {
         isAction = true;
+        sprite = GetComponent<SpriteRenderer>();
         Invoke( "RandomBossAction",3);
     }
     void Update()
@@ -92,15 +95,31 @@ public class FormerWarriorBoss : MonoBehaviour
         {
             SoundManager.instance.hit();
             Hp -= Player.GetComponent<PlayerState>().GeneralDamage();
+            StartCoroutine(Attacked());
         }
         if (collision.transform.CompareTag("PlayerAttack_2"))
         {
             SoundManager.instance.hit();
             Hp -= Player.GetComponent<PlayerState>().GeneralDamage();
+            StartCoroutine(Attacked());
         }
         if (collision.transform.CompareTag("Double_Slash"))
         {
             Hp -= Player.GetComponent<PlayerState>().ESkillDamage();
+            StartCoroutine(Attacked());
+        }
+    }
+    IEnumerator Attacked()
+    {
+        if (!isred)
+        {
+            isred = true;
+            sprite.color = Color.red;
+            Time.timeScale = 0.7f;
+            yield return new WaitForSeconds(0.1f);
+            Time.timeScale = 1;
+            sprite.color = Color.white;
+            isred = false;
         }
     }
     void RandomBossAction()
@@ -153,6 +172,8 @@ public class FormerWarriorBoss : MonoBehaviour
         Hpbar.GetComponent<Image>().fillAmount = (Hp / MaxHp * 100 / 100);
         if (Hp <= 0)
         {
+            Time.timeScale = 1;
+            sprite.color = Color.white;
             isAction = true;
             StopAllCoroutines();
             Destroy(SkillEffect_1);

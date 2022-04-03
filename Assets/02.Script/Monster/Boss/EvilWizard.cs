@@ -19,6 +19,8 @@ public class EvilWizard : MonoBehaviour
     private int nextfo = 0;
     private bool isAction = false;
     Animator animator;
+    SpriteRenderer sprite;
+    bool isred = false;
     void Start()
     {
         Hp = MaxHp;
@@ -26,6 +28,7 @@ public class EvilWizard : MonoBehaviour
         HpbarObject = GameObject.Find("BossCanvas").transform.Find("EvilWizardHpbar").gameObject;
         HpbarObject.SetActive(true);
         Hpbar = GameObject.Find("EvilWizard_Hpbar");
+        sprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         Invoke("RandomBossAction", 3);
         //RandomBossAction();
@@ -81,7 +84,7 @@ public class EvilWizard : MonoBehaviour
         {
             GameObject obj;
             obj = (GameObject)Instantiate(meteo, new Vector3(Random.Range(-25.46f, 7.57f), 9, 0), Quaternion.identity);
-            obj.transform.Rotate(new Vector3(0f, 0f,90));
+            obj.transform.Rotate(new Vector3(0f, 0f,0));
             yield return new WaitForSeconds(0.2f);
         }
         animator.SetBool("Patten1", false);
@@ -124,7 +127,7 @@ public class EvilWizard : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             obj = (GameObject)Instantiate(meteo, new Vector2(Player.transform.position.x, gameObject.transform.position.y-10), Quaternion.identity);
-            obj.transform.Rotate(new Vector3(0, 0, -90));
+            obj.transform.Rotate(new Vector3(0, 0, -180));
             obj.transform.localScale = new Vector3(0.5f, 0.5f, 1);
             yield return new WaitForSeconds(1f);
         }
@@ -170,19 +173,36 @@ public class EvilWizard : MonoBehaviour
         {
             SoundManager.instance.hit();
             Hp -= Player.GetComponent<PlayerState>().GeneralDamage();
+            StartCoroutine(Attacked());
         }
         if (collision.transform.CompareTag("PlayerAttack_2"))
         {
             SoundManager.instance.hit();
             Hp -= Player.GetComponent<PlayerState>().GeneralDamage();
+            StartCoroutine(Attacked());
         }
         if (collision.transform.CompareTag("Double_Slash"))
         {
             Hp -= Player.GetComponent<PlayerState>().ESkillDamage();
+            StartCoroutine(Attacked());
         }
         if (collision.transform.CompareTag("QSkill"))
         {
             Hp -= Player.GetComponent<PlayerState>().XSkillDamage();
+            StartCoroutine(Attacked());
+        }
+    }
+    IEnumerator Attacked()
+    {
+        if (!isred)
+        {
+            isred = true;
+            sprite.color = Color.red;
+            Time.timeScale = 0.7f;
+            yield return new WaitForSeconds(0.1f);
+            Time.timeScale = 1;
+            sprite.color = Color.white;
+            isred = false;
         }
     }
     void UpdateHpbar()
@@ -190,6 +210,8 @@ public class EvilWizard : MonoBehaviour
         Hpbar.GetComponent<Image>().fillAmount = (Hp / MaxHp * 100 / 100);
         if (Hp <= 0)
         {
+            Time.timeScale = 1;
+            sprite.color = Color.white;
             isAction = true;
             StopAllCoroutines();
             Destroy(Patten3);
