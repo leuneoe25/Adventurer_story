@@ -7,16 +7,16 @@ public class FormerWarriorBoss : MonoBehaviour
 {
     bool isattack;
     
-    private GameObject Hpbar; // ���ݹ���
-     private GameObject HpbarObject; // ���ݹ���
-    [SerializeField] private GameObject Portal; // ���ݹ���
-    [SerializeField] private GameObject Attack1Area; // ���ݹ���
-    [SerializeField] private GameObject Attack2Area; // ���ݹ���
-    [SerializeField] private GameObject AttackRange_1; // ���ݹ���
-    [SerializeField] private GameObject AttackRange_2; // ���ݹ���
-    [SerializeField] private GameObject SkillEffect_1; // ��ų ����Ʈ
-    [SerializeField] private GameObject SkillEffect_2; // ��ų ����Ʈ
-    [SerializeField] private float MaxHp; // ��ų ����Ʈ
+    private GameObject Hpbar;
+     private GameObject HpbarObject;
+    [SerializeField] private GameObject Portal;
+    [SerializeField] private GameObject Attack1Area;
+    [SerializeField] private GameObject Attack2Area;
+    [SerializeField] private GameObject AttackRange_1;
+    [SerializeField] private GameObject AttackRange_2;
+    [SerializeField] private GameObject SkillEffect_1; 
+    [SerializeField] private GameObject SkillEffect_2; 
+    [SerializeField] private float MaxHp;
     private bool isAction;
     private GameObject Player;
     public int Damage;
