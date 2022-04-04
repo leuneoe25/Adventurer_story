@@ -406,7 +406,7 @@ MonoBehaviour:
   AttackRange_2: {fileID: 1877223430517484509}
   SkillEffect_1: {fileID: 1877223431574085943}
   SkillEffect_2: {fileID: 1877223432054439662}
-  MaxHp: 400
+  MaxHp: 350
   Damage: 20
   nrl: 0
   next: 0
