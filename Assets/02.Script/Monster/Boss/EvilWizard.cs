@@ -93,6 +93,10 @@ public class EvilWizard : MonoBehaviour
     IEnumerator EvilWizard_Patten2()
     {
         isAction = true;
+        animator.SetBool("wait", true);
+        yield return new WaitForSeconds(0.8f);
+        animator.SetBool("wait", false);
+
         animator.SetBool("Patten1", true);
         float oneShoting = 10;
 
@@ -102,7 +106,7 @@ public class EvilWizard : MonoBehaviour
             float angle = 360 / oneShoting;
             for (int i = 0; i < oneShoting; i++)
             {
-                Debug.Log("patten4");
+                Debug.Log("patten44");
                 GameObject obj;
                 obj = (GameObject)Instantiate(bullet, transform.position, Quaternion.identity);
                 obj.GetComponent<Rigidbody2D>().AddForce(new Vector2(speed * Mathf.Cos(Mathf.PI * 2 * i / oneShoting), speed * Mathf.Sin(Mathf.PI * i * 2 / oneShoting)));
