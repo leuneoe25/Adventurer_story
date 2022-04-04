@@ -108,8 +108,12 @@ public class PlayerBehaviour : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            isdash = true;
-            StartCoroutine(dash());
+            if(!isAttack)
+            {
+                isdash = true;
+                StartCoroutine(dash());
+            }
+            
         }
         Dashbar.fillAmount = GetDashTime();
         if(Input.GetKey(KeyCode.A))

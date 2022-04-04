@@ -85,20 +85,20 @@ public class InventorySystem : MonoBehaviour
             }
             isOnInventory = !isOnInventory;
         }
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            if(Inven.activeSelf)
-            {
-                if(InvenCh.activeSelf)
-                {
-                    Time.timeScale = 1;
-                    InvenCh.SetActive(false);
-                }
-                gameObject.GetComponent<PlayerBehaviour>().isMove = true;
-                gameObject.GetComponent<SkillSystem>().isG = false;
-                Inven.SetActive(false);
-            }
-        }
+        //if(Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    if(Inven.activeSelf)
+        //    {
+        //        if(InvenCh.activeSelf)
+        //        {
+        //            Time.timeScale = 1;
+        //            InvenCh.SetActive(false);
+        //        }
+        //        gameObject.GetComponent<PlayerBehaviour>().isMove = true;
+        //        gameObject.GetComponent<SkillSystem>().isG = false;
+        //        Inven.SetActive(false);
+        //    }
+        //}
 
         UpdateText();
 
