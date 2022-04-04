@@ -182,6 +182,7 @@ public class BringerofDeath : MonoBehaviour
     }
     void Die()
     {
+        Player.GetComponent<InventorySystem>().coin.SetCoin(18);
         Player.GetComponent<SkillSystem>().AddCommandQSkill();
         QuestSystem.GameLeval++;
         Destroy(gameObject);

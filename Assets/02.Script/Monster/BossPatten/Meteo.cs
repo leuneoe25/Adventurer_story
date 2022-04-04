@@ -13,7 +13,7 @@ public class Meteo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.down * speed);
+        transform.Translate(Vector2.down * speed*Time.deltaTime);
     }
     void DestroyObject()
     {
