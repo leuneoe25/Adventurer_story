@@ -55,10 +55,11 @@ public class PlayerAttackSystem : MonoBehaviour
         animator.SetBool("isAttack_1", true);
         
         yield return new WaitForSeconds(0.3f);
+        gameObject.GetComponent<PlayerBehaviour>().isAttack = false;
         Attack_Combo_1.SetActive(false);
         animator.SetBool("isAttack_1", false);
         isAttack = true;
-        gameObject.GetComponent<PlayerBehaviour>().isAttack = false;
+        
         gameObject.GetComponent<PlayerBehaviour>().Setdefaultspeed(10);
     }
     
@@ -70,10 +71,11 @@ public class PlayerAttackSystem : MonoBehaviour
         animator.SetBool("isAttack_2", true);
         
         yield return new WaitForSeconds(0.4f);
+        gameObject.GetComponent<PlayerBehaviour>().isAttack = false;
         Attack_Combo_2.SetActive(false);
         isAttack = false;
         animator.SetBool("isAttack_2", false);
-        gameObject.GetComponent<PlayerBehaviour>().isAttack = false;
+        
         gameObject.GetComponent<PlayerBehaviour>().Setdefaultspeed(10);
     }
     public void Attack_Combo_2_On()

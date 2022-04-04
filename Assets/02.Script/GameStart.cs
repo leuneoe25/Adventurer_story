@@ -12,9 +12,12 @@ public class GameStart : MonoBehaviour
         PlayerPrefs.SetInt("QSkill", 0);
         PlayerPrefs.SetInt("Coin", 0);
         PlayerPrefs.SetInt("Level", 1);
-        if(GameSystem.instans()!=null)
+        GameObject ins = GameObject.Find("GameSystem");
+        if(ins != null)
         {
-            GameSystem.instans().SetisFirst(true);
+            Debug.Log("a");
+            PlayerPrefs.SetInt("isFirst", 1);
+            GameSystem.instans().StartSet();
         }
     }
     public void GameQuit()

@@ -8,13 +8,12 @@ using Cinemachine;
 public class GameSystem : MonoBehaviour
 {
     private static GameSystem ins;
-    private bool isFirst;
     private int DieCount;
-    [SerializeField] GameObject Tutorial;
-    [SerializeField] PolygonCollider2D coll;
-    [SerializeField] GameObject Guild;
-    [SerializeField] GameObject Guide;
-    [SerializeField] private CinemachineConfiner Cm;
+    private GameObject Tutorial;
+    private PolygonCollider2D coll;
+    private GameObject Guild;
+    private GameObject Guide;
+    private  CinemachineConfiner Cm;
     private void Awake()
     {
         if (ins == null)
@@ -49,14 +48,14 @@ public class GameSystem : MonoBehaviour
     void Start()
     {
         Debug.Log("a");
-        isFirst = true;
+        PlayerPrefs.SetInt("isFirst", 1);
         SetTutorial();
     }
     public void SetTutorial()
     {
-        if (isFirst)
+        if (PlayerPrefs.GetInt("isFirst")==1)
         {
-
+            QuestSystem.GameLeval = 1;
             Tutorial = GameObject.Find("Map").transform.GetChild(0).gameObject;
             Tutorial.SetActive(true);
             coll = GameObject.Find("TutorialStage1").transform.GetChild(0).gameObject.GetComponent<PolygonCollider2D>();
@@ -100,8 +99,8 @@ public class GameSystem : MonoBehaviour
         Guide = GameObject.Find("Guild").transform.GetChild(0).gameObject;
         Guide.SetActive(false);
     }    
-    public void SetisFirst(bool val)
-    {
-        isFirst = val;
-    }
+    //public void SetisFirst(bool val)
+    //{
+    //    isFirst = val;
+    //}
 }

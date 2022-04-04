@@ -34,7 +34,8 @@ public class StoreSystem : MonoBehaviour
     }
     void Update()
     {
-        if(InStore)
+        CoinText.text = "Coin : " + Player.GetComponent<InventorySystem>().coin.GetCoin();
+        if (InStore)
         {
             if(Input.GetKeyDown(KeyCode.F))
             {

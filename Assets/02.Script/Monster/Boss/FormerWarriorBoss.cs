@@ -172,6 +172,7 @@ public class FormerWarriorBoss : MonoBehaviour
         Hpbar.GetComponent<Image>().fillAmount = (Hp / MaxHp * 100 / 100);
         if (Hp <= 0)
         {
+            
             Time.timeScale = 1;
             sprite.color = Color.white;
             isAction = true;
@@ -190,6 +191,7 @@ public class FormerWarriorBoss : MonoBehaviour
     void Die()
     {
         Player.GetComponent<SkillSystem>().AddCommandESkill();
+        Player.GetComponent<InventorySystem>().coin.SetCoin(20);
         //QuestSystem.GameLeval++;
         Destroy(gameObject);
     }
