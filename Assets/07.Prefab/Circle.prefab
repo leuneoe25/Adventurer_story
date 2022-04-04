@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3168296606117620285}
   - component: {fileID: 3168296606117620284}
   - component: {fileID: 3168296606117620282}
-  - component: {fileID: 6428931261921678911}
+  - component: {fileID: 1079958799621037893}
   m_Layer: 14
   m_Name: Circle
   m_TagString: EvilWizardAttack
@@ -74,13 +74,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847,
+  m_Sprite: {fileID: 2230344122243341868, guid: e5624cd1c8e80854aa86ebebb422dcd7,
     type: 3}
-  m_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.32, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.2
---- !u!58 &6428931261921678911
+--- !u!58 &1079958799621037893
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

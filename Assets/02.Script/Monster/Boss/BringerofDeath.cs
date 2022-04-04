@@ -18,12 +18,16 @@ public class BringerofDeath : MonoBehaviour
     private bool isAction = false;
     Animator animator;
     GameObject obj = null;
+    bool isDie = false;
+    SpriteRenderer sprite;
+    bool isred = false;
     void Start()
     {
         Hp = MaxHp;
         Player = GameObject.Find("Player");
         HpbarObject = GameObject.Find("BossCanvas").transform.Find("BringerofDeathHpbar").gameObject;
         HpbarObject.SetActive(true);
+        sprite = GetComponent<SpriteRenderer>();
         Hpbar = GameObject.Find("BringerofDeath_Hpbar");
         animator = GetComponent<Animator>();
         Invoke("RandomBossAction", 1f);
@@ -122,15 +126,31 @@ public class BringerofDeath : MonoBehaviour
         {
             SoundManager.instance.hit();
             Hp -= Player.GetComponent<PlayerState>().GeneralDamage();
+            StartCoroutine(Attacked());
         }
         if (collision.transform.CompareTag("PlayerAttack_2"))
         {
             SoundManager.instance.hit();
             Hp -= Player.GetComponent<PlayerState>().GeneralDamage();
+            StartCoroutine(Attacked());
         }
         if (collision.transform.CompareTag("Double_Slash"))
         {
             Hp -= Player.GetComponent<PlayerState>().ESkillDamage();
+            StartCoroutine(Attacked());
+        }
+    }
+    IEnumerator Attacked()
+    {
+        if (!isred)
+        {
+            isred = true;
+            sprite.color = Color.red;
+            Time.timeScale = 0.7f;
+            yield return new WaitForSeconds(0.1f);
+            Time.timeScale = 1;
+            sprite.color = Color.white;
+            isred = false;
         }
     }
     public void OnPatten1()
@@ -146,7 +166,8 @@ public class BringerofDeath : MonoBehaviour
         Hpbar.GetComponent<Image>().fillAmount = (Hp / MaxHp * 100 / 100);
         if (Hp <= 0)
         {
-            
+            Time.timeScale = 1;
+            sprite.color = Color.white;
             isAction = true;
             StopAllCoroutines();
             Destroy(Patten1);
