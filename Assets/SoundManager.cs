@@ -8,13 +8,15 @@ public class SoundManager : MonoBehaviour
     public static SoundManager instance;
 
     AudioSource myAudio;
-
+    
     public AudioClip Attack1;
     public AudioClip Attack2;
     public AudioClip dash;
     public AudioClip Esk;
     public AudioClip Qsk;
     public AudioClip HIT;
+    public AudioClip botten;
+    
     private void Awake()
     {
         if(instance == null)
@@ -41,7 +43,6 @@ public class SoundManager : MonoBehaviour
     {
         myAudio.PlayOneShot(dash);
     }
-
     public void esk()
     {
         myAudio.PlayOneShot(Esk);
@@ -54,4 +55,9 @@ public class SoundManager : MonoBehaviour
     {
         myAudio.PlayOneShot(HIT);
     }
+    public void button()
+    {
+        myAudio.PlayOneShot(botten);
+    }
+    
 }

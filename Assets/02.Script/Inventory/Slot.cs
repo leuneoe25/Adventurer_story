@@ -90,7 +90,8 @@ public class Slot : MonoBehaviour
     }
     void Execute()
     {
-        if(item.Gettype() == Item.type.Portion || item.Gettype() == Item.type.AdditionHp || item.Gettype() == Item.type.AdditionPower)
+        SoundManager.instance.button();
+        if (item.Gettype() == Item.type.Portion || item.Gettype() == Item.type.AdditionHp || item.Gettype() == Item.type.AdditionPower)
         {
             InventorySystem.temporaryHealamount = item.Get();
             CheackText.text = "아이템을 사용하시겠습니까?";
@@ -111,7 +112,8 @@ public class Slot : MonoBehaviour
     }
     public void Portionconsent()
     {
-        if(item.Gettype() == Item.type.Portion)
+        SoundManager.instance.button();
+        if (item.Gettype() == Item.type.Portion)
             player.GetComponent<PlayerState>().Heal(InventorySystem.temporaryHealamount);
         if (item.Gettype() == Item.type.AdditionHp)
             player.GetComponent<PlayerState>().HpAdd(item.Get());
@@ -122,6 +124,7 @@ public class Slot : MonoBehaviour
     }
     public void Portiondenial()
     {
+        SoundManager.instance.button();
         InventorySystem.temporaryHealamount = 0;
         CheackObject.SetActive(false);
     }

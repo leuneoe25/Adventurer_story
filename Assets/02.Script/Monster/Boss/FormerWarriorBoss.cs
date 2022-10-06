@@ -206,7 +206,7 @@ public class FormerWarriorBoss : MonoBehaviour
             yield return new WaitForSeconds(1f);
             AttackRange_1.SetActive(false);
             Debug.Log("asd");
-
+            BossSound.instance.FormerBossAttack1();
             animator.SetBool("Attack1", true);
             yield return new WaitForSeconds(0.8f);
             animator.SetBool("Attack1", false);
@@ -233,6 +233,7 @@ public class FormerWarriorBoss : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
             AttackRange_2.SetActive(false);
             Attackarea2on();
+            BossSound.instance.FormerBossAttack2();
             while (true)
             {
                 SkillEffect_2.SetActive(true);
@@ -271,6 +272,7 @@ public class FormerWarriorBoss : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
             AttackRange_2.SetActive(false);
             Attackarea2on();
+            BossSound.instance.FormerBossAttack2();
             while (true)
             {
                 SkillEffect_2.SetActive(true);

@@ -8,6 +8,7 @@ public class DarkHand : MonoBehaviour
     private void Start()
     {
         box = GetComponent<BoxCollider2D>();
+        BossSound.instance.BringerofPatten2();
     }
     public void OnAttackArea()
     {

@@ -60,6 +60,7 @@ public class BringerofDeath : MonoBehaviour
     {
         isAction = true;
         animator.SetBool("Patten1", true);
+        BossSound.instance.BringerofPatten1();
         yield return new WaitForSeconds(0.5f);
         if(Player.transform.localScale.x == 5)
         {

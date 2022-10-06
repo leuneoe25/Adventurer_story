@@ -54,6 +54,7 @@ public class QuestSlot : MonoBehaviour
 
     void Execute()
     {
+        SoundManager.instance.button();
         PlayerPrefs.SetInt("isFirst", 0);
         GameSystem.instans().Guidefalse();
 
@@ -120,6 +121,7 @@ public class QuestSlot : MonoBehaviour
     }
     public void Questconsent()
     {
+        SoundManager.instance.button();
         Proceeding = true;
         questObject.SetActive(false);
         QuestObject.GetComponent<QuestSystem>().SetCanvers(false);
@@ -133,6 +135,7 @@ public class QuestSlot : MonoBehaviour
     }
     public void Esc()
     {
+        SoundManager.instance.button();
         questObject.SetActive(false);
     }
 

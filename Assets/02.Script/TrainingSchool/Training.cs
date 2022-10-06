@@ -71,6 +71,7 @@ public class Training : MonoBehaviour
     }
     private void LevelUp()
     {
+        SoundManager.instance.button();
         LevelText.text = "Lv. " + Player.GetComponent<PlayerState>().GetLevelVal();
         CoinText.text = Player.GetComponent<InventorySystem>().coin.GetCoin() + "G";
         if (Player.GetComponent<PlayerState>().GetLevelVal() >=40)
@@ -97,6 +98,7 @@ public class Training : MonoBehaviour
     }
     private void Exit()
     {
+        SoundManager.instance.button();
         InventorySystem.OnUI = 0;
         TrainingObject.SetActive(false);
         Player.GetComponent<PlayerAttackSystem>().AttackIsPossible = true;

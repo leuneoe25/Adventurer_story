@@ -67,12 +67,13 @@ public class PlayerBehaviour : MonoBehaviour
             isJumpable = false;
             animator.SetBool("isJump", true);
             animator.SetBool("isRun", false);
+            RunSound.instance.stopRun();
         }
         if(hit.transform == null)
         {
             animator.SetBool("isJump", true);
             animator.SetBool("isRun", false);
-            
+            RunSound.instance.stopRun();
         }
         else
         {
@@ -151,6 +152,7 @@ public class PlayerBehaviour : MonoBehaviour
         if (isMove && !isWallJump)
         {
             rigidbody.velocity = new Vector2(x * defaultspeed, rigidbody.velocity.y);
+            RunSound.instance.Run();
             animator.SetBool("isRun", true);
         }
         else
@@ -160,6 +162,7 @@ public class PlayerBehaviour : MonoBehaviour
         }
         if (rigidbody.velocity.x == 0)
         {
+            RunSound.instance.stopRun();
             animator.SetBool("isRun", false);
         }
     }

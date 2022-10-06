@@ -80,6 +80,7 @@ public class EvilWizard : MonoBehaviour
     {
         isAction = true;
         animator.SetBool("Patten1",true);
+        BossSound.instance.EvilDownMeteo();
         for (int i = 0; i < 44; i++)
         {
             GameObject obj;
@@ -87,6 +88,7 @@ public class EvilWizard : MonoBehaviour
             obj.transform.Rotate(new Vector3(0f, 0f,0));
             yield return new WaitForSeconds(0.2f);
         }
+        BossSound.instance.EvilDownMeteoStop();
         animator.SetBool("Patten1", false);
         Invoke("RandomBossAction", 4);
     }
@@ -103,6 +105,7 @@ public class EvilWizard : MonoBehaviour
         float speed = 10;
         for (int j = 0; j < 5; j++)
         {
+            BossSound.instance.EvilWizardfirepoooooStart();
             float angle = 360 / oneShoting;
             for (int i = 0; i < oneShoting; i++)
             {
@@ -130,6 +133,7 @@ public class EvilWizard : MonoBehaviour
         GameObject obj;
         for (int i = 0; i < 3; i++)
         {
+            BossSound.instance.EvilWizardUpMeteoStart();
             obj = (GameObject)Instantiate(meteo, new Vector2(Player.transform.position.x, gameObject.transform.position.y-10), Quaternion.identity);
             obj.transform.Rotate(new Vector3(0, 0, -180));
             obj.transform.localScale = new Vector3(0.5f, 0.5f, 1);
@@ -145,9 +149,11 @@ public class EvilWizard : MonoBehaviour
     IEnumerator EvilWizard_Patten3()
     {
         isAction = true;
+        BossSound.instance.EvilFireStart();
         animator.SetBool("Patten3", true);
         yield return new WaitForSeconds(2f);
         animator.SetBool("Patten3", false);
+        BossSound.instance.EvilFireStop();
         Invoke("RandomBossAction", 4);
     }
     void patten3On()

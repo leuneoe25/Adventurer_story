@@ -86,6 +86,7 @@ public class StoreSystem : MonoBehaviour
     }
     void buyCheck(string name, int price)
     {
+        SoundManager.instance.button();
         OffNo();
         Offyes();
         CheckObject.SetActive(true);
@@ -106,6 +107,7 @@ public class StoreSystem : MonoBehaviour
     }
     void ButtenConsent(string name,int price)
     {
+        SoundManager.instance.button();
         CoinText.text = "Coin : " + Player.GetComponent<InventorySystem>().coin.GetCoin();
         Player.GetComponent<InventorySystem>().AcquireItem(name);
         Player.GetComponent<InventorySystem>().coin.SetCoin(-price);
@@ -114,6 +116,7 @@ public class StoreSystem : MonoBehaviour
     }
     void ButtenRefusal()
     {
+        SoundManager.instance.button();
         CheckObject.SetActive(false);
     }
     public void OnOne()

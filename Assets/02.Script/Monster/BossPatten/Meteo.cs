@@ -7,6 +7,7 @@ public class Meteo : MonoBehaviour
     [SerializeField] private float speed;
     private void Start()
     {
+        
         Invoke("DestroyObject", 3f);
     }
 
